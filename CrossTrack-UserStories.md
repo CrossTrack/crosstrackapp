@@ -11,7 +11,7 @@ Cross Track User Stories
   * Dropdowns with movements listed
   * Can add more than 1 movement
   * Can Add Reps, Rounds, and Weight, as additional criteria for each movement
-    * input fields for each
+   * input fields for each
 ==========
 
 ### I can enter in multiple movements so I can fill out my entire workout routine(8)
