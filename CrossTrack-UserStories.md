@@ -25,3 +25,6 @@ Cross Track User Stories
 ==========
 
 ## Stretch Features
+
+### I can share my workout/s to social media outlets (facebook to start)
+  * Share button/s
