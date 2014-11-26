@@ -32,6 +32,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
   }
    .brand {
     width: 30px;
@@ -96,52 +97,9 @@
    .container-fluid>.navbar-header {
      margin-right: 0;
    }
+
   </style>
- <script>
- //Array of movements for the input box of workouts
-  $(function() {
-    var movements = [
-    "Pull Ups",
-    "Push Ups",
-    "Sit Ups",
-    "Clean",
-    "Power Clean",
-    "Squat Clean",
-    "Hang Clean",
-    "Hang Squat Clean",
-    "Snatch",
-    "Power Snatch",
-    "Squat Snatch",
-    "Hang Snatch",
-    "Hang Squat Snatch",
-    "Press",
-    "Strict Press",
-    "Push Press",
-    "Jerk",
-    "Push Jerk",
-    "Split Jerk",
-    ];
-    var workouts = [
-       "Amanda",
-       "Annie",
-       "Fran",
-       "Murph",
-       "Filthy Fifty"
-    ];
 
-    $( "#movements" ).autocomplete({
-      source: movements
-    });
-    $("#workoutList").autocomplete({
-      source: workouts
-    });
-    $(".repCount").autocomplete({
-      source: reps
-    });
-  });
-
-
-  </script>
 </head>
 <body>
 
@@ -209,6 +167,51 @@
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script>
+      //Array of movements for the input box of workouts
+       $(function() {
+         var movements = [
+         "Pull Ups",
+         "Push Ups",
+         "Sit Ups",
+         "Clean",
+         "Power Clean",
+         "Squat Clean",
+         "Hang Clean",
+         "Hang Squat Clean",
+         "Snatch",
+         "Power Snatch",
+         "Squat Snatch",
+         "Hang Snatch",
+         "Hang Squat Snatch",
+         "Press",
+         "Strict Press",
+         "Push Press",
+         "Jerk",
+         "Push Jerk",
+         "Split Jerk",
+         ];
+         var workouts = [
+            "Amanda",
+            "Annie",
+            "Fran",
+            "Murph",
+            "Filthy Fifty"
+         ];
+
+         $( "#movements" ).autocomplete({
+           source: movements
+         });
+         $("#workoutList").autocomplete({
+           source: workouts
+         });
+         /*$(".repCount").autocomplete({
+           source: reps
+         });*/
+       });
+
+
+       </script>
       <!--<script>
         \$(".addWorkout").on('click', function(){
         if(\$('.workoutList').hasClass('hidden')){
