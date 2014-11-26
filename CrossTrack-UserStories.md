@@ -1,7 +1,7 @@
 Cross Track User Stories
 ============
 
-## MVP
+## MVP (Total Points Required == 33pts)
 
 ### I can login via Facebook so I can use the app(4)
   * Facebook OAuth with Firebase
@@ -46,10 +46,10 @@ Cross Track User Stories
 
 
 
-## Stretch Features
+## Stretch Features (Total Points Required == ???)
 
-### I can share my workout/s to social media outlets (facebook to start)
+### I can share my workout/s to social media outlets (facebook to start)(8)
   * Share button/s
 
-### I can add a photo or video so that I can remember my workout, PR, or see technique
+### I can add a photo or video so that I can remember my workout, PR, or see technique(???)
   * Upload picture or video from phone
