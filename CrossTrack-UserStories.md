@@ -53,4 +53,3 @@ Cross Track User Stories
 
 ### I can add a photo or video so that I can remember my workout, PR, or see technique
   * Upload picture or video from phone
-  
