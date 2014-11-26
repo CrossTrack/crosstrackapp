@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cross Track</title>
+  <title>Activ8</title>
+  <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <style>
@@ -21,11 +22,14 @@
 
   h1 {
     margin: 0;
-    padding: 2% 0;
+    padding: 2% 15%;
+    font-family: 'Stardos Stencil', 'Arial';
+    font-size: 30pt;
   }
   .container-fluid {
     padding: 0;
     position: relative;
+    overflow: hidden;
   }
   .main-nav {
     position: absolute;
@@ -85,7 +89,7 @@
   }
   .kettle {
     width: 50%;
-    margin: 35% auto 0 auto;
+    margin: 50% auto 0 auto;
   }
   .kettleBox footer {
     width: 100%;
@@ -93,17 +97,28 @@
     bottom: 0;
     left: 0;
     text-align: center;
+    color: lightgray;
   }
    .container-fluid>.navbar-header {
      margin-right: 0;
    }
-
+   .appName {
+     color: white;
+   }
+   .background-img {
+     z-index: -1;
+     position: absolute;
+     top: 0;
+     right: -103%;
+   }
   </style>
 
 </head>
 <body>
-
   <div class="container-fluid">
+    <background class="background-img">
+      <img src="images/boxbg.jpg" alt="">
+    </background>
     <nav class="navbar navbar-default main-nav" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -117,7 +132,7 @@
         <a class="navbar-brand" href="#">
         <img class="ree" src="images/reebokxfit.png" alt="">
         </a>
-        <a class="name" href="#"><section class="appName"><h1>Cross Track</h1></section></a>
+        <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
