@@ -3,33 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cross Check</title>
+  <title>Cross Track</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <style>
-  .custom-combobox {
-    position: relative;
-    display: inline-block;
-  }
-  .custom-combobox-toggle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: -1px;
-    padding: 0;
-  }
-  .custom-combobox-input {
-    margin: 0;
-    padding: 5px 10px;
-  }
   body {
     margin: 0;
     body: 0;
   }
   .navbar {
     background-color: #171515;
+  }
+  a, a:hover, a:active {
+    text-decoration: none;
+    cursor: pointer;
   }
 
   h1 {
@@ -75,143 +64,53 @@
     margin-top: 5%;
   }
   </style>
-  <script>
-  (function( $ ) {
-    $.widget( "custom.combobox", {
-      _create: function() {
-        this.wrapper = $( "<span>" )
-          .addClass( "custom-combobox" )
-          .insertAfter( this.element );
-
-        this.element.hide();
-        this._createAutocomplete();
-        this._createShowAllButton();
-      },
-
-      _createAutocomplete: function() {
-        var selected = this.element.children( ":selected" ),
-          value = selected.val() ? selected.text() : "";
-
-        this.input = $( "<input>" )
-          .appendTo( this.wrapper )
-          .val( value )
-          .attr( "title", "" )
-          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
-          .autocomplete({
-            delay: 0,
-            minLength: 0,
-            source: $.proxy( this, "_source" )
-          })
-          .tooltip({
-            tooltipClass: "ui-state-highlight"
-          });
-
-        this._on( this.input, {
-          autocompleteselect: function( event, ui ) {
-            ui.item.option.selected = true;
-            this._trigger( "select", event, {
-              item: ui.item.option
-            });
-          },
-
-          autocompletechange: "_removeIfInvalid"
-        });
-      },
-
-      _createShowAllButton: function() {
-        var input = this.input,
-          wasOpen = false;
-
-        $( "<a>" )
-          .attr( "tabIndex", -1 )
-          .attr( "title", "Show All Items" )
-          .tooltip()
-          .appendTo( this.wrapper )
-          .button({
-            icons: {
-              primary: "ui-icon-triangle-1-s"
-            },
-            text: false
-          })
-          .removeClass( "ui-corner-all" )
-          .addClass( "custom-combobox-toggle ui-corner-right" )
-          .mousedown(function() {
-            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
-          })
-          .click(function() {
-            input.focus();
-
-            // Close if already visible
-            if ( wasOpen ) {
-              return;
-            }
-
-            // Pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-          });
-      },
-
-      _source: function( request, response ) {
-        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-        response( this.element.children( "option" ).map(function() {
-          var text = $( this ).text();
-          if ( this.value && ( !request.term || matcher.test(text) ) )
-            return {
-              label: text,
-              value: text,
-              option: this
-            };
-        }) );
-      },
-
-      _removeIfInvalid: function( event, ui ) {
-
-        // Selected an item, nothing to do
-        if ( ui.item ) {
-          return;
-        }
-
-        // Search for a match (case-insensitive)
-        var value = this.input.val(),
-          valueLowerCase = value.toLowerCase(),
-          valid = false;
-        this.element.children( "option" ).each(function() {
-          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
-            this.selected = valid = true;
-            return false;
-          }
-        });
-
-        // Found a match, nothing to do
-        if ( valid ) {
-          return;
-        }
-
-        // Remove invalid value
-        this.input
-          .val( "" )
-          .attr( "title", value + " didn't match any item" )
-          .tooltip( "open" );
-        this.element.val( "" );
-        this._delay(function() {
-          this.input.tooltip( "close" ).attr( "title", "" );
-        }, 2500 );
-        this.input.autocomplete( "instance" ).term = "";
-      },
-
-      _destroy: function() {
-        this.wrapper.remove();
-        this.element.show();
-      }
-    });
-  })( jQuery );
-
+ <script>
+ //Array of movements for the input box of workouts
   $(function() {
-    $( "#combobox" ).combobox();
-    $( "#toggle" ).click(function() {
-      $( "#combobox" ).toggle();
+    var movements = [
+    "Pull Ups",
+    "Push Ups",
+    "Sit Ups",
+    "Clean",
+    "Power Clean",
+    "Squat Clean",
+    "Hang Clean",
+    "Hang Squat Clean",
+    "Snatch",
+    "Power Snatch",
+    "Squat Snatch",
+    "Hang Snatch",
+    "Hang Squat Snatch",
+    "Press",
+    "Strict Press",
+    "Push Press",
+    "Jerk",
+    "Push Jerk",
+    "Split Jerk",
+    ];
+    var workouts = [
+       {
+        Name: "Fran",
+        Reps: "21-15-9",
+        Rds: "3",
+        Move1: {
+          Movement: "Thrusters",
+          Weight: "95/75",
+        },
+        Move2: {
+          Movement: "PullUps",
+        }
+      }
+    ];
+    $( "#movements" ).autocomplete({
+      source: movements
+    });
+    $("#workoutList").autocomplete({
+      source: workouts
     });
   });
+
+
   </script>
 </head>
 <body>
@@ -248,44 +147,38 @@
 
     <section class="main">
     <!-- <h1>Cross Check <span class="glyphicon glyphicon-ok"></span></h1> -->
-    <div class="ui-widget">
-      <label class="whatWork">What Did You Do Today?</label><br>
-      <select id="combobox">
-        <option value="">Select one...</option>
-        <option value="Pullups">Pull Ups<option>
-        <option value="Pushups">Push Ups</option>
-        <option value="Situps">Sit Ups</option>
-        <option value="clean">Clean</option>
-        <option class="divider"></option>
-        <option value="power clean">Power Clean</option>
-        <option value="squat clean">Squat Clean</option>
-        <option value="hang clean">Hang Clean</option>
-        <option value="hang squat clean">Hang Squat Clean</option>
-        <option class="divider"></option>
-        <optionvalue="snatch">Snatch</option>
-        <option class="divider"></option>
-        <option value="power snatch">Power Snatch</option>
-        <option value="squat snatch">Squat Snatch</option>
-        <option value="hang snatch">Hang Snatch</option>
-        <option value="hang squat snatch">Hang Squat Snatch</option>
-        <option class="divider"></option>
-        <option value="press">Press</option>
-        <option class="divider"></option>
-        <option value="strict press">Strict Press</option>
-        <option value="push press">Push Press</option>
-        <option class="divider"></option>
-        <option value="jerk">Jerk</option>
-        <option class="divider"></option>
-        <option value="push jerk">Push Jerk</option>
-        <option value="split jerk">Split Jerk</option>
-        <option class="divider"></option>
-      </select>
-      <a href="#"><h4>(+)Add Movement </h4></a>
-    </div>
+      <div class="ui-widget movementsList">
+        <label class="whatWork" for="movements">What Did You Do Today?</label><br>
+        <input id="movements">
+      </div>
+      <div class="ui-widget workoutList hidden">
+        <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
+        <input id="workoutList">
+      </div>
+      <a href="#"><h4>(+)Add Movement</h4></a>
+      <a class="addWorkout removeWorkout" ><h4>(+)Add Workout</h4></a>
     <button class="save btn btn-primary" type="submit">Save</button>
+  </div>
   </section>
 
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script>
+  $(".addWorkout").on('click', function(){
+  if($('.workoutList').hasClass('hidden')){
+      $('.workoutList').removeClass('hidden')
+      $('.movementsList').addClass('hidden')
+      $(".addWorkout h4").text("(-)Remove Workout");
+    } else {
+   if($('.movementsList').hasClass('hidden')){
+      $('.workoutList').addClass('hidden')
+      $('.movementsList').removeClass('hidden')
+      $(".addWorkout h4").text("(+)Add Workout");
+    }
+  };
+    });
+
+
+</script>
 </body>
 </html>
