@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cross Track</title>
+  <title>Activ8</title>
+  <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <style>
   body {
     margin: 0;
     body: 0;
   }
   .navbar {
-    background-color: #171515;
+    background-color: rgba(188, 37, 54, 0.8);
+    margin: 0;
+    border: none;
+  }
+  .appName {
+    color: #eee;
   }
   a, a:hover, a:active {
     text-decoration: none;
@@ -23,18 +27,25 @@
 
   h1 {
     margin: 0;
-    padding: 2% 0;
+    padding: 2% 15%;
+    font-family: 'Stardos Stencil', 'Arial';
+    font-size: 30pt;
   }
   .container-fluid {
     padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
   }
    .brand {
     width: 30px;
     padding-left: 30%;
-  }
-  .navbar {
-    margin: 0;
-    border: none;
   }
   .ree {
     width: 40px;
@@ -51,10 +62,24 @@
     text-align: center;
     height: 100vh;
   }
+  .kettleBox {
+    padding: 8%;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(5,5,5,0.5);
+    text-align: center;
+    height: 100vh;
+    position: relative;
+  }
   .whatWork {
     font-size: 20pt;
     padding-bottom: 5%;
     color: white;
+  }
+  h3 {
+    color: white;
+    margin: 0;
+    padding: 0;
   }
   h4 {
     color: white;
@@ -63,88 +88,67 @@
   .save {
     margin-top: 5%;
   }
-  .main-nav {
-    z-index: 1;
+  .kettle {
+    width: 50%;
+    margin: 50% auto 0 auto;
   }
+  .kettleBox footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: lightgray;
+  }
+   .container-fluid>.navbar-header {
+     margin-right: 0;
+   }
+   .background-img {
+     z-index: -1;
+     position: absolute;
+     top: 0;
+     right: -103%;
+   }
+   .movementsList, .workoutList {
+     padding-top: 30%;
+   }
   </style>
- <script>
- //Array of movements for the input box of workouts
-  $(function() {
-    var movements = [
-    "Pull Ups",
-    "Push Ups",
-    "Sit Ups",
-    "Clean",
-    "Power Clean",
-    "Squat Clean",
-    "Hang Clean",
-    "Hang Squat Clean",
-    "Snatch",
-    "Power Snatch",
-    "Squat Snatch",
-    "Hang Snatch",
-    "Hang Squat Snatch",
-    "Press",
-    "Strict Press",
-    "Push Press",
-    "Jerk",
-    "Push Jerk",
-    "Split Jerk",
-    ];
-    var workouts = [
-       "Amanda",
-       "Annie",
-       "Fran",
-       "Murph",
-       "Filthy Fifty"
-    ];
 
-    $( "#movements" ).autocomplete({
-      source: movements
-    });
-    $("#workoutList").autocomplete({
-      source: workouts
-    });
-    $(".repCount").autocomplete({
-      source: reps
-    });
-  });
-
-
-  </script>
 </head>
 <body>
-  <nav class="navbar navbar-default main-nav" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-      <img class="ree" src="images/reebokxfit.png" alt="">
-      </a>
-      <a class="name" href="#"><section class="appName"><h1>Cross Track</h1></section></a>
-    </div>
+    <background class="background-img">
+      <img src="images/boxbg.jpg" alt="">
+    </background>
+    <nav class="navbar navbar-default main-nav" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+        <a class="navbar-brand" href="#">
+        <img class="ree" src="images/reebokxfit.png" alt="">
+        </a>
+        <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="cross-menu">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dash<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">New Workout</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">PR's</a></li>
-        <li><a href="#">Workout Ideas</a></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-  </nav>
-  <div class="container-fluid">
-
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- <div class="collapse navbar-collapse" id="cross-menu">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Dash<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">New Workout</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">PR's</a></li>
+          <li><a href="#">Workout Ideas</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </div> --><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
     <section class="main">
     <!-- <h1>Cross Check <span class="glyphicon glyphicon-ok"></span></h1> -->
       <div class="ui-widget movementsList">
@@ -168,6 +172,8 @@
   </section>
 
 </div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script>
   $(".addWorkout").on('click', function(){
@@ -183,8 +189,51 @@
     }
   };
     });
-
-
 </script>
+<script>
+//Array of movements for the input box of workouts
+ $(function() {
+   var movements = [
+   "Pull Ups",
+   "Push Ups",
+   "Sit Ups",
+   "Clean",
+   "Power Clean",
+   "Squat Clean",
+   "Hang Clean",
+   "Hang Squat Clean",
+   "Snatch",
+   "Power Snatch",
+   "Squat Snatch",
+   "Hang Snatch",
+   "Hang Squat Snatch",
+   "Press",
+   "Strict Press",
+   "Push Press",
+   "Jerk",
+   "Push Jerk",
+   "Split Jerk",
+   ];
+   var workouts = [
+      "Amanda",
+      "Annie",
+      "Fran",
+      "Murph",
+      "Filthy Fifty"
+   ];
+
+   $( "#movements" ).autocomplete({
+     source: movements
+   });
+   $("#workoutList").autocomplete({
+     source: workouts
+   });
+   $(".repCount").autocomplete({
+     source: reps
+   });
+ });
+
+
+ </script>
 </body>
 </html>
