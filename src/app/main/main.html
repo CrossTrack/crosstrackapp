@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 login">
       <!-- don't show navbar on login screen <div ng-include="'components/navbar/navbar.html'"></div> -->
-      <h2 class="text-center logo">CrossTrack</h2>
+      <h2 class="text-center">CrossTrack</h2>
 
       <a href="#"><img src="./assets/images/kettlebell-fb.png" width=80px class="img-responsive center-block" alt="Login with Facebook"></img></a>
       <h3 class="text-center">Login</h3>
@@ -18,7 +18,7 @@
   </div><!-- .footer > .container -->
 </footer>
 
-<!-- Dashboard -->
+<!-- ============== Dashboard ============== -->
 <div class="container">
   <div class="row">
     <div ng-include="'components/navbar/navbar.html'"></div>
@@ -55,3 +55,35 @@
     <p class="text-muted text-center">Privacy Policy</p>
   </div><!-- .footer > .container -->
 </footer>
+
+<!-- ============== Today ============== -->
+<div class="container">
+  <div class="row">
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <div class="col-xs-12">
+      <h2 class="text-center">What did you do today?</h2>
+      <form role="form">
+        <div class="form-group">
+          <label for="needsName" class="text-center">Select a move or workout</label>
+          <input type="text" class="form-control inp-lg" id="needs-name" placeholder="Select one">
+          <a href="#">Add more</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Save</button>
+      </form>
+    </div>
+  </div><!-- .row -->
+</div><!-- .container -->
+
+<!-- Sticky Footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-center">Privacy Policy</p>
+  </div><!-- .footer > .container -->
+</footer>
+
+
+
+
+
+
+
