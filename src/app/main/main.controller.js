@@ -81,6 +81,13 @@ angular.module('crosstrack')
           console.log(user);
           uid = user.uid;
           username = user.github.username;
+
+          if (error) {
+            console.log('Login Failed!', error);
+          } else {
+            console.log('Login Succeeded!', user);
+          }
+
           console.log('User logged in with id: ', uid);
           console.log('username: ', username);
 
