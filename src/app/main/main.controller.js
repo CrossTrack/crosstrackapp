@@ -75,21 +75,22 @@ angular.module('crosstrack')
     $scope.login = function authenticate(e) {
         var ref = new Firebase('https://crosstrack.firebaseio.com');
         var uid = null;
+        var username = null;
 
-        // e.preventDefault();
-        ref.authWithOAuthPopup('github', function(err, user) {
-            if (err) {
-                console.log(err, 'error');
-            } else if (user) {
-                // logged in!
-                uid = user.uid;
-                console.log('logged in with id', uid);
+        ref.authWithOAuthPopup('github', function(error, user) {
+          console.log(user);
+          uid = user.uid;
+          username = user.github.username;
+          console.log('User logged in with id: ', uid);
+          console.log('username: ', username);
 
-            } else {
-                // logged out
-                console.log('we hit the else');
-            }
-        });
+        }, {
+            remember: "sessionOnly",
+            scope: "user,gist"
+          }
+
+
+        );
     };
 
 
