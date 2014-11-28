@@ -121,18 +121,20 @@
   if($('.workoutList').hasClass('hidden')){
       $('.workoutList').removeClass('hidden')
       $('.movementsList').addClass('hidden')
+      $('.addMovement').addClass('hidden');
       $(".addWorkout h4").text("(-)Remove Workout");
     } else {
    if($('.movementsList').hasClass('hidden')){
       $('.workoutList').addClass('hidden')
       $('.movementsList').removeClass('hidden')
+      $('.addMovement').removeClass('hidden');
       $(".addWorkout h4").text("(+)Add Workout");
     }
     };
   });
 
     $(".addMovement").on('click',function(){
-      $('.listOfMoves').append('<li><input class="movements" placeholder="Movement"><button type="button" class="btn btn-default deleteMove">X</button></li>');
+      $('.listOfMoves').append('<li><input class="movements" placeholder="Movement" style="margin-left: -3px;"><button type="button" class="btn btn-default deleteMove">X</button></li>');
       $( ".movements" ).autocomplete({
         source: movements
       });
