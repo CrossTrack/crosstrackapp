@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('crosstrack', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngResource', 'ngRoute'])
+var app = angular.module('crosstrack', ['firebase', 'ngAnimate', 'ngCookies', 'ngTouch', 'ngResource', 'ngRoute'])
+
   // .constant('FIREBASE_URL', 'https://crosstrack.firebaseio.com/');
-  .config(function ($routeProvider) {
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
