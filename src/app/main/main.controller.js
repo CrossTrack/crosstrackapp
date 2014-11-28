@@ -70,4 +70,28 @@ angular.module('crosstrack')
     angular.forEach($scope.awesomeThings, function(awesomeThing) {
       awesomeThing.rank = Math.random();
     });
+
+    $scope.login = function authenticate(e) {
+        var ref = new Firebase('https://crosstrack.firebaseio.com');
+        var uid = null;
+
+        e.preventDefault();
+        ref.authWithOAuthPopup('github', function(err, user) {
+            if (err) {
+                console.log(err, 'error');
+            } else if (user) {
+                // logged in!
+                uid = user.uid;
+                console.log('logged in with id', uid);
+
+            } else {
+                // logged out
+                console.log('we hit the else');
+            }
+        });
+    };
+
+
   });
+
+
