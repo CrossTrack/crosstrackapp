@@ -73,7 +73,7 @@ angular.module('crosstrack')
     });
 
     $scope.login = function authenticate(e) {
-        var ref = new Firebase('https://crosstrack.firebaseio.com');
+        var ref = new Firebase('FIREBASE_URL');
         var uid = null;
         var username = null;
 
