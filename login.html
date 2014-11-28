@@ -7,6 +7,11 @@
   <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js'></script>
+  <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+  <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
   <style>
     .userInfo {
     	width: 200px;
@@ -72,12 +77,31 @@
     </section>
 
       </div>
-      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-      <script>
-        ref.authWithOAuthRedirect("facebook", function(error) {
-          remember: "default"
-        });
+
+    <script>
+
+    var activ = new Firebase('https://activ8.firebaseio.com/');
+    var auth = new FirebaseSimpleLogin(activ, function(error, user) {
+      if (error) {
+        // an error occurred while attempting login
+        console.log(error);
+      } else if (user) {
+        // user authenticated with Firebase
+        console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+      } else {
+        // user is logged out
+      }
+    });
+
+    auth.login('facebook');
+
+        // ref.authWithOAuthRedirect("facebook", function(error) {
+        //   remember: "default"
+
+          // the permissions requested
+          // scope: "user_photos"
+          // Need to find profile pic, could be baseline
+
       </script>
 </body>
 </html>
