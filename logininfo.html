@@ -7,26 +7,10 @@
   <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .userInfo {
-    	width: 200px;
-    	height: 150px;
-    	background: khaki;
-      margin: 30% auto 0 auto;
-    }
-    .main-body {
-      background: url(images/boxbg.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      background-size: cover;
-    }
-    h2 {
-      color: white;
-      margin: 30% auto 0 auto;
-    }
-  </style>
+  
 </head>
-<body>
-  <div class="container-fluid main-body">
+<body ng-app="activ8">
+  <div class="container-fluid main-body" ng-controller="MainController">
     <div class="cover"></div>
     <!-- <background class="background-img">
       <img src="images/boxbg.jpg" alt="">
@@ -61,12 +45,16 @@
     </div><!-- /.container-fluid -->
     </nav>
     <section class="main">
-      <h2>Let's Get To Work</h2>
       <section class="fbLogin">
         <div class="userInfo">
-          <input type="text" value="username" placeholder="username">
-          <input type="text" value="password" placeholder="password">
+          <input type="email" class="form-control username" placeholder="username">
+          <input type="password" class="form-control pw" placeholder="password">
+          <p class="first24">24"</p>
+          <p class="second24">24"</p>
+          <p class="first30">30"</p>
+          <p class="second30">30"</p>
         </div>
+        <h2>Let's Get To Work</h2>
         <footer><em>Privacy Policy</em></footer>
       </section>
     </section>

@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  body: 0;
+  padding: 0;
 }
 .navbar {
   background-color: rgba(188, 37, 54, 0.8);
@@ -11,14 +11,20 @@ body {
 }
 .appName {
   color: #eee;
+  display: inline-block;
+}
+.logout {
+  display: inline-block;
+  float: right;
+  margin: 4%;
 }
 a, a:hover, a:active {
   text-decoration: none;
   cursor: pointer;
 }
 h1 {
-  margin: 0;
-  padding: 2% 15%;
+  margin: 2% 0;
+  padding-left: 12%;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
 }
@@ -49,7 +55,7 @@ h1 {
   padding: 8%;
   width: 100%;
   margin: 0 auto;
-  background: rgba(5,5,5,0.4);
+  background-color: rgba(0,0,0,0.4);
   text-align: center;
   height: 100vh;
 }
@@ -57,7 +63,7 @@ h1 {
   padding: 8%;
   width: 100%;
   margin: 0 auto;
-  background: rgba(5,5,5,0.4);
+  background-color: rgba(0,0,0,0.4);
   text-align: center;
   height: 100vh;
   position: relative;
@@ -94,12 +100,66 @@ h4 {
  .container-fluid>.navbar-header {
    margin-right: 0;
  }
- .background-img {
-   z-index: -1;
-   position: absolute;
-   bottom: -6%;
-   right: -200%;
- }
+
  .movementsList, .workoutList {
    padding-top: 30%;
  }
+  .userInfo {
+    width: 200px;
+    height: 150px;
+    background: burlywood;
+    margin: 73% auto 0 auto;
+    position: relative;
+  }
+  .username {
+    position: absolute;
+    left: 14%;
+    top: 18%;
+    width: 70%;
+  }
+  .pw {
+    position: absolute;
+    left: 14%;
+    top: 60%;
+    width: 70%;
+  }
+  .first24 {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+  }
+  .second24 {
+    position: absolute;
+    bottom: -8%;
+    left: 25%;
+    right: 25%;
+  }
+  .first30 {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: rotateZ(90deg)
+  }
+  .second30 {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    transform: rotateZ(90deg)
+  }
+  .main-body {
+    background: url(images/boxbg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  h2 {
+    color: white;
+    margin: 30% auto 0 auto;
+  }
+/*iPhone5 landscape*/
+@media (min-width: 238px) and (orientation: landscape){
+.kettle {
+  width: 25%;
+  margin: 10% auto 0 auto;
+}
+}
