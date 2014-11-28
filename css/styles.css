@@ -23,7 +23,7 @@ a, a:hover, a:active {
   cursor: pointer;
 }
 h1 {
-  margin: 2% 0;
+  margin: 6px 0 0 0;
   padding-left: 12%;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
@@ -86,8 +86,18 @@ h4 {
   margin-top: 5%;
 }
 .kettle {
-  width: 50%;
-  margin: 50% auto 0 auto;
+  width: 40%;
+  /* margin: 50% auto 0 auto; */
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+}
+.loginText {
+  position: absolute;
+  top: 65%;
+  left: 25%;
+  right: 25%;
 }
  footer {
   width: 100%;
@@ -156,10 +166,10 @@ h4 {
     color: white;
     margin: 30% auto 0 auto;
   }
-/*iPhone5 landscape*/
+/*iPhone5 landscape
 @media (min-width: 238px) and (orientation: landscape){
 .kettle {
   width: 25%;
   margin: 10% auto 0 auto;
 }
-}
+}*/
