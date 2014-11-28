@@ -113,6 +113,12 @@ h4 {
 
  .movementsList, .workoutList {
    padding-top: 30%;
+   background-color: rgba(0,0,0,0.5);
+ }
+ .add {
+   background-color: rgba(0,0,0,0.5);
+   padding: 8% 0;
+   margin-top: -10px;
  }
   .userInfo {
     width: 200px;
@@ -166,10 +172,26 @@ h4 {
     color: white;
     margin: 30% auto 0 auto;
   }
-/*iPhone5 landscape
-@media (min-width: 238px) and (orientation: landscape){
-.kettle {
-  width: 25%;
-  margin: 10% auto 0 auto;
+.listOfMoves {
+  list-style-type: none;
+  padding: 0;
 }
-}*/
+/* @media (min-width: 380px){
+  .loginText {
+    top: 75%;
+  }
+}
+
+@media (min-width: 540px){
+  .kettle {
+    width: 40%;
+    margin: 50% auto 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    right: 30%;
+  }
+  .loginText {
+    top: 75%;
+  }
+} */

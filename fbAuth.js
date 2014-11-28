@@ -35,4 +35,6 @@ angular.module('activ8', ['firebase'])
       fbAuth.$unauth()
       window.location.reload()
     }
+
+    var movesAdded = [ ];
   });
