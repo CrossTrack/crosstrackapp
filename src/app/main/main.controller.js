@@ -1,4 +1,5 @@
 'use strict';
+/*global Firebase */
 
 angular.module('crosstrack')
   .controller('MainCtrl', function ($scope) {
@@ -75,7 +76,7 @@ angular.module('crosstrack')
         var ref = new Firebase('https://crosstrack.firebaseio.com');
         var uid = null;
 
-        e.preventDefault();
+        // e.preventDefault();
         ref.authWithOAuthPopup('github', function(err, user) {
             if (err) {
                 console.log(err, 'error');
