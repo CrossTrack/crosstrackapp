@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="activApp">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
     }
   </style>
 </head>
-<body>
+<body ng-controller="fbAuth">
   <div class="container-fluid main-body">
     <div class="cover"></div>
     <!-- <background class="background-img">
@@ -69,8 +69,7 @@
       <h2>Let's Get To Work</h2>
       <section class="fbLogin">
         <div class="userInfo">
-          <input type="text" value="username" placeholder="username">
-          <input type="text" value="password" placeholder="password">
+          <button type="button" ng-click="auth.login('facebook')">Login</button>
         </div>
         <footer><em>Privacy Policy</em></footer>
       </section>
@@ -80,20 +79,28 @@
 
     <script>
 
-    var activ = new Firebase('https://activ8.firebaseio.com/');
-    var auth = new FirebaseSimpleLogin(activ, function(error, user) {
-      if (error) {
-        // an error occurred while attempting login
-        console.log(error);
-      } else if (user) {
-        // user authenticated with Firebase
-        console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
-      } else {
-        // user is logged out
-      }
-    });
+var activApp = angular.module("activApp", ["firebase"]);
+  myApp.controller('MyController', ['$scope', '$firebase',
+    function($scope, $firebase) {
+      var activ = new Firebase('https://activ8.firebaseio.com/');
+      var auth = new FirebaseSimpleLogin(activ, function(error, user) {
+        if (error) {
+          // an error occurred while attempting login
+          console.log(error);
+        } else if (user) {
+          // user authenticated with Firebase
+          console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+        } else {
+          // user is logged out
+        }
+      });
+    };
+  ]);
 
-    auth.login('facebook');
+
+
+
+    // auth.login('facebook');
 
         // ref.authWithOAuthRedirect("facebook", function(error) {
         //   remember: "default"
