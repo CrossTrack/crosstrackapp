@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+  var ref = new Firebase("https://activ8.firebaseio.com");
+
+  var auth = new FirebaseSimpleLogin(ref, function(error, user) {
+    // ref.onAuth(function(authData) {
+      if (error) {
+        console.log(error);
+      } else if (user) {
+        // user authenticated with Firebase
+        console.log("User ID: " + user.uid + ", Provider: " + user.provider);
+      } else {
+        // user is logged out
+        console.log("Not logged in!");
+      }
+    // });
+  });
+
+  $(function(){
+    $("#fBlogin").click(function(){
+      auth.login('facebook', {
+        rememberMe: true
+      });
+    });
+  });
+</script>
+
+  </head>
+  <body>
+    <a href="#" id="fbLogin">Login Here</a>
+  </body>
+</html>

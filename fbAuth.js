@@ -2,13 +2,15 @@
 // var activApp = angular.module("activApp", ["firebase"]);
 //   activApp.controller('fbAuth', ['$scope', '$firebase',
 
-  var ref = new Firebase("https://activ8.firebaseio.com/");
+  var ref = new Firebase("https://activ8.firebaseio.com");
 
   var auth = new FirebaseSimpleLogin(ref, function(error, user) {
     // ref.onAuth(function(authData) {
-      if (authData) {
+      if (error) {
+        console.log(error);
+      } else if (user) {
         // user authenticated with Firebase
-        console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
+        console.log("User ID: " + user.uid + ", Provider: " + user.provider);
       } else {
         // user is logged out
         console.log("Not logged in!");
