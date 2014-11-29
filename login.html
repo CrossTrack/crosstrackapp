@@ -69,7 +69,7 @@
       <h2>Let's Get To Work</h2>
       <section class="fbLogin">
         <div class="userInfo">
-          <button type="button" ng-click="auth.login('facebook')">Login</button>
+          <button type="button" ng-click="activ.login('facebook')">Login</button>
         </div>
         <footer><em>Privacy Policy</em></footer>
       </section>
@@ -83,7 +83,9 @@ var activApp = angular.module("activApp", ["firebase"]);
   activApp.controller('fbAuth', ['$scope', '$firebase',
     function($scope, $firebase) {
       var activ = new Firebase('https://activ8.firebaseio.com/');
-      var auth = new FirebaseSimpleLogin(activ, function(error, user) {
+      // var auth = new FirebaseSimpleLogin(activ, function(error, user) {
+      activ.authWithOAuthRedirect("facebook", function(error) {
+        remember: "default"
         if (error) {
           // an error occurred while attempting login
           console.log(error);
@@ -102,8 +104,7 @@ var activApp = angular.module("activApp", ["firebase"]);
 
     // auth.login('facebook');
 
-        // ref.authWithOAuthRedirect("facebook", function(error) {
-        //   remember: "default"
+
 
           // the permissions requested
           // scope: "user_photos"
