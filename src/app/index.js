@@ -1,14 +1,15 @@
 'use strict';
+/*global Firebase */
 
 var app = angular.module('crosstrack',
-  ['firebase', 'ngAnimate', 'ngCookies', 'ngTouch', 'ngResource', 'ngRoute']);
+  ['firebase', 'appControllers', 'ngAnimate', 'ngCookies', 'ngTouch', 'ngResource', 'ngRoute']);
 
 var appControllers = angular.module('appControllers', ['firebase']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/', {
-      templateUrl: 'app/main/main.html',
+      templateUrl: 'app/views/main.html',
       controller:  'MainCtrl'
     }).
     when('/dashboard', {
