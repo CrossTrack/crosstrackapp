@@ -1,38 +1,40 @@
 'use strict';
 /*global Firebase */
 
-app.controller('MainCtrl', function ($scope, $firebase) {
+app.controller('MainCtrl', function ($scope, $firebase, Auth) {
     // var ref = new Firebase('https://crosstrack.firebaseio.com/');
 
-    $scope.login = function authenticate(e) {
-        var ref = new Firebase('https://crosstrack.firebaseio.com/');
-        var uid = null;
-        var username = null;
+  $scope.auth = Auth;
+  $scope.user = $scope.auth.$getAuth();
 
-        ref.authWithOAuthPopup('github', function(error, user) {
-          console.log(user);
-          uid = user.uid;
-          username = user.github.username;
+  $scope.login = function authenticate(e) {
+      var ref = new Firebase('https://crosstrack.firebaseio.com/');
+      var uid = null;
+      var username = null;
 
-          if (error) {
-            console.log('Login Failed!', error);
-          } else {
-            console.log('Login Succeeded!', user);
-          }
+      ref.authWithOAuthPopup('github', function(error, user) {
+        console.log(user);
+        uid = user.uid;
+        username = user.github.username;
 
-          console.log('User logged in with id: ', uid);
-          console.log('username: ', username);
+        if (error) {
+          console.log('Login Failed!', error);
+        } else {
+          console.log('Login Succeeded!', user);
+        }
 
-        }, {
-            remember: "sessionOnly",
-            scope: "user,gist"
-          }
+        console.log('User logged in with id: ', uid);
+        console.log('username: ', username);
+
+      }, {
+          remember: "sessionOnly",
+          scope: "user,gist"
+        }
+
+      );
+  };
 
 
-        );
-    };
-
-
-  });
+});
 
 

@@ -6,6 +6,13 @@ var app = angular.module('crosstrack',
 
 var appControllers = angular.module('appControllers', ['firebase']);
 
+// let's create a re-usable factory that generates the $firebaseAuth instance
+app.factory("Auth", ["$firebaseAuth", function($firebaseAuth) {
+  var ref = new Firebase("https://crosstrack.firebaseio.com/");
+  return $firebaseAuth(ref);
+}]);
+
+
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/', {

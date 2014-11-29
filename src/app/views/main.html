@@ -6,7 +6,19 @@
 
       <a href="#"><img src="./assets/images/kettlebell-fb.png" width=80px class="img-responsive center-block" alt="Login with Facebook"></img></a>
       <h3 class="text-center">Log in</h3>
-      <button class="btn-success" ng-click="login()">Log in with GitHub</button>
+
+
+      <!-- begin test -->
+      <div ng-show="user">
+        <p>Hello, {{ user.github.username }}</p>
+        <button ng-click="auth.$unauth()">Logout</button>
+      </div>
+      <div ng-hide="user">
+        <p>Welcome, please log in.</p>
+        <button ng-click="login()">Login with GitHub</button>
+      </div>
+
+      <!-- end test -->
 
     </div><!-- .col-xs-12 -->
   </div><!-- .row -->
