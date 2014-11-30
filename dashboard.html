@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activ8</title>
+  <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .row-1{
+      margin: 15% 0 0 0;
+      padding-top: 15%;
+    }
+    .row-2, .row-3 {
+      color: white;
+      min-height: 20%;
+      background-color: rgba(200,0,0,0.5);
+      margin: 15% auto 0 auto;
+      width: 90%;
+    }
+    .avatar {
+      padding: 0;
+      padding-left: 10%;
+    }
+    .plus-workout button {
+      width: 100%;
+      min-height: 80px;
+      font-size: 15pt;
+    }
+    .plus-workout button a {
+      color: white;
+    }
+  </style>
+</head>
+<body ng-app="activ8">
+  <div class="container-fluid main-body" ng-controller="MainController">
+    <nav class="navbar navbar-default main-nav" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+        <img class="ree" src="images/reebokxfit.png" alt="">
+        </a>
+        <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
+      </div>
+    </div><!-- /.container-fluid -->
+    </nav>
+    <section class="main-dash">
+      <div class="row row-1">
+      <section class="avatar col-xs-5">
+        <img src="images/LoganXfit2.jpg" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px"><!-- {{app.facebook.avatar_url}} -->
+      </section>
+      <section class="plus-workout col-xs-7">
+        <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus"><a href="file:///Users/Logan/TheIronYard/crosstrackapp/newwork.html">NewWorkout</a></button>
+      </section>
+    </div>
+    <div class="row row-2">
+      <section class="daysActive col-xs-12">
+        <p>Days Active Chart</p>
+      </section>
+    </div>
+    <div class="row row-3">
+      <section class="myHistory col-xs-12">
+        <p>My History</p>
+      </section>
+    </div>
+    </section>
+
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="fbAuth.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!-- <script>
+//Array of movements for the input box of workouts
+
+     var movements = [
+     "Pull Ups",
+     "Push Ups",
+     "Sit Ups",
+     "Clean",
+     "Power Clean",
+     "Squat Clean",
+     "Hang Clean",
+     "Hang Squat Clean",
+     "Snatch",
+     "Power Snatch",
+     "Squat Snatch",
+     "Hang Snatch",
+     "Hang Squat Snatch",
+     "Press",
+     "Strict Press",
+     "Push Press",
+     "Jerk",
+     "Push Jerk",
+     "Split Jerk",
+     ];
+     var workouts = [
+        "Amanda",
+        "Annie",
+        "Fran",
+        "Murph",
+        "Filthy Fifty"
+     ];
+
+     \$( ".movements" ).autocomplete({
+       source: movements
+     });
+     \$("#workoutList").autocomplete({
+       source: workouts
+     });
+     /*\$(".repCount").autocomplete({
+       source: reps
+     });*/
+  \$(".addWorkout").on('click', function(){
+  if(\$('.workoutList').hasClass('hidden')){
+      \$('.workoutList').removeClass('hidden')
+      \$('.movementsList').addClass('hidden')
+      \$('.addMovement').addClass('hidden');
+      \$(".addWorkout h4").text("(-)Remove Workout");
+    } else {
+   if(\$('.movementsList').hasClass('hidden')){
+      \$('.workoutList').addClass('hidden')
+      \$('.movementsList').removeClass('hidden')
+      \$('.addMovement').removeClass('hidden');
+      \$(".addWorkout h4").text("(+)Add Workout");
+    }
+    };
+  });
+
+    \$(".addMovement").on('click',function(){
+      \$('.listOfMoves').append('<li><input class="movements" placeholder="Movement" style="margin-left: -3px;"><button type="button" class="btn btn-default deleteMove">X</button></li>');
+      \$( ".movements" ).autocomplete({
+        source: movements
+      });
+    });
+    \$('body').on('click', '.deleteMove', function(){
+      \$(this).parent().remove()
+    });
+</script>-->
+</body>
+</html>

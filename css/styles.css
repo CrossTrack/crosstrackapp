@@ -24,7 +24,7 @@ a, a:hover, a:active {
 }
 h1 {
   margin: 6px 0 0 0;
-  padding-left: 12%;
+  padding-left: 32%;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
 }
@@ -53,6 +53,13 @@ h1 {
 }
 .main {
   padding: 8%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  height: 100vh;
+}
+.main-dash {
   width: 100%;
   margin: 0 auto;
   background-color: rgba(0,0,0,0.4);

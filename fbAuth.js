@@ -32,7 +32,7 @@ angular.module('activ8', ['firebase'])
     }
 
     $scope.logOut = function(){
-      fbAuth.$unauth()
+      fbAuth.$unauth();
       window.location.reload()
     }
 
