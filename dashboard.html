@@ -32,6 +32,9 @@
     .plus-workout button a {
       color: white;
     }
+    .personalBests {
+      color: white;
+    }
   </style>
 </head>
 <body ng-app="activ8">
@@ -65,6 +68,35 @@
         <p>My History</p>
       </section>
     </div>
+    </section>
+    <section class="personalBests">
+      <ul class="prList1 col-xs-6">
+        <li>Power Clean: {{user.pr.powerclean}}</li>
+        <li>Squat Clean: {{user.pr.squatclean}}</li>
+        <li>Hang Clean: {{user.pr.hangclean}}</li>
+        <li>Hang Squat Clean: {{user.pr.hangsquatclean}}</li>
+        <li>Split Jerk: {{user.pr.splitjerk}}</li>
+        <li>Push Jerk: {{user.pr.pushjerk}}</li>
+        <li>Clean & Jerk: {{user.pr.cleanjerk}}</li>
+        <li>Power Snatch: {{user.pr.powersnatch}}</li>
+        <li>Squat Snatch: {{user.pr.squatsnatch}}</li>
+        <li>Hang Snatch: {{user.pr.hangsnatch}}</li>
+        <li>Hang Squat Snatch: {{user.pr.hangsquatsnatch}}</li>
+
+      </ul>
+      <ul class="prList2 col-xs-6">
+        <li>Deadlift: {{user.pr.deadlift}}</li>
+        <li>Sumo Deadlift: {{user.pr.sumodeadlift}}</li>
+        <li>Squat: {{user.pr.squat}}</li>
+        <li>Overhead Squat: {{user.pr.ohsquat}}</li>
+        <li>Front Squat: {{user.pr.frontsquat}}</li>
+        <li>Fran: {{user.pr.fran}}</li>
+        <li>Annie: {{user.pr.annie}}</li>
+        <li>Filthy Fifty: {{user.pr.filthy}}</li>
+        <li>Nicole: {{user.pr.nicole}}</li>
+        <li>Murph: {{user.pr.murph}}</li>
+        <li>Open 14.5: {{user.pr.open14-5}}</li>
+      </ul>
     </section>
 
 </div>
