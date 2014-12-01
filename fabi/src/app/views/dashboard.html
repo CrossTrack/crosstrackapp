@@ -1,0 +1,31 @@
+<div class="container" ng-controller="DashboardCtrl">
+  <div class="row">
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <div class="col-xs-4 bg-warning">
+      <img class="img-circle" src="http://placehold.it/100X100">
+    </div><!-- .avatar -->
+    <div class="col-xs-8">
+      <button type="button" class="btn btn-primary btn-lg btn-block">Large button</button>
+    </div>
+  </div><!-- .row -->
+  <div class="row">
+    <div class="col-xs-12 bg-success">
+      <p>Hello, {{ user.github.username }}</p>
+      <h3>Days Active</h3>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus diam quis leo placerat dictum.
+    </div>
+  </div><!-- .row -->
+  <div class="row">
+    <div class="col-xs-12 bg-danger">
+      <h3>History</h3>
+      <ul>
+        <li>Mon Nov 20</li>
+        <li>Tue Nov 21</li>
+        <li>Wed Nov 22</li>
+        <li>Thu Nov 23</li>
+      </ul>
+    </div>
+  </div><!-- .row -->
+</div><!-- .container -->
+
+<div ng-include="'components/footer/footer.html'"></div>

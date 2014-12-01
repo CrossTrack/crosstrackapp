@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 login">
+      <div ng-include="'components/navbar/navbar.html'"></div>
+      <h2 class="text-center">CrossTrack</h2>
+      <a href="#"><img src="./assets/images/kettlebell-fb.png" width=80px class="img-responsive center-block" alt="Login with Facebook"></img></a>
+      <h3 class="text-center">Log in</h3>
+      <hr>
+      <!-- begin test -->
+      <div>
+        <hr>
+        <div ng-show="user">
+
+          <p>Hello, {{ user.github.username }}</p>
+          <p>Name: {{ user.github.displayName }}</p>
+          <button ng-click="auth.$unauth()">Logout</button>
+        </div>
+        <div ng-hide="user">
+          <p>Welcome, please log in.</p>
+          <button ng-click="login()">Login with GitHub</button>
+        </div>
+      </div>
+      <!-- end test -->
+
+    </div><!-- .col-xs-12 -->
+  </div><!-- .row -->
+</div><!-- .container -->
+
+
+
+
+
+
