@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
-<body>
-  <div class="container-fluid main-body">
+<body ng-app="activ8">
+  <div class="container-fluid main-body" ng-controller="MainController as app" >
     <nav class="navbar navbar-default main-nav" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,9 +44,9 @@
       </div> --><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
-    <section class="kettleBox">
+    <section class="kettleBox" >
 
-      <figure ng-hide="loggedIn()" ng-click="login()" id="fBlogin">
+      <figure ng-hide="loggedIn()" ng-click="login()">
         <a ><img src="images/kettlebell.png" alt="KettleFBLogin" class="img-responsive kettle"></a><br>
           <figcaption class="loginText">
             <a href="#"><h3>Login</h3></a>
