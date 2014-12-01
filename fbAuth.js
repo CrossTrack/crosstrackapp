@@ -21,15 +21,14 @@ angular.module('activ8', ['firebase'])
     $scope.login = function(){
       fbAuth.$authWithOAuthPopup("facebook").then(function(authData){
         console.log("Logged in as: ", authData.uid);
+        self.uid = authData.uid;
         self.displayName = authData.facebook.displayName;
         self.profilePic = authData.facebook.cachedUserProfile.picture.data.url;
-        // users.child(authData.uid).once('value', function(snapshot) {
-        //   if (snapshot.val() === null) {
-        //     console.log("New User");
-        //   } else {
-        //     console.log("User exists");
-        //   }
-        // });
+        users.once('value', function(snapshot) {
+          snapshot.childExists(self.uid, function(exists) {
+            console.log('user exists');
+          });
+        });
       }).catch(function(error){
         console.log("Authentication failed: ", error);
       });
