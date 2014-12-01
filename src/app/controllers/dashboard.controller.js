@@ -3,7 +3,7 @@
 
 app.controller('DashboardCtrl', ['$scope', '$firebase',
   function($scope, $firebase) {
-    var ref = new Firebase('https://crosstrack.firebaseio.com/');
+    var ref = new Firebase('https://crosstrack.firebaseio.com');
 
     // create an AngularFire reference to the data
     var sync = $firebase(ref);

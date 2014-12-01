@@ -9,7 +9,7 @@ var appControllers = angular.module('appControllers', ['firebase']);
 // let's create a re-usable factory that generates the $firebaseAuth instance
 // https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-user-authentication-and-management
 app.factory("Auth", ["$firebaseAuth", function($firebaseAuth) {
-  var ref = new Firebase("https://crosstrack.firebaseio.com/");
+  var ref = new Firebase("https://crosstrack.firebaseio.com");
   return $firebaseAuth(ref);
 }]);
 

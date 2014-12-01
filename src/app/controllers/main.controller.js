@@ -1,11 +1,22 @@
 'use strict';
 /* global Firebase */
 
+app.run(["$rootScope", "$location", function($rootScope, $location) {
+  $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+    // We can catch the error thrown when the $requireAuth promise is rejected
+    // and redirect the user back to the home page
+    if (error === "AUTH_REQUIRED") {
+      $location.path("/");
+    }
+  });
+}]);
+
+
 app.controller('MainCtrl', function ($scope, $firebase, Auth) {
   $scope.auth = Auth;
   $scope.user = $scope.auth.$getAuth();
   $scope.login = function authenticate(e) {
-      var ref = new Firebase('https://crosstrack.firebaseio.com/');
+      var ref = new Firebase('https://crosstrack.firebaseio.com');
       var uid = null;
       var username = null;
 
@@ -44,4 +55,22 @@ app.controller('MainCtrl', function ($scope, $firebase, Auth) {
   }; // login
 }); // controller
 
+// =========================================================
+// create a User factory with a getFullName() method
+app.factory("UserFactory", function($FirebaseObject) {
+  return $FirebaseObject.$extendFactory({
+      getFullName: function() {
+        // concatenate first and last name
+        return this.first_name + " " + this.last_name;
+      }
+   });
+});
 
+// create a User object from our Factory
+app.factory("User", function($firebase, $FirebaseObject) {
+  var ref = new Firebase('https://crosstrack.firebaseio.com'+"/users/");
+  return function(userid) {
+    return $firebase(ref.child(userid), {objectFactory: "UserFactory"}).$asObject();
+  }
+});
+// =========================================================
