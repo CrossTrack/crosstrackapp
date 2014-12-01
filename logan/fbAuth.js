@@ -17,9 +17,9 @@ angular.module('activ8', ['firebase'])
     $scope.login = function(){
       console.log(fbAuth)
       fbAuth.$authWithOAuthPopup("facebook").then(function(authData){
-        console.log("Logged in as: ", authData.facebook.displayName);
         self.displayName = authData.facebook.displayName;
         self.profilePic = authData.facebook.cachedUserProfile.picture.data.url;
+        console.log("Logged in as: ", authData.facebook.displayName);
       }).catch(function(error){
         console.log("Authentication failed: ", error);
       });

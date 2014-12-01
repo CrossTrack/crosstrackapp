@@ -16,7 +16,7 @@ body {
 .logout {
   display: inline-block;
   float: right;
-  margin: 4%;
+  margin: 2.5%;
 }
 a, a:hover, a:active {
   text-decoration: none;
@@ -24,7 +24,7 @@ a, a:hover, a:active {
 }
 h1 {
   margin: 6px 0 0 0;
-  padding-left: 32%;
+  padding-left: 15%;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
 }
