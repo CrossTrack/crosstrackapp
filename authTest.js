@@ -1,50 +1,32 @@
 'use strict';
 
-angular.module('activ8', ['firebase'])
-  .controller('MainController', function($firebase, $firebaseAuth){
-    var fire = new Firebase('https://activ8.firebaseio.com/'),
-        sync = $firebase(fire),
-        fbAuth = $firebaseAuth(fire),
-        syncObject = sync.$asObject(),
-        self = this;
+angular.module('activ8', []);
+var self = this;
+var ref = new Firebase(
+  'https://activ8.firebaseio.com');
 
-    syncObject.$bindTo($scope, "data");
-    $scope.workouts = sync.$asArray();
 
-    var actObj = $firebase(fire).$asObject();
+  // Log in logic.
+  // ref.authwithOAuthPopup('facebook', function(){
+  //   console.log(arguements);
+  // });
 
-    var users = new Firebase('https://activ8.firebaseio.com/web/data/users/');
+var users = new Firebase(
+  'https://activ8.firebaseio.com/users');
 
-    // $scope.newUser = function(){
-    //  fire.child('users').child(authData.uid).set(authData);
-    // }
 
-    $scope.login = function(){
-      fbAuth.$authWithOAuthPopup("facebook").then(function(authData){
-        console.log("Logged in as: ", authData.uid);
-        self.uid = authData.uid;
-        self.displayName = authData.facebook.displayName;
-        self.profilePic = authData.facebook.cachedUserProfile.picture.data.url;
-        // if(users.once('value', function(snapshot) {
-        //   snapshot.childExists(self.uid, function(exists) {
-        //     console.log('user exists');
-        //   });
-        // }));
-      }).catch(function(error){
-        console.log("Authentication failed: ", error);
-      });
-    }
+// This is to log out.
+// ref.unauth();
 
-    $scope.loggedIn = function(){
-      if(fbAuth.$getAuth() != null){
-        return true;
-      }
-    }
+// Getting/Storing user data.
+// var user = ref.getAuth();
+// users.child(user.uid);
+// users.child(user.uid).set(ref.getAuth);
 
-    $scope.logOut = function(){
-      fbAuth.$unauth();
-      window.location.reload()
-    }
-
-    var movesAdded = [ ];
-  });
+var authdUser = auth.getAuth();
+users.child(authdUser.uid).set({
+  uid: authdUser.uid,
+  facebook: authdUser.facebook,
+  fullName: authdUser.facebook.displayName,
+  avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+});
