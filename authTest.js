@@ -1,32 +1,38 @@
 'use strict';
 
-angular.module('activ8', []);
-var self = this;
-var ref = new Firebase(
-  'https://activ8.firebaseio.com');
+angular.module('activ8', [])
+  .controller('MainController', function(){
+    var ref = new Firebase('https://activ8.firebaseio.com/'),
+    users = new Firebase('https://activ8.firebaseio.com/users'),
+    authdUser = ref.getAuth(),
+    self = this;
 
+    this.login = function(){
+      ref.authWithOAuthPopup('facebook', function(error, authData){
+        console.log("Logged in as: ", authData.facebook.displayName);
+      })
+      users.child(authdUser.uid).set({
+        uid: authdUser.uid,
+        facebook: authdUser.facebook,
+        full_name: authdUser.facebook.displayName,
+        avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+      });
+      // users.once('value', function(snapshot) {
+      //   snapshot.childExists(authdUser.uid, function(exists) {
+      //     console.log('user exists');
+      //   });
+      // });
+    }
 
-  // Log in logic.
-  // ref.authwithOAuthPopup('facebook', function(){
-  //   console.log(arguements);
-  // });
+    this.loggedIn = function(){
+     if(ref.getAuth() != null){
+       return true;
+     }
+    };
 
-var users = new Firebase(
-  'https://activ8.firebaseio.com/users');
+    this.logOut = function(){
+      ref.unauth();
+      console.log("You Have Signed Out");
+    }
 
-
-// This is to log out.
-// ref.unauth();
-
-// Getting/Storing user data.
-// var user = ref.getAuth();
-// users.child(user.uid);
-// users.child(user.uid).set(ref.getAuth);
-
-var authdUser = auth.getAuth();
-users.child(authdUser.uid).set({
-  uid: authdUser.uid,
-  facebook: authdUser.facebook,
-  fullName: authdUser.facebook.displayName,
-  avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
-});
+  });
