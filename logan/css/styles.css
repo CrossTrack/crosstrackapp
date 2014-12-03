@@ -11,12 +11,13 @@ body {
 }
 .appName {
   color: #eee;
-  display: inline-block;
+  display: flex;
+  padding-left: 10%;
 }
 .logout {
   display: inline-block;
   float: right;
-  margin: 4%;
+  margin: 2.5%;
 }
 a, a:hover, a:active {
   text-decoration: none;
@@ -24,7 +25,7 @@ a, a:hover, a:active {
 }
 h1 {
   margin: 6px 0 0 0;
-  padding-left: 32%;
+  padding-left: 15%;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
 }
@@ -50,19 +51,19 @@ h1 {
 }
 .name {
   text-align: center;
+  color: white;
 }
 .main {
-  padding: 8%;
   width: 100%;
   margin: 0 auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.6);
   text-align: center;
   height: 100vh;
 }
 .main-dash {
   width: 100%;
   margin: 0 auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.5);
   text-align: center;
   height: 100vh;
 }
@@ -120,10 +121,8 @@ h4 {
 
  .movementsList, .workoutList {
    padding-top: 30%;
-   background-color: rgba(0,0,0,0.5);
  }
  .add {
-   background-color: rgba(0,0,0,0.5);
    padding: 8% 0;
    margin-top: -10px;
  }
@@ -191,6 +190,88 @@ h4 {
   margin: 0;
   margin-left: -24px;
   padding: 0 2%;
+}
+.row-1{
+  margin: 0;
+  padding-top: 20%;
+}
+.row-2, .row-3 {
+  color: white;
+  min-height: 20%;
+  background-color: rgba(200,0,0,0.5);
+  margin: 15% auto 0 auto;
+  width: 90%;
+}
+.avatar {
+  padding: 0;
+  padding-left: 10%;
+}
+.plus-workout button {
+  width: 100%;
+  min-height: 80px;
+  font-size: 15pt;
+}
+.plus-workout button a {
+  color: white;
+}
+#personalBests {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+}
+.prList {
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.prDrop {
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.prDrop li {
+  font-size: 12pt;
+  text-align: center;
+  margin: 5% 0;
+}
+.prList li {
+  font-size: 12pt;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.records {
+  margin: 0 auto 2% auto;
+  width: 85%;
+  padding-top: 10%;
+}
+.page-down {
+  padding-top: 10%;
+}
+.page-down a {
+  color: rgba(200,0,0,0.5);
+  font-size: 50pt;
+}
+.fbName {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+.page-up {
+  text-align: center;
+  padding: 0;
+}
+.page-up a {
+  color: rgba(200,0,0,0.5);
+  font-size: 50pt;
+}
+#personalRecords {
+  width: 80%;
+  height: 50px;
+}
+.logout-button {
+  position: absolute;
+  top: 10%;
+  right: 2%;
 }
 /* @media (min-width: 380px){
   .loginText {

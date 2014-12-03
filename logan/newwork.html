@@ -12,24 +12,27 @@
 <body ng-app="activ8">
   <div class="container-fluid main-body" ng-controller="MainController">
     <nav class="navbar navbar-default main-nav" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button> -->
         <a class="navbar-brand" href="#">
-        <img class="ree" src="images/reebokxfit.png" alt="">
+          <img class="ree" src="images/reebokxfit.png" alt="">
         </a>
-        <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
+        <a class="name" href="#">
+          <h1 class="appName navbar-left">Activ8</h1>
+        </a>
+        <button ng-click="logOut()" class="logout navbar-right btn">Logout</button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <!-- <div class="collapse navbar-collapse" id="cross-menu">
-        <ul class="nav navbar-nav">
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <!-- <div class="collapse navbar-collapse" id="cross-menu">
+          <ul class="nav navbar-nav">
           <li class="active"><a href="#">Dash<span class="sr-only">(current)</span></a></li>
           <li><a href="#">New Workout</a></li>
           <li><a href="#">History</a></li>
@@ -49,12 +52,12 @@
         </ul>
       </div>
       </form>
-      <!-- <section class="movementInfo">
+       <!-- <section class="movementInfo">
         <label class="reps" for="repCount">Reps:</label>
         <input class="repCount" type="text"><br>
         <label class="rds" for="rdsCount">Rds:</label>
         <input class="rdsCount" type="text">
-      </section> -->
+             </section> -->
       <div class="ui-widget workoutList hidden">
         <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
         <input id="workoutList" placeholder="Workout Name">
@@ -69,7 +72,8 @@
 
 </div>
 <script src="bower_components/angular/angular.js"></script>
-<script src="fbAuth.js"></script>
+<script src="index.js"></script>
+<script src="main-controller.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
