@@ -119,8 +119,6 @@ angular.module('activ8', ['firebase'])
   });
 */
 
-'use strict';
-
 angular.module('activ8')
   /**
    * Root Firebase reference instance shared between all Services
@@ -162,7 +160,16 @@ angular.module('activ8')
        * Wrapper for `$firebaseAuth.$unauth()`
        */
       logout: function(){
+        console.log(auth.fullName + 'logged out.');
         auth.$unauth();
+      },
+      /**
+      *Show/Hide login menu
+      */
+      loggedIn: function(){
+       if(Firebase.getAuth() != null){
+         return true;
+       }
       }
     }; // END service
 
@@ -178,7 +185,7 @@ angular.module('activ8')
         return null;
       }
 
-      var user = $firebase(ref
+      var user = $firebase(Firebase
         .child('users')
         .child(authdUser.uid)
       ).$asObject();
@@ -206,6 +213,8 @@ angular.module('activ8')
     var self = this;
 
     this.login = Auth.login;
+
+    this.loggedIn = Auth.loggedIn;
 
     this.logout = Auth.logout;
 
