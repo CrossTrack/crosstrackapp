@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('activ8', ['firebase'])
-  .controller('MainController', function($firebase, $firebaseAuth, $scope){
+  .controller('MainController', function($firebase, $firebaseAuth){
     var fire = new Firebase('https://activ8.firebaseio.com/'),
         sync = $firebase(fire),
         fbAuth = $firebaseAuth(fire),
@@ -9,12 +9,12 @@ angular.module('activ8', ['firebase'])
         self = this;
 
 
-    syncObject.$bindTo($scope, "data");
-    $scope.workouts = sync.$asArray();
+    syncObject.$bindTo(self, "data");
+    self.workouts = sync.$asArray();
 
     var actObj = $firebase(fire).$asObject();
 
-    $scope.login = function(){
+    self.login = function(){
       console.log(fbAuth)
       fbAuth.$authWithOAuthPopup("facebook").then(function(authData){
         console.log("Logged in as: ", authData.facebook.displayName);
@@ -25,13 +25,13 @@ angular.module('activ8', ['firebase'])
       });
     }
 
-    $scope.loggedIn = function(){
+    self.loggedIn = function(){
       if(fbAuth.$getAuth() != null){
         return true;
       }
     }
 
-    $scope.logOut = function(){
+    self.logOut = function(){
       fbAuth.$unauth();
       window.location.reload()
     }

@@ -72,14 +72,13 @@
 </head>
 <body ng-app="activ8">
   <div class="container-fluid main-body" ng-controller="MainController">
-    <section id="dashboard" class="main-dash">
-      <nav class="navbar navbar-default main-nav" role="navigation">
+      <nav id="dashboard" class="navbar navbar-default main-nav main-dash" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
           <img class="ree" src="images/reebokxfit.png" alt="">
           </a>
-          <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
+          <a class="name" href="#"><section class="appName navbar-left"><h1>Activ8</h1></section></a>
         </div>
       </div><!-- /.container-fluid -->
       </nav>
@@ -104,7 +103,6 @@
     </div>
     <section class="page-down">
       <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
-    </section>
     </section>
     <section id="personalBests">
       <h3 class="records">Personal Records(PR's)</h3>

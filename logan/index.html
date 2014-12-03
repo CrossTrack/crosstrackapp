@@ -13,37 +13,35 @@
 <body ng-app="activ8">
   <div class="container-fluid main-body" ng-controller="MainController as app" >
     <nav class="navbar navbar-default main-nav" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cross-menu">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button> -->
         <a class="navbar-brand" href="#">
-        <img class="ree" src="images/reebokxfit.png" alt="">
+          <img class="ree" src="images/reebokxfit.png" alt="">
         </a>
-        <a class="name" href="#">
-          <h1 class="appName navbar-left">Activ8</h1>
-          </a>
+        <a class="name" href="#"><section class="appName"><h1>Activ8</h1></section></a>
         <button ng-show="loggedIn()" ng-click="logOut()" class="logout navbar-right btn">Logout</button>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <!-- <div class="collapse navbar-collapse" id="cross-menu">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Dash<span class="sr-only">(current)</span></a></li>
-          <li><a href="#">New Workout</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">PR's</a></li>
-          <li><a href="#">Workout Ideas</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </div> --><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </nav>
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Dash<span class="sr-only">(current)</span></a></li>
+      <li><a href="#">New Workout</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">PR's</a></li>
+      <li><a href="#">Workout Ideas</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div> --><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
     <section class="kettleBox" >
 
       <figure ng-hide="loggedIn()" ng-click="login()">
