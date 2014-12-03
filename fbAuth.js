@@ -1,50 +1,105 @@
 'use strict';
 
-angular.module('activ8', ['firebase'])
-  .controller('MainController', function($firebase, $firebaseAuth, $scope){
-    var fire = new Firebase('https://activ8.firebaseio.com/'),
-        sync = $firebase(fire),
-        fbAuth = $firebaseAuth(fire),
-        syncObject = sync.$asObject(),
-        self = this;
+angular.module('activ8')
+  /**
+   * Root Firebase reference instance shared between all Services
+   */
+  .factory('Firebase', function(CONFIG){
+      return new Firebase(CONFIG.Firebase.baseUrl);
+  })
 
-    syncObject.$bindTo($scope, "data");
-    $scope.workouts = sync.$asArray();
+  /**
+   * Auth(entication) Service
+   *
+   * @method {Promise} login
+   * @method {undefined} logout
+   * @method {undefined} onAuth
+   *
+   * @TODO: make onAuth return a Promise?
+   */
+  .factory('Auth', function(Firebase, $firebaseAuth, $firebase){
+    var auth = $firebaseAuth(Firebase);
 
-    var actObj = $firebase(fire).$asObject();
-
-    var users = new Firebase('https://activ8.firebaseio.com/web/data/users/');
-
-    // $scope.newUser = function(){
-    //  fire.child('users').child(authData.uid).set(authData);
-    // }
-
-    $scope.login = function(){
-      fbAuth.$authWithOAuthPopup("facebook").then(function(authData){
-        console.log("Logged in as: ", authData.uid);
-        self.uid = authData.uid;
-        self.displayName = authData.facebook.displayName;
-        self.profilePic = authData.facebook.cachedUserProfile.picture.data.url;
-        // if(users.once('value', function(snapshot) {
-        //   snapshot.childExists(self.uid, function(exists) {
-        //     console.log('user exists');
-        //   });
-        // }));
-      }).catch(function(error){
-        console.log("Authentication failed: ", error);
-      });
-    }
-
-    $scope.loggedIn = function(){
-      if(fbAuth.$getAuth() != null){
-        return true;
+    return {
+      /**
+       * Wrapper for `$firebaseAuth.$onAuth()` that filters the `auth` object
+       * through the `updateUser()` function
+       */
+      onAuth: function(cb){
+        auth.$onAuth(function(data){
+            cb(updateUser(data));
+        });
+      },
+      /**
+       * Wrapper for `$firebaseAuth.$authWithOAuthPopup()` that invokes the
+       * correct provider code.
+       */
+      login: function(){
+        return auth.$authWithOAuthPopup('facebook');
+      },
+      /**
+       * Wrapper for `$firebaseAuth.$unauth()`
+       */
+      logout: function(){
+        console.log('Logged out.');
+        auth.$unauth();
+      },
+      /**
+      *Show/Hide login menu
+      */
+      loggedIn: function(){
+       if(Firebase.getAuth() != null){
+         return true;
+       }
       }
-    }
+    }; // END service
 
-    $scope.logOut = function(){
-      fbAuth.$unauth();
-      window.location.reload()
-    }
+    /**
+     * Tranform the `authdUser` object from `$firebaseAuth` into a full User
+     * record in the `/users` collection.
+     *
+     * @param {Object} authdUser from $firebaseAuth.getAuth()
+     * @return {Object} from $firebase.$asObject()
+     */
+    function updateUser(authdUser){
+      if ( authdUser === null ){
+        return null;
+      }
 
-    var movesAdded = [ ];
+      var user = $firebase(Firebase
+        .child('users')
+        .child(authdUser.uid)
+      ).$asObject();
+
+      angular.extend(user, {
+         uid: authdUser.uid,
+         facebook: authdUser.facebook,
+         fullName: authdUser.facebook.displayName,
+         avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+      });
+
+      user.$save();
+
+      return user;
+    } // END updateUser
+  }) // END factory(Auth)
+
+  /**
+   * Main application Controller
+   *
+   * @method {Promise} login -- trigger the login workflow
+   * @method {undefined} logout -- trigger the logout workflow
+   */
+  .controller('MainCtrl', function(Auth){
+    var self = this;
+
+    this.login = Auth.login;
+
+    this.loggedIn = Auth.loggedIn;
+
+    this.logOut = Auth.logout;
+
+    Auth.onAuth(function(user){
+      self.user = user;
+    });
   });

@@ -160,7 +160,7 @@ angular.module('activ8')
        * Wrapper for `$firebaseAuth.$unauth()`
        */
       logout: function(){
-        console.log(auth.fullName + 'logged out.');
+        console.log('Logged out.');
         auth.$unauth();
       },
       /**
@@ -216,7 +216,7 @@ angular.module('activ8')
 
     this.loggedIn = Auth.loggedIn;
 
-    this.logout = Auth.logout;
+    this.logOut = Auth.logout;
 
     Auth.onAuth(function(user){
       self.user = user;
