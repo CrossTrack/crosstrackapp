@@ -1,4 +1,7 @@
-Crosstrack App
+Activ8 App
 =============
 
-The CrossTrack App will allow you to save and store your workout results, compare with prevous results, and quickly give you a snapshot of your overall progess on different workouts, lifts, and more.
+Activ8 App Main Repo:
+CrossTrack has become Activ8
+
+Check us out at [Activ8.fitness](Activ8.fitness)

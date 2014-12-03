@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" ng-app="activ8">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activ8</title>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body >
+  <div class="container-fluid main-body" ng-controller="MainController as app">
+    <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+        <img class="ree" src="images/reebokxfit.png" alt="">
+        </a>
+        <a class="name" href="#">
+          <h1 class="appName navbar-left">Activ8</h1>
+          </a>
+      </div>
+
+    </div><!-- /.container-fluid -->
+    </nav>
+    <section ng-hide="app.loggedIn()" class="kettleBox" >
+
+      <figure ng-click="app.login()">
+        <a ><img src="images/kettlebell.png" alt="KettleFBLogin" class="img-responsive kettle"></a><br>
+          <figcaption class="loginText">
+            <a href="#"><h3>Login</h3></a>
+          </figcaption>
+      </figure>
+
+      <footer><em>Privacy Policy</em></footer>
+    <!--   <div class="ui-widget movementsList">
+      <label class="whatWork" for="movements">What Did You Do Today?</label><br>
+      <input id="movements">
+    </div>
+    <section class="movementInfo">
+      <label class="reps" for="repCount">Reps:</label>
+      <input class="repCount" type="text"><br>
+      <label class="rds" for="rdsCount">Rds:</label>
+      <input class="rdsCount" type="text">
+    </section>
+    <div class="ui-widget workoutList hidden">
+      <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
+      <input id="workoutList">
+    </div>
+    <a href="#"><h4>(+)Add Movement</h4></a>
+    <a class="addWorkout removeWorkout" ><h4>(+)Add Workout</h4></a>
+        <button class="save btn btn-primary" type="submit">Save</button>
+      </div>-->
+        </section>
+    <section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+      <nav class="navbar navbar-default main-nav" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <img class="ree" src="images/reebokxfit.png" alt="">
+            </a>
+            <section class="appName navbar-left"><a class="name" href="#"><h1>Activ8</h1></a></section>
+            <button ng-click="app.logout()" class="btn navbar-right logout-button">Logout</button>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
+      <div class="row row-1">
+        <section class="avatar col-xs-5">
+          <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">{{app.facebook.avatar_url}}
+          <p class="fbName">{{app.user.fullName|| displayName}}</p>
+        </section>
+        <section class="plus-workout col-xs-7">
+          <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus"><a href="file:///Users/Logan/TheIronYard/crosstrackapp/newwork.html">NewWorkout</a></button>
+        </section>
+      </div>
+      <div class="row row-2">
+        <section class="daysActive col-xs-12">
+          <h3>Days Active Chart</h3>
+        </section>
+      </div>
+      <div class="row row-3">
+        <section class="myHistory col-xs-12">
+          <p>My History</p>
+        </section>
+      </div>
+      <section class="page-down">
+        <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
+      </section>
+    </section>
+    <section ng-show="app.loggedIn()" id="personalBests">
+      <h3 class="records">Personal Records(PR's)</h3>
+        <ul class="prDrop">
+          <li>
+            <label for="personalRecords">Select Movement:</label><br>
+            <select type="text" id="personalRecords" placeholder="Breaking Records">
+              <optgroup label="Clean">
+                <option value="Power Clean">Power Clean</option>
+                <option value="Squat Clean">Squat Clean</option>
+                <option value="Hang Power Clean">Hang Power Clean</option>
+                <option value="Hang Squat Clean">Hang Squat Clean</option>
+                <option value="Clean & Jerk">Clean & Jerk</option>
+              </optgroup>
+              <optgroup label="Jerk">
+                <option value="Jerk">Jerk</option>
+                <option value="Split Jerk">Split Jerk</option>
+                <option value="Push Jerk">Push Jerk</option>
+              </optgroup>
+              <optgroup label="Snatch">
+                <option value="Power Snatch">Power Snatch</option>
+                <option value="Squat Snatch">Squat Snatch</option>
+              </optgroup>
+            </select>
+          </li>
+          </ul>
+      <!-- <ul class="prList prList1 col-xs-6">
+        <li>Power Clean: {{user.pr.powerclean}} 500lbs</li>
+        <li>Squat Clean: {{user.pr.squatclean}} 500lbs</li>
+        <li>Hang Clean: {{user.pr.hangclean}} 500lbs</li>
+        <li>Hang Squat Clean: {{user.pr.hangsquatclean}} 500lbs</li>
+        <li>Split Jerk: {{user.pr.splitjerk}} 500lbs</li>
+        <li>Push Jerk: {{user.pr.pushjerk}} 500lbs</li>
+        <li>Clean & Jerk: {{user.pr.cleanjerk}} 500lbs</li>
+        <li>Power Snatch: {{user.pr.powersnatch}} 500lbs</li>
+        <li>Squat Snatch: {{user.pr.squatsnatch}} 500lbs</li>
+        <li>Hang Snatch: {{user.pr.hangsnatch}} 500lbs</li>
+        <li>Hang Squat Snatch: {{user.pr.hangsquatsnatch}} 500lbs</li>
+
+      </ul>
+      <ul class="prList prList2 col-xs-6">
+        <li>Deadlift: {{user.pr.deadlift}} 500lbs</li>
+        <li>Sumo Deadlift: {{user.pr.sumodeadlift}} 500lbs</li>
+        <li>Squat: {{user.pr.squat}} 500lbs</li>
+        <li>Overhead Squat: {{user.pr.ohsquat}} 500lbs</li>
+        <li>Front Squat: {{user.pr.frontsquat}} 500lbs</li>
+        <li>Fran: {{user.pr.fran}} 3:45</li>
+        <li>Annie: {{user.pr.annie}} 18:00</li>
+        <li>Filthy Fifty: {{user.pr.filthy}} 30:00</li>
+        <li>Nicole: {{user.pr.nicole}} 22:00</li>
+        <li>Murph: {{user.pr.murph}} 45:00</li>
+        <li>Open 14.5: {{user.pr.open14-5}} 6:00</li>
+      </ul> -->
+      <section class="page-up col-xs-12">
+        <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
+      </section>
+    </section>
+
+  </div>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angularfire/dist/angularfire.js"></script>
+      <script src="app/index.js"></script>
+      <script src="app/main/main-controller.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script>
+      //Array of movements for the input box of workouts
+       $(function() {
+         var movements = [
+         "Pull Ups",
+         "Push Ups",
+         "Sit Ups",
+         "Clean",
+         "Power Clean",
+         "Squat Clean",
+         "Hang Clean",
+         "Hang Squat Clean",
+         "Snatch",
+         "Power Snatch",
+         "Squat Snatch",
+         "Hang Snatch",
+         "Hang Squat Snatch",
+         "Press",
+         "Strict Press",
+         "Push Press",
+         "Jerk",
+         "Push Jerk",
+         "Split Jerk",
+         ];
+         var workouts = [
+            "Amanda",
+            "Annie",
+            "Fran",
+            "Murph",
+            "Filthy Fifty"
+         ];
+         var personalRecords = [
+          "Power Clean",
+          "Squat Clean",
+          "Hang Power Clean",
+          "Hang Squat Clean",
+          "Jerk",
+          "Split Jerk",
+          "Push Jerk",
+          "Clean & Jerk",
+          "Power Snatch",
+          "Squat Snatch"
+         ];
+
+         $( "#movements" ).autocomplete({
+           source: movements
+         });
+         $("#workoutList").autocomplete({
+           source: workouts
+         });
+         $("#personalRecords").autocomplete({
+           source: personalRecords
+         });
+         /*$(".repCount").autocomplete({
+           source: reps
+         });*/
+       });
+
+
+       </script>
+       <script>
+       $(function() {
+         $('a[href*=#]:not([href=#])').click(function() {
+           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+             var target = $(this.hash);
+             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+             if (target.length) {
+               $('html,body').animate({
+                 scrollTop: target.offset().top
+               }, 1000);
+               return false;
+             }
+           }
+         });
+       });
+       </script>
+      <!--<script>
+        \$(".addWorkout").on('click', function(){
+        if(\$('.workoutList').hasClass('hidden')){
+      \$('.workoutList').removeClass('hidden')
+      \$('.movementsList').addClass('hidden')
+      \$(".addWorkout h4").text("(-)Remove Workout");
+          } else {
+         if(\$('.movementsList').hasClass('hidden')){
+      \$('.workoutList').addClass('hidden')
+      \$('.movementsList').removeClass('hidden')
+      \$(".addWorkout h4").text("(+)Add Workout");
+          }
+        };
+          });
+
+</script> -->
+
+</body>
+</html>
