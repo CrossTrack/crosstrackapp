@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('activ8', ['firebase'])
+angular.module('activ8', 'newWorkout', ['firebase'])
 /**
 * Global Configuration Object
 *
