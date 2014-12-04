@@ -47,7 +47,21 @@
   </li> -->
     </nav>
     <section class="main" ng-controller="WorkoutController as work">
-      <form class="newMove" >
+       <form class="newMove" style="margin-top: 40%;">
+         <div class="new-moves">
+           <label>Workout</label><br>
+           <input type="text" data-ng-model="moveList.movements.name" list="movename">
+         </div>
+         <div>
+           <input type="Button" value="Add" ng-click="work.addMove()"><br>
+           <input type="Button" value="Save" ng-click="work.saveWorkout()">
+         </div>
+       </form>
+         <datalist id="movename">
+           <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}">
+         </datalist>
+    </section>
+      <!-- <form class="newMove" >
       <div class="ui-widget movementsList">
         <input type="search" ng-model="move" placeholder="Movement">
         <p>{{work.moveData}}</p>
@@ -55,12 +69,12 @@
         <ul class="listOfMoves" ng-repeat="moves in work.moveData.movements">
             <li>
               {{moves.name}}<br>
-              <input type="text" value="{{moves.reps}}"> reps<br>
-              <input type="number" value="{{moves.rds}}"> rds
+              <input type="text" value="{{moves.reps}}">reps<br>
+              <input type="number" value="{{moves.rds}}">rds
             </li>
         </ul>
       </div>
-      </form>
+      </form> -->
        <!-- <section class="movementInfo">
         <label class="reps" for="repCount">Reps:</label>
         <input class="repCount" type="text"><br>
