@@ -49,6 +49,12 @@ angular.module('activ8')
     */
     logout: function(){
       auth.$unauth();
+    },
+    /**
+    *Get the current user.
+    */
+    getUser: function(){
+
     }
   }; // END service
 

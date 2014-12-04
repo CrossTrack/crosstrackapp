@@ -30,12 +30,15 @@ angular.module('activ8')
 
   this.test = function(){
     console.log(squatClean);
+    console.log(powerClean);
+    console.log("Squat Clean");
     console.log(self.viewPr(squatClean));
+    console.log("Power Clean");
     console.log(self.viewPr(powerClean));
   }
 
   this.testPr = function(){
-    console.log("Test");
+    console.log(auth.user.facebook.displayName);
   }
 
   /**
