@@ -26,14 +26,23 @@ angular.module('activ8')
   ];
 
   var squatClean = [135, 95, 185, 155];
+  var powerClean = [205, 185, 225, 295];
 
   this.test = function(){
     console.log(squatClean);
-    console.log(self.personalBest(squatClean));
+    console.log(self.viewPr(squatClean));
+    console.log(self.viewPr(powerClean));
   }
 
-  this.personalBest = function(prMovement){
-    return Math.max(squatClean);
+  this.testPr = function(){
+    console.log("Test");
+  }
+
+  /**
+  *Returns Personal Best for selected movement
+  */
+  this.viewPr = function(selectedPr){
+    return Math.max.apply(null, selectedPr);
   }
 
 });
