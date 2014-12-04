@@ -7,19 +7,66 @@ angular.module('activ8')
   movements = [
    {
       name: "Pull Ups",
-      reps: 1,
-      rds: 1
+      type: 1
     },
     {
       name: "Push Ups",
       reps: 1,
       rds: 1
-    }
+    },
+    {
+      name: "Handstand Push Ups",
+      reps: 1,
+      rds: 1
+    },
+    {
+      name: "Sit Ups",
+      reps: 1,
+      rds: 1
+    },
+    {
+      name: "GHD Sit Ups",
+      reps: 1,
+      rds: 1
+    },
+    {
+      name: "Power Clean",
+      reps: 1,
+      type: 2
+    },
+    {
+      name: "Squat Clean",
+      reps: 1,
+      rds: 1,
+      weight: 0
+    },
+    {
+      name: "Hang Power Clean",
+      reps: 1,
+      rds: 1,
+      weight: 0
+    },
+    {
+      name: "Hang Squat Clean",
+      reps: 1,
+      rds: 1,
+      weight: 0
+    },
   ];
 
   this.moveList = {};
   this.moveList.movements = movements;
-
+  // console.log(movements)
+  // this.repsRounds = function(){
+  //   if(this.moveList.movements.type >= 1){
+  //     return true;
+  //   }
+  // }
+  // this.weighted = function(){
+  //   if(moveList.movements.type === 2){
+  //     return true;
+  //   }
+  // }
    this.addMove = function(){
     $('.new-moves').append('<input type="text" data-ng-model="moveList.movements.name" list="movename">')
   };
