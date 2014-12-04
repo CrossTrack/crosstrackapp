@@ -74,6 +74,7 @@ angular.module('activ8')
       facebook: authdUser.facebook,
       fullName: authdUser.facebook.displayName,
       avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+      gender: authdUser.facebook.cachedUserProfile.gender
     });
 
     user.$save();
