@@ -93,8 +93,12 @@
       <h3 class="records">Personal Records(PR's)</h3>
         <ul class="prDrop">
           <li>
-            <label for="personalRecords">Select Movement:</label><br>
-            <select type="text" id="personalRecords" placeholder="Breaking Records">
+            <label for="personalRecords" ng-click="pr.test()">Select Movement:</label><br>
+            <select type="text" id="personalRecords" placeholder="Breaking Records"
+              ng-model="selectedPR"
+              ng-change="pr.test()"
+            >
+            <!-- ng-options="personalRecord for personalRecord in personalRecords" -->
               <optgroup label="Clean">
                 <option value="Power Clean">Power Clean</option>
                 <option value="Squat Clean">Squat Clean</option>
@@ -154,6 +158,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
       <script src="app/index.js"></script>
       <script src="app/main/main-controller.js"></script>
+      <script src="app/main/pr-controller.js"></script>
       <script>
       //Array of movements for the input box of workouts
        $(function() {

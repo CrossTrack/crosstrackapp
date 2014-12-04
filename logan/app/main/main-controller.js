@@ -73,7 +73,7 @@ angular.module('activ8')
       uid: authdUser.uid,
       facebook: authdUser.facebook,
       fullName: authdUser.facebook.displayName,
-      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
       gender: authdUser.facebook.cachedUserProfile.gender
     });
 
