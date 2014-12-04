@@ -89,7 +89,7 @@
         <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
       </section>
     </section>
-    <section ng-show="app.loggedIn()" id="personalBests">
+    <section ng-show="app.loggedIn()" id="personalBests" ng-controller="prCtrl as pr">
       <h3 class="records">Personal Records(PR's)</h3>
         <ul class="prDrop">
           <li>
@@ -149,11 +149,11 @@
   </div>
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angularfire/dist/angularfire.js"></script>
-      <script src="app/index.js"></script>
-      <script src="app/main/main-controller.js"></script>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script src="app/index.js"></script>
+      <script src="app/main/main-controller.js"></script>
       <script>
       //Array of movements for the input box of workouts
        $(function() {
