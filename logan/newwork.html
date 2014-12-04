@@ -42,13 +42,22 @@
         </ul>
       </div> --><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
+    <!-- <li>
+    <input ng-model="movement" class="movements" placeholder="Movement">
+  </li> -->
     </nav>
-    <section class="main">
-      <form class="newMove">
+    <section class="main" ng-controller="WorkoutController as work">
+      <form class="newMove" >
       <div class="ui-widget movementsList">
-        <ul class="listOfMoves">
-          <label class="whatWork" for="movements">What Did You Do Today?</label><br>
-          <li><input class="movements" placeholder="Movement"></li>
+        <input type="search" ng-model="move" placeholder="Movement">
+        <p>{{work.moveData}}</p>
+        <label class="whatWork" for="movements">What Did You Do Today?</label><br>
+        <ul class="listOfMoves" ng-repeat="moves in work.moveData.movements">
+            <li>
+              {{moves.name}}<br>
+              <input type="text" value="{{moves.reps}}"> reps<br>
+              <input type="number" value="{{moves.rds}}"> rds
+            </li>
         </ul>
       </div>
       </form>
@@ -65,15 +74,16 @@
       <section class="add">
         <a class="addMovement"><h4>(+)Add Movement</h4></a>
         <a class="addWorkout removeWorkout" ><h4>(+)Add Workout</h4></a>
-        <button class="save btn btn-primary" type="submit">Save</button>
+        <button ng-click="work.addWorkout()" class="save btn btn-primary" type="submit">Save</button>
       </section>
   </div>
   </section>
 
 </div>
 <script src="bower_components/angular/angular.js"></script>
-<script src="index.js"></script>
-<script src="main-controller.js"></script>
+<script src="app/index.js"></script>
+<script src="app/main/main-controller.js"></script>
+<script src="app/main/add-workout-controller.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -83,12 +93,57 @@
 <script>
 //Array of movements for the input box of workouts
 
-     var movements = [
-     "Pull Ups",
-     "Push Ups",
-     "Sit Ups",
-     "Clean",
-     "Power Clean",
+/*var movements = {
+        {
+           name: "Pull Ups",
+           reps: 1,
+           rds: 1
+         },
+         {
+           name: "Push Ups",
+           reps: 1,
+           rds: 1
+         }
+       };
+             name:
+             "Push Ups": {
+               reps: {
+                 1
+               },
+               rds: {
+                 1
+               }
+           }
+           name:
+             Sit Ups: {
+               reps: {
+                 1
+               },
+               rds: {
+                 1
+               }
+           },
+           name:
+             Clean: {
+               reps: {
+                 1
+               },
+               rds: {
+                 1
+               },
+               weight: {
+                 0
+               }
+           },*/
+    /* Sit Ups: {
+
+     },
+     Clean: {
+
+     },
+     Power Clean: {
+
+     }
      "Squat Clean",
      "Hang Clean",
      "Hang Squat Clean",
@@ -103,7 +158,7 @@
      "Jerk",
      "Push Jerk",
      "Split Jerk",
-     ];
+   };*/
      var workouts = [
         "Amanda",
         "Annie",
@@ -112,9 +167,9 @@
         "Filthy Fifty"
      ];
 
-     $( ".movements" ).autocomplete({
+     /*$( ".movements" ).autocomplete({
        source: movements
-     });
+     });*/
      $("#workoutList").autocomplete({
        source: workouts
      });

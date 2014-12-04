@@ -73,11 +73,12 @@ angular.module('activ8')
       uid: authdUser.uid,
       facebook: authdUser.facebook,
       fullName: authdUser.facebook.displayName,
-      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url
+      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+      gender: authdUser.facebook.cachedUserProfile.gender
     });
 
     user.$save();
-
+    console.log(user)
     return user;
   } // END updateUser
 }) // END factory(Auth)
@@ -88,7 +89,7 @@ angular.module('activ8')
 * @method {Promise} login -- trigger the login workflow
 * @method {undefined} logout -- trigger the logout workflow
 */
-.controller('MainController', function(Auth){
+  .controller('MainController', function(Auth){
   var self = this;
 
   this.login = Auth.login;
@@ -101,61 +102,3 @@ angular.module('activ8')
 
   this.loggedIn = Auth.loggedIn;
 });
-// 'use strict';
-//
-// angular.module('activ8')
-//   .factory('Auth', function(CONFIG, $firebaseAuth, $firebase){
-//     var ref = new Firebase(CONFIG.Firebase.baseUrl);
-//
-//     var auth = $firebaseAuth(ref);
-//
-//     auth.$onAuth(function(data){
-//       getUser();
-//     })
-//
-//     return {
-//       onAuth: function(cb){
-//         auth.$onAuth(function(data){
-//           cb = (getUser(data))
-//         });
-//       },
-//       login: function(){
-//         return auth.$authWithOAuthPopup('facebook')
-//       },
-//       logout: function(){
-//         auth.$unauth();
-//       },
-//       getUser: function(){
-//         var auth = ref.getAuth();
-//         return $firebase(ref).child('users').child(auth.uid).$asObject();
-//       }
-//     };
-//     function getUser(authdUser){
-//       if(authdUser === null){
-//         return null
-//       }
-//
-//       var auth = ref.getAuth();
-//       return $firebase(ref).child('users').child(auth.uid).$asObject();
-//     }
-//   })
-//   .factory('AuthdUser', function(CONFIG, $firebase, Auth){
-//     var ref = new Firebase(CONFIG.Firebase.baseUrl);
-//
-//     var authdUser = ref.getAuth();
-//
-//     return {};
-//   })
-//   .controller('MainController', function(Auth){
-//
-//     var self = this;
-//
-//     Auth.onAuth(function(data){
-//       console.log(user)
-//       self.user = user;
-//     });
-//
-//     this.login = Auth.login;
-//
-//     this.logout = Auth.logout;
-//     });
