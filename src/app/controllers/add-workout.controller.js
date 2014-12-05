@@ -1,54 +1,55 @@
 'use strict';
+/* global Firebase */
 
 angular.module('activ8')
 
 .controller('WorkoutController', function(){
-  var ref = new Firebase("https://activ8.firebaseio.com/users/facebook%3A10153339607144746"),
+  var ref = new Firebase('https://activ8.firebaseio.com/users/facebook%3A10153339607144746'),
   self = this,
   movements = [
    {
-      name: "Pull Ups",
+      name: 'Pull Ups',
       type: 1
     },
     {
-      name: "Push Ups",
+      name: 'Push Ups',
       reps: 1,
       rds: 1
     },
     {
-      name: "Handstand Push Ups",
+      name: 'Handstand Push Ups',
       reps: 1,
       rds: 1
     },
     {
-      name: "Sit Ups",
+      name: 'Sit Ups',
       reps: 1,
       rds: 1
     },
     {
-      name: "GHD Sit Ups",
+      name: 'GHD Sit Ups',
       reps: 1,
       rds: 1
     },
     {
-      name: "Power Clean",
+      name: 'Power Clean',
       reps: 1,
       type: 2
     },
     {
-      name: "Squat Clean",
+      name: 'Squat Clean',
       reps: 1,
       rds: 1,
       weight: 0
     },
     {
-      name: "Hang Power Clean",
+      name: 'Hang Power Clean',
       reps: 1,
       rds: 1,
       weight: 0
     },
     {
-      name: "Hang Squat Clean",
+      name: 'Hang Squat Clean',
       reps: 1,
       rds: 1,
       weight: 0
@@ -83,12 +84,12 @@ angular.module('activ8')
     if($('select').val() < 5){
       return true;
     }
-  }
+  };
   this.weighted = function(){
     if($('select').val() >= 5){
       return true;
     }
-  }
+  };
 
    this.addMove = function(){
     $('.new-moves').append(
@@ -103,7 +104,7 @@ angular.module('activ8')
   // this.addWorkout = function(){
   //   console.log("Hello")
   // }
-})
+});
 
 
 // <form>

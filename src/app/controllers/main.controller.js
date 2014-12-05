@@ -1,4 +1,5 @@
 'use strict';
+/* global Firebase */
 
 angular.module('activ8')
 /**
@@ -77,7 +78,7 @@ angular.module('activ8')
     });
 
     user.$save();
-    console.log(user.facebook)
+    console.log(user.facebook);
     return user;
   } // END updateUser
 }) // END factory(Auth)

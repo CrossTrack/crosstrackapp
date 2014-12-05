@@ -10,4 +10,4 @@ angular.module('activ8', 'newWorkout', ['firebase'])
   Firebase: {
     baseUrl: 'https://activ8.firebaseio.com'
   }
-})
+});
