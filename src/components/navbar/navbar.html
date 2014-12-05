@@ -12,17 +12,23 @@
       <li><a ng-href="#">Contact</a></li>
     </ul>
     <!-- begin our code -->
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <section class="navbar-header">
-          <a href="#" class="navbar-brand"><h3>Activ8</h3></a>
-          </section>
+    <nav class="navbar navbar-default main-nav" role="navigation">
+      <section class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <img class="ree" src="images/reebokxfit.png" alt="">
+        </a>
+        <a class="name" href="#">
+          <h1 class="appName navbar-left">Activ8</h1>
+        </a>
+        <button ng-click="logOut()" class="logout navbar-right btn">Logout</button>
+      </section>
 
-          <ul class="nav navbar-nav navbar-right navMenu">
-            <li><a href="#">About</a></li>
-            <li><a href="">Docs</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-      </nav>
-      <!-- end our code -->
+      <ul class="nav navbar-nav navbar-right navMenu">
+        <li><a href="#">About</a></li>
+        <li><a href="">Docs</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- end our code -->
   </div>
 </nav>
