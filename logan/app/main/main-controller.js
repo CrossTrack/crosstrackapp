@@ -35,7 +35,6 @@ angular.module('activ8')
     * correct provider code.
     */
     login: function(){
-      console.log(auth)
       return auth.$authWithOAuthPopup('facebook');
     },
 
@@ -54,7 +53,8 @@ angular.module('activ8')
     *Get the current user.
     */
     getUser: function(){
-
+      var currentUser = Firebase.getAuth();
+      return $firebase(Firebase).child('users').child(currentUser.uid).$asObject();
     }
   }; // END service
 

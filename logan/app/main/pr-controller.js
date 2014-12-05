@@ -5,7 +5,7 @@ angular.module('activ8')
 /**
 *Personal Bests controller
 */
-.controller('prCtrl', function(){
+.controller('prCtrl', function(Auth, Firebase, $firebaseAuth, $firebase){
 
   var self = this;
 
@@ -38,7 +38,10 @@ angular.module('activ8')
   }
 
   this.testPr = function(){
-    console.log(auth.user.facebook.displayName);
+    // var foo = Auth.getUser();
+    // .$asObject();
+
+    console.log(Auth.getUser());
   }
 
   /**
