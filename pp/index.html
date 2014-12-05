@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activ8</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <div class="container-fluid product-page">
+  <div class="container-fluid product-page">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <section class="navbar-header">
+          <a href="#" class="navbar-brand"><h3>Activ8</h3></a>
+          </section>
+
+          <ul class="nav navbar-nav navbar-right navMenu">
+            <li><a href="#">About</a></li>
+            <li><a href="">Docs</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+      </nav>
+      <section class="col-xs-12 jumbotron">
+        <h1>Activ8 Fitness</h1>
+        <p><a class="btn btn-primary btn-lg" href="#aboutActiv8" role="button">Get Moving, Get Active</a></p>
+        <section class="login-screen col-xs-12 col-md-4">
+          <img src="images/pp-loginscreen.png" alt="">
+        </section>
+        <section class="dash-screen col-xs-12 col-md-4">
+          <img src="images/pp-dashboard.png" alt="">
+        </section>
+        <section class="new-screen col-xs-12 col-md-4">
+          <img src="images/pp-newworkout.png" alt="">
+        </section>
+      </section>
+
+  </div>
+  <div id="aboutActiv8" class="product-description">
+    <h2>Activ8 Fitness</h2>
+    <div class="row">
+      <p class="main-description col-xs-12 col-md-6">
+        Activ8 Fitness is a Fitness Tracking App that will allow you to log all of your
+        workouts and keep them organized for you. Activ8 keeps track of all of your Personal
+        Records for when you hit that big lift and shows you your progress for each movement.
+        Activ8 is easy to use and has all your favorite named workouts pre-programmed so when
+        you go out and kick Fran's ass in a time of 2 minutes flat you can select Fran from the
+        dropdown and it pre-populates for you.
+      </p>
+      <section class="dash col-xs-12 col-md-6">
+        <img src="images/pp-dashboard.png" alt="">
+      </section>
+    </div>
+    <div class="row">
+      <p class="main-description col-xs-12">
+        Activ8 is a great way to stay active and to really stay on course to reaching your personal
+        fitness goals.
+      </p>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
