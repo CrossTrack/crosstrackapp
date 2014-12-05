@@ -29,15 +29,6 @@
 
     <div ng-view></div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -47,9 +38,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script src="fbAuth.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <script src="app/index.js"></script>
-    <script src="app/main/main.controller.js"></script>
+    <script src="app/controllers/main.controller.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
 
     <!-- inject:partials -->
