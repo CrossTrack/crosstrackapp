@@ -47,21 +47,31 @@
   </li> -->
     </nav>
     <section class="main" ng-controller="WorkoutController as work">
-       <form class="newMove" style="margin-top: 40%;">
+       <form class="newMove" style="margin-top: 40%;" ng-submit="work.postWorkout()">
          <div class="new-moves">
            <label>Workout</label><br>
-           <select ng-model="selected" ng-options="moves.name for moves in work.moveList.movements">
-             <option value="">Select Movement</option>
-          </select><br>
-           <input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps">
-           <input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds">
-           <input type="text" ng-show="work.weighted()" placeholder="Weight"><br>
+           <!-- <select ng-model="move.name" ng-options="moves.name for moves in work.moveList.movements">
+             <option value="0"><label>Select Movement</label></option>
+                     </select><br> -->
+           <input class="moving" ng-model="moving" type="text" list="moving" placeholder="Select Movement" autocomplete><br>
+           <input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>
+           <input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>
+           <input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>
          </div>
+
          <div>
-           <input type="Button" value="Add" ng-click="work.addMove()"><br>
-           <input type="Button" value="Save" ng-click="work.saveWorkout()">
+           <input type="submit" value="Save">
          </div>
        </form>
+       <datalist id="moving">
+         <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
+       </datalist><br>
+       <p style="color: white;">{{moves.type}}</p>
+       <input type="Button" value="Add" ng-click="work.addMove()"><br>
+
+       Workouts: {{work.workout}}<br>
+       Work: {{move}}<br>
+
     </section>
       <!-- <form class="newMove" >
       <div class="ui-widget movementsList">
