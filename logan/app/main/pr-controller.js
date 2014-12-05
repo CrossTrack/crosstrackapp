@@ -5,7 +5,7 @@ angular.module('activ8')
 /**
 *Personal Bests controller
 */
-.controller('prCtrl', function(Auth, Firebase, $firebaseAuth, $firebase){
+.controller('prCtrl', function(Auth){
 
   var self = this;
 
@@ -41,7 +41,7 @@ angular.module('activ8')
     // var foo = Auth.getUser();
     // .$asObject();
 
-    console.log(Auth.getUser().uid);
+    console.log(Auth.getUser().pr.powerClean);
   }
 
   /**
