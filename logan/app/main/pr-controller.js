@@ -41,7 +41,7 @@ angular.module('activ8')
     // var foo = Auth.getUser();
     // .$asObject();
 
-    console.log(Auth.getUser());
+    console.log(Auth.getUser().uid);
   }
 
   /**

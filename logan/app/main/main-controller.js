@@ -19,6 +19,7 @@ angular.module('activ8')
 */
 .factory('Auth', function(Firebase, $firebaseAuth, $firebase){
   var auth = $firebaseAuth(Firebase);
+  var currentUser = {};
 
   return {
     /**
@@ -53,8 +54,7 @@ angular.module('activ8')
     *Get the current user.
     */
     getUser: function(){
-      var currentUser = Firebase.getAuth();
-      return $firebase(Firebase).child('users').child(currentUser.uid).$asObject();
+      return currentUser;
     }
   }; // END service
 
@@ -84,6 +84,8 @@ angular.module('activ8')
     });
 
     user.$save();
+
+    currentUser = user;
 
     return user;
   } // END updateUser
