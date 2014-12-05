@@ -105,18 +105,3 @@ angular.module('activ8')
   //   console.log("Hello")
   // }
 });
-
-
-// <form>
-// <div>
-// <label>title</label>
-// <input type="text" data-ng-model="item.title" list="comicstitle">
-// </div>
-// <div>
-// <input type="Button" value="Add" data-ng-click="addItem(item)">
-// </div>
-// </form>
-// </div>
-// <datalist id="comicstitle">
-// <option  data-ng-repeat="ttl in titles" value="{{ttl}}">
-// </datalist>
