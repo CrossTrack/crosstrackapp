@@ -11,3 +11,22 @@ angular.module('activ8', ['firebase', 'ngRoute'])
     baseUrl: 'https://activ8.firebaseio.com'
   }
 })
+
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+    when('/', {
+      templateUrl: 'app/views/main.html',
+      controller:  'MainCtrl'
+    }).
+    when('/dashboard', {
+      templateUrl: 'app/views/dashboard.html',
+      controller:  'DashboardCtrl'
+    }).
+    when('/new-workout', {
+      templateUrl: 'app/views/new-workout.html',
+      controller:  'NewWorkoutCtrl'
+    }).
+    otherwise({
+      redirectTo: '/'
+    });
+}]);

@@ -1,34 +1,13 @@
-<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-      <span class="glyphicon glyphicon-home"></span> Gulp Angular
-    </a>
-  </div>
-
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-    <ul class="nav navbar-nav">
-      <li class="active"><a ng-href="#">Home</a></li>
-      <li><a ng-href="#">About</a></li>
-      <li><a ng-href="#">Contact</a></li>
-    </ul>
-    <!-- begin our code -->
-    <nav class="navbar navbar-default main-nav" role="navigation">
-      <section class="navbar-header">
-        <a href="#" class="navbar-brand">
-          <img class="ree" src="images/reebokxfit.png" alt="">
+    <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation" ng-controller="NavbarCtrl">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+        <img class="ree" src="images/reebokxfit.png" alt="">
         </a>
         <a class="name" href="#">
           <h1 class="appName navbar-left">Activ8</h1>
-        </a>
-        <button ng-click="logOut()" class="logout navbar-right btn">Logout</button>
-      </section>
+          </a>
+      </div>
 
-      <ul class="nav navbar-nav navbar-right navMenu">
-        <li><a href="#">About</a></li>
-        <li><a href="">Docs</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
+    </div><!-- /.container-fluid -->
     </nav>
-    <!-- end our code -->
-  </div>
-</nav>

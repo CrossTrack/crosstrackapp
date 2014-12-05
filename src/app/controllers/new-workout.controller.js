@@ -3,7 +3,7 @@
 
 angular.module('activ8')
 
-.controller('WorkoutController', function(){
+.controller('NewWorkoutCtrl', function(){
   var ref = new Firebase('https://activ8.firebaseio.com/users/facebook%3A10153339607144746'),
   self = this,
   movements = [
