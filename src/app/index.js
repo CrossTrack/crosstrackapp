@@ -16,15 +16,11 @@ angular.module('activ8', ['firebase', 'ngRoute'])
   $routeProvider.
     when('/', {
       templateUrl: 'app/views/main.html',
-      controller:  'MainCtrl'
-    }).
-    when('/dashboard', {
-      templateUrl: 'app/views/dashboard.html',
-      controller:  'DashboardCtrl'
+      // controller:  'MainCtrl'
     }).
     when('/new-workout', {
       templateUrl: 'app/views/new-workout.html',
-      controller:  'NewWorkoutCtrl'
+      // controller:  'NewWorkoutCtrl'
     }).
     otherwise({
       redirectTo: '/'
