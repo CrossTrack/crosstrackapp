@@ -35,7 +35,6 @@ angular.module('activ8')
     * correct provider code.
     */
     login: function(){
-      console.log(auth)
       return auth.$authWithOAuthPopup('facebook');
     },
 
@@ -66,11 +65,11 @@ angular.module('activ8')
 
     var user = $firebase(Firebase
       .child('users')
-      .child(authdUser.uid)
+      .child(authdUser.facebook.id)
     ).$asObject();
 
     angular.extend(user, {
-      uid: authdUser.uid,
+      uid: authdUser.facebook.id,
       facebook: authdUser.facebook,
       fullName: authdUser.facebook.displayName,
       avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
@@ -78,7 +77,7 @@ angular.module('activ8')
     });
 
     user.$save();
-    console.log(user)
+    console.log(user.facebook)
     return user;
   } // END updateUser
 }) // END factory(Auth)

@@ -3,7 +3,8 @@
 angular.module('activ8')
 
 .controller('WorkoutController', function(){
-  var self = this,
+  var ref = new Firebase("https://activ8.firebaseio.com/users/facebook%3A10153339607144746"),
+  self = this,
   movements = [
    {
       name: "Pull Ups",
@@ -53,10 +54,31 @@ angular.module('activ8')
       weight: 0
     },
   ];
+  this.date = new Date();
+
+  var userWorkouts = ref.child('workouts');
+
+  userWorkouts.push({
+    date:
+  {
+    Pull_Ups: {
+      reps: 25,
+      rds: 5
+    },
+    Push_Ups: {
+      reps: 25,
+      rds: 5
+    },
+    Sit_Ups: {
+      reps: 25,
+      rds: 5
+    }
+  }
+  });
 
   this.moveList = {};
   this.moveList.movements = movements;
-  
+
   this.repsRounds = function(){
     if($('select').val() < 5){
       return true;
