@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-          <img class="ree" src="images/reebokxfit.png" alt="">
+          <img class="ree" src="./assets/images/reebokxfit.png" alt="">
           </a>
           <a class="name" href="#"><section class="appName navbar-left"><h1>Activ8</h1></section></a>
         </div>
@@ -12,11 +12,11 @@
       </nav>
       <div class="row row-1">
       <section class="avatar col-xs-5">
-        <img src="images/LoganXfit2.jpg" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px"><!-- {{app.facebook.avatar_url}} -->
+        <img src="./assets/images/LoganXfit2.jpg" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px"><!-- {{app.facebook.avatar_url}} -->
         <p class="fbName">{{user.facebook.username}} Rich Froning</p>
       </section>
       <section class="plus-workout col-xs-7">
-        <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus"><a href="file:///Users/Logan/TheIronYard/crosstrackapp/newwork.html">NewWorkout</a></button>
+        <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus"><a href="file:///Users/Logan/TheIronYard/crosstrackapp/newwork.html">New Workout</a></button>
       </section>
     </div>
     <div class="row row-2">
@@ -71,19 +71,3 @@
 
 
 
-<script>
-  $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-</script>
