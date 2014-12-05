@@ -56,19 +56,26 @@ angular.module('activ8')
 
   this.moveList = {};
   this.moveList.movements = movements;
-  // console.log(movements)
-  // this.repsRounds = function(){
-  //   if(this.moveList.movements.type >= 1){
-  //     return true;
-  //   }
-  // }
-  // this.weighted = function(){
-  //   if(moveList.movements.type === 2){
-  //     return true;
-  //   }
-  // }
+  
+  this.repsRounds = function(){
+    if($('select').val() < 5){
+      return true;
+    }
+  }
+  this.weighted = function(){
+    if($('select').val() >= 5){
+      return true;
+    }
+  }
+
    this.addMove = function(){
-    $('.new-moves').append('<input type="text" data-ng-model="moveList.movements.name" list="movename">')
+    $('.new-moves').append(
+    '<select ng-model="selected" ng-options="moves.name for moves in work.moveList.movements">' +
+    '<option value="">Select Movement</option>' +
+    '</select><br>' +
+    '<input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps">' +
+    '<input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds">' +
+    '<input type="text" ng-show="work.weighted()" placeholder="Weight"><br>');
   };
 
   // this.addWorkout = function(){

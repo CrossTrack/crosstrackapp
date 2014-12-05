@@ -50,20 +50,18 @@
        <form class="newMove" style="margin-top: 40%;">
          <div class="new-moves">
            <label>Workout</label><br>
-           <datalist id="movename">
-             <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}">
-          </datalist>
-           <input type="text" ng-model="moveList.movements.type" list="movename" required>
-           <input type="text" ng-show="moveList.movements.type > 0" placeholder="Reps">
-           <input type="text" ng-show="work.repsRounds()" placeholder="Rounds">
-           <input type="text" ng-show="work.weighted()" placeholder="Weight">
+           <select ng-model="selected" ng-options="moves.name for moves in work.moveList.movements">
+             <option value="">Select Movement</option>
+          </select><br>
+           <input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps">
+           <input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds">
+           <input type="text" ng-show="work.weighted()" placeholder="Weight"><br>
          </div>
          <div>
            <input type="Button" value="Add" ng-click="work.addMove()"><br>
            <input type="Button" value="Save" ng-click="work.saveWorkout()">
          </div>
        </form>
-
     </section>
       <!-- <form class="newMove" >
       <div class="ui-widget movementsList">
