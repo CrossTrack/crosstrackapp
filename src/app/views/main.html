@@ -1,6 +1,7 @@
+  <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <div class="container-fluid main-body" ng-controller="MainController as app">
     <p>aaaa</p>
-    <!-- Navbar -->
+    <!-- Navbar A -->
     <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation">
       <p>inside nav</p>
       <div class="navbar-header">
@@ -12,6 +13,7 @@
         </a>
       </div>
     </nav>
+
     <section ng-hide="app.loggedIn()" class="kettleBox" >
       <figure ng-click="app.login()">
         <a ><img src="images/kettlebell.png" alt="KettleFBLogin" class="img-responsive kettle"></a><br>
@@ -23,6 +25,7 @@
     </section>
 
     <section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+      <!-- Navbar B -->
       <nav class="navbar navbar-default main-nav" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -32,31 +35,35 @@
             <section class="appName"><a class="name" href="#"><h1>Activ8</h1></a></section>
             <button ng-click="app.logout()" class="btn navbar-right logout-button">Logout</button>
           </div>
-        </div><!--/.container-fluid -->
+        </div><!-- /.container-fluid - TODO: can we remove this div tag? -->
       </nav>
       <div class="row row-1">
         <section class="avatar col-xs-5">
           <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
           <p class="fbName">{{app.user.fullName|| displayName}}</p>
-        </section>
+        </section><!-- / section.avatar -->
         <section class="plus-workout col-xs-7">
-          <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus">NewWorkout</button>
-        </section>
+          <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus">New Workout</button>
+        </section><!-- / section.plus-workout -->
       </div>
+      <!-- BEGIN Days Active -->
       <div class="row row-2">
         <section class="daysActive col-xs-12">
           <h3>Days Active Chart</h3>
         </section>
       </div>
+      <!-- BEGIN History -->
       <div class="row row-3">
         <section class="myHistory col-xs-12">
           <p>My History</p>
         </section>
       </div>
+      <!-- BEGIN "page-down" content -->
       <section class="page-down">
         <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
       </section>
-    </section>
+    </section><!-- / section#dashboard -->
+
     <section ng-show="app.loggedIn()" id="personalBests">
       <h3 class="records">Personal Records(PR's)</h3>
       <ul class="prDrop">
@@ -85,7 +92,7 @@
       <section class="page-up col-xs-12">
         <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
       </section>
-    </section>
+    </section><!-- / section#personalBests -->
   </div><!-- .main-body -->
 
   <script>
