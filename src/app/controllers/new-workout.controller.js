@@ -1,107 +1,115 @@
 'use strict';
-/* global Firebase */
 
 angular.module('activ8')
 
-.controller('WorkoutController', function(){
-  var ref = new Firebase('https://activ8.firebaseio.com/users/facebook%3A10153339607144746'),
+.controller('WorkoutController', function(Auth){
+  var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid),
   self = this,
-  movements = [
-   {
-      name: 'Pull Ups',
+  movements = {
+   "PullUps": {
+      name: "Pull Ups",
       type: 1
-    },
-    {
-      name: 'Push Ups',
-      reps: 1,
-      rds: 1
-    },
-    {
-      name: 'Handstand Push Ups',
-      reps: 1,
-      rds: 1
-    },
-    {
-      name: 'Sit Ups',
-      reps: 1,
-      rds: 1
-    },
-    {
-      name: 'GHD Sit Ups',
-      reps: 1,
-      rds: 1
-    },
-    {
-      name: 'Power Clean',
-      reps: 1,
-      type: 2
-    },
-    {
-      name: 'Squat Clean',
-      reps: 1,
-      rds: 1,
-      weight: 0
-    },
-    {
-      name: 'Hang Power Clean',
-      reps: 1,
-      rds: 1,
-      weight: 0
-    },
-    {
-      name: 'Hang Squat Clean',
-      reps: 1,
-      rds: 1,
-      weight: 0
-    },
-  ];
+  },
+    "PushUps": {
+      name: "Push Ups",
+      type: 1
+  },
+    "HandstandPushUps": {
+    name: "Handstand Push Ups",
+    type: 1
+  },
+    "SitUps": {
+    name: "Sit Ups",
+    type: 1
+  },
+    "GHDSitUps": {
+    name: "GHD Sit Ups",
+    type: 1
+  },
+    "PowerClean": {
+    name: "Power Clean",
+    type: 2
+  },
+    "SquatClean": {
+    name: "Squat Clean",
+    type: 2
+  },
+    "HangPowerClean": {
+    name: "Hang Power Clean",
+    type: 2
+  },
+    "HangSquatClean": {
+    name: "Hang Squat Clean",
+    type: 2
+  }
+  };
+
+
+  console.log(movements["PullUps"].type)
+  // Utilize the Date for titles?
   this.date = new Date();
 
-  var userWorkouts = ref.child('workouts');
+  //Posting Workouts to the Workout Array
+  this.workout = [ ];
+  this.move = {name: " ", reps: " ", rds: " ", weight: " "};
 
-  userWorkouts.push({
-    date:
-  {
-    Pull_Ups: {
-      reps: 25,
-      rds: 5
-    },
-    Push_Ups: {
-      reps: 25,
-      rds: 5
-    },
-    Sit_Ups: {
-      reps: 25,
-      rds: 5
-    }
-  }
-  });
+  // this.postWorkout = function (){
+  //   this.workout.push(this.move);
+  //   this.move = {name: " ", reps: " ", rds: " ", weight: " "};
+  //   console.log("Poo")
+  // };
+
+
+  var userWorkouts = ref.child('workouts')
+
+  this.postWorkout = function(){
+    userWorkouts.push({name: "hello"});
+  };
 
   this.moveList = {};
   this.moveList.movements = movements;
-
+  console.log(Auth.getUser())
+  // (movements[($('.moving').val().replace(/ /g, ''))].type === 1)
   this.repsRounds = function(){
-    if($('select').val() < 5){
+    if($('.moving').val() === ""){
+      return false;
+    }
+    else if((movements[($('.moving').val().replace(/ /g, ''))].type === 1)){
       return true;
     }
-  };
+  }
   this.weighted = function(){
-    if($('select').val() >= 5){
-      return true;
-    }
-  };
+  if($('.moving').val() === ""){
+    return false;
+  }
+  else if((movements[($('.moving').val().replace(/ /g, ''))].type === 2)){
+    return true;
+  }
+}
 
    this.addMove = function(){
     $('.new-moves').append(
-    '<select ng-model="selected" ng-options="moves.name for moves in work.moveList.movements">' +
-    '<option value="">Select Movement</option>' +
-    '</select><br>' +
-    '<input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps">' +
-    '<input type="text" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds">' +
-    '<input type="text" ng-show="work.weighted()" placeholder="Weight"><br>');
+    '<input class="moving" ng-model="moving" type="text" list="moving" placeholder="Select Movement" autocomplete><br>' +
+    '<input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>' +
+    '<input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>' +
+    '<input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>');
   };
-
   // this.addWorkout = function(){
   //   console.log("Hello")
   // }
-});
+})
+
+
+// <form>
+// <div>
+// <label>title</label>
+// <input type="text" data-ng-model="item.title" list="comicstitle">
+// </div>
+// <div>
+// <input type="Button" value="Add" data-ng-click="addItem(item)">
+// </div>
+// </form>
+// </div>
+// <datalist id="comicstitle">
+// <option  data-ng-repeat="ttl in titles" value="{{ttl}}">
+// </datalist>

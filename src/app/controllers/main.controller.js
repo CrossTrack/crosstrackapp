@@ -1,4 +1,5 @@
 'use strict';
+/* global Firebase */
 
 angular.module('activ8')
 /**
