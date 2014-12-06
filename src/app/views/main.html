@@ -1,12 +1,11 @@
   <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <div class="container-fluid main-body" ng-controller="MainController as app">
-    <p>aaaa</p>
     <!-- Navbar A -->
     <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation">
-      <p>inside nav</p>
+      <span>You are logged out. ln#5</span>
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
-          <img class="ree" src="./assets/images/reebokxfit.png" alt="">
+          <img class="ree" src="./assets/images/reebokxfit.png" alt="" width="40px">
         </a>
         <a class="name" href="#">
           <h1 class="appName">Activ8</h1>
@@ -15,6 +14,7 @@
     </nav>
 
     <section ng-hide="app.loggedIn()" class="kettleBox" >
+      <span>You are logged out. ln#17</span>
       <figure ng-click="app.login()">
         <a ><img src="./assets/images/kettlebell.png" alt="KettleFBLogin" class="img-responsive kettle"></a><br>
         <figcaption class="loginText">
@@ -24,13 +24,16 @@
       <footer><em>Privacy Policy</em></footer>
     </section>
 
+    <!-- LOGGED IN -->
+    <!-- BEGIN Dashboard -->
     <section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+      <span>You are logged in. ln#28</span>
       <!-- Navbar B -->
       <nav class="navbar navbar-default main-nav" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">
-              <img class="ree" src="./assets/images/reebokxfit.png" alt="">
+              <img class="ree" src="./assets/images/reebokxfit.png" alt="" width="40px">
             </a>
             <section class="appName"><a class="name" href="#"><h1>Activ8</h1></a></section>
             <button ng-click="app.logout()" class="btn navbar-right logout-button">Logout</button>
