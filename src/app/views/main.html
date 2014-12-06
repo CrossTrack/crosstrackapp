@@ -1,15 +1,16 @@
   <div class="container-fluid main-body" ng-controller="MainController as app">
+    <p>aaaa</p>
+    <!-- Navbar -->
     <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <img class="ree" src="images/reebokxfit.png" alt="">
-          </a>
-          <a class="name" href="#">
-            <h1 class="appName navbar-left">Activ8</h1>
-          </a>
-        </div>
-      </div><!-- /.container-fluid -->
+      <p>inside nav</p>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img class="ree" src="images/reebokxfit.png" alt="">
+        </a>
+        <a class="name" href="#">
+          <h1 class="appName">Activ8</h1>
+        </a>
+      </div>
     </nav>
     <section ng-hide="app.loggedIn()" class="kettleBox" >
       <figure ng-click="app.login()">
@@ -28,7 +29,7 @@
             <a class="navbar-brand" href="#">
               <img class="ree" src="images/reebokxfit.png" alt="">
             </a>
-            <section class="appName navbar-left"><a class="name" href="#"><h1>Activ8</h1></a></section>
+            <section class="appName"><a class="name" href="#"><h1>Activ8</h1></a></section>
             <button ng-click="app.logout()" class="btn navbar-right logout-button">Logout</button>
           </div>
         </div><!--/.container-fluid -->

@@ -1,5 +1,4 @@
 'use strict';
-/* global Firebase */
 
 angular.module('activ8')
 /**
@@ -20,6 +19,7 @@ angular.module('activ8')
 */
 .factory('Auth', function(Firebase, $firebaseAuth, $firebase){
   var auth = $firebaseAuth(Firebase);
+  var currentUser = {};
 
   return {
     /**
@@ -41,14 +41,20 @@ angular.module('activ8')
 
     loggedIn: function(){
       if(auth.$getAuth()){
-      return true;
-     }
-   },
+        return true;
+      }
+    },
     /**
     * Wrapper for `$firebaseAuth.$unauth()`
     */
     logout: function(){
       auth.$unauth();
+    },
+    /**
+    *Get the current user.
+    */
+    getUser: function(){
+      return currentUser;
     }
   }; // END service
 
@@ -78,7 +84,9 @@ angular.module('activ8')
     });
 
     user.$save();
-    console.log(user.facebook);
+
+    currentUser = user;
+
     return user;
   } // END updateUser
 }) // END factory(Auth)
