@@ -2,7 +2,7 @@
 
 angular.module('activ8')
 
-.controller('WorkoutController', function(Auth){
+.controller('WorkoutController', function(Auth, $firebase){
   var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid),
   self = this,
   movements = {
@@ -60,10 +60,10 @@ angular.module('activ8')
   // };
 
 
-  var userWorkouts = ref.child('workouts')
+  var userWorkouts = $firebase(ref.child('workouts').child(this.date))
 
   this.postWorkout = function(){
-    userWorkouts.push({name: "hello"});
+    userWorkouts.$add({name: "hello"});
   };
 
   this.moveList = {};
