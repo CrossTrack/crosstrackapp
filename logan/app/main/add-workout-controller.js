@@ -2,7 +2,7 @@
 
 angular.module('activ8')
 
-.controller('WorkoutController', function(Auth){
+.controller('WorkoutController', function(Auth, $firebase){
   var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid),
   self = this,
   movements = {
@@ -47,7 +47,8 @@ angular.module('activ8')
 
   console.log(movements["PullUps"].type)
   // Utilize the Date for titles?
-  this.date = new Date();
+  this.new = new Date();
+  this.date = this.new.toString();
 
   //Posting Workouts to the Workout Array
   this.workout = [ ];
@@ -60,10 +61,10 @@ angular.module('activ8')
   // };
 
 
-  var userWorkouts = ref.child('workouts')
+  var userWorkouts = $firebase(ref.child('workouts').child(this.date).asArray())
 
   this.postWorkout = function(){
-    userWorkouts.push({name: "hello"});
+    userWorkouts.$add({name: "hello"});
   };
 
   this.moveList = {};
@@ -94,22 +95,4 @@ angular.module('activ8')
     '<input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>' +
     '<input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>');
   };
-  // this.addWorkout = function(){
-  //   console.log("Hello")
-  // }
 })
-
-
-// <form>
-// <div>
-// <label>title</label>
-// <input type="text" data-ng-model="item.title" list="comicstitle">
-// </div>
-// <div>
-// <input type="Button" value="Add" data-ng-click="addItem(item)">
-// </div>
-// </form>
-// </div>
-// <datalist id="comicstitle">
-// <option  data-ng-repeat="ttl in titles" value="{{ttl}}">
-// </datalist>
