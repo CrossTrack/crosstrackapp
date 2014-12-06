@@ -35,7 +35,7 @@ main {
 .cd-scrolling-bg {
    min-height: 100%;
 }
-.getmove {
+.get-move {
   margin-left: 10em;
   margin-top: 10em;
   position: absolute;
@@ -47,7 +47,7 @@ main {
 .navbar {
   margin-bottom: 0;
 }
-.navMenu {
+.nav-menu {
   padding-right: 3%;
   margin-right: 0;
 }
@@ -76,7 +76,7 @@ a.navbar-brand {
 h3 {
   margin: 0;
 }
-#aboutActiv8 {
+#about-activ8 {
   padding-top: 5%;
 }
 .dash img {
