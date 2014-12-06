@@ -1,19 +1,48 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+main {
+  height: 100%;
+}
 
+.cd-fixed-bg {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-.jumbotron {
-  text-align: center;
-  background-color: rgba(0,0,0,0.6);
-  color: white;
-  margin-bottom: 0;
+
+.cd-fixed-bg.cd-bg-1 {
+  position: relative;
+  background-image: url("images/inthegym.jpg");
 }
-.product-page {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0,0,0,0.3);
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("images/weightrack.jpg");
+}
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("images/outthegym.jpg");
+}
+.cd-fixed-bg.cd-bg-4 {
+  background-image: url("images/inthegym5.jpg");
+}
+
+.cd-scrolling-bg {
+   min-height: 100%;
+}
+.getmove {
+  margin-left: 10em;
+  margin-top: 10em;
+  position: absolute;
+}
+.download {
+  margin-top: 2%;
+  margin-left: 2%;
 }
 .navbar {
   margin-bottom: 0;
@@ -54,4 +83,24 @@ h3 {
   width: 60%;
   margin: 0 auto;
   display: block;
+}
+.cd-scrolling-bg {
+  position: relative;
+  min-height: 100%;
+  padding: 4em 0;
+  line-height: 1.6;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.cd-scrolling-bg.cd-color-1 {
+  background-color: #3d3536;
+  color: #a6989a;
+}
+.cd-scrolling-bg.cd-color-2 {
+  background-color: #99a478;
+  color: #3d3536;
+}
+.cd-scrolling-bg.cd-color-3 {
+  background-color: #b4d7a8;
+  color: #3d3536;
 }
