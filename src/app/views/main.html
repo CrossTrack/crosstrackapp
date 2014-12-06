@@ -86,3 +86,76 @@
       </section>
     </section>
   </div><!-- .main-body -->
+
+  <script>
+    //Array of movements for the input box of workouts
+    $(function() {
+     var movements = [
+     "Pull Ups",
+     "Push Ups",
+     "Sit Ups",
+     "Clean",
+     "Power Clean",
+     "Squat Clean",
+     "Hang Clean",
+     "Hang Squat Clean",
+     "Snatch",
+     "Power Snatch",
+     "Squat Snatch",
+     "Hang Snatch",
+     "Hang Squat Snatch",
+     "Press",
+     "Strict Press",
+     "Push Press",
+     "Jerk",
+     "Push Jerk",
+     "Split Jerk",
+     ];
+     var workouts = [
+     "Amanda",
+     "Annie",
+     "Fran",
+     "Murph",
+     "Filthy Fifty"
+     ];
+     var personalRecords = [
+     "Power Clean",
+     "Squat Clean",
+     "Hang Power Clean",
+     "Hang Squat Clean",
+     "Jerk",
+     "Split Jerk",
+     "Push Jerk",
+     "Clean & Jerk",
+     "Power Snatch",
+     "Squat Snatch"
+     ];
+
+     $( "#movements" ).autocomplete({
+       source: movements
+     });
+     $("#workoutList").autocomplete({
+       source: workouts
+     });
+     $("#personalRecords").autocomplete({
+       source: personalRecords
+     });
+   });
+    </script>
+
+    <script>
+    $(function() {
+     $('a[href*=#]:not([href=#])').click(function() {
+       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+         var target = $(this.hash);
+         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+         if (target.length) {
+           $('html,body').animate({
+             scrollTop: target.offset().top
+           }, 1000);
+           return false;
+         }
+       }
+     });
+   });
+    </script>
