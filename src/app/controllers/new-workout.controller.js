@@ -3,7 +3,7 @@
 angular.module('activ8')
 
 .controller('WorkoutController', function(Auth, $firebase){
-  var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid),
+  var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
   self = this,
   movements = {
    "PullUps": {
@@ -43,15 +43,36 @@ angular.module('activ8')
     type: 2
   }
   };
+  this.workout = [ ];
+  this.move = {name: " ", reps: " ", rds: " ", weight: " "};
+  this.date = Date.now();
+  var sync = $firebase(ref.child(Date.now()))
+
+   this.newWorkout = sync.$asArray();
+  this.addWork = function(user, move, move2) {
+    this.newWorkout.$add(
+      {
+       user: Auth.getUser().uid,
+       move1: move.name,
+       move1reps: move.reps,
+       move1rds: move.rds,
+       move1weight: move.weight,
+       move2: move2.name,
+       move2reps: move2.reps,
+       move2rds: move2.rds,
+       move2weight: move2.weight
+
+     });
+  };
 
 
   console.log(movements["PullUps"].type)
   // Utilize the Date for titles?
-  this.date = new Date();
+
 
   //Posting Workouts to the Workout Array
-  this.workout = [ ];
-  this.move = {name: " ", reps: " ", rds: " ", weight: " "};
+
+
 
   // this.postWorkout = function (){
   //   this.workout.push(this.move);
@@ -60,10 +81,10 @@ angular.module('activ8')
   // };
 
 
-  var userWorkouts = $firebase(ref.child('workouts').child(this.date))
+  var userWorkouts = $firebase(ref.child('workouts').child(this.date.toString())).$asObject()
 
-  this.postWorkout = function(){
-    userWorkouts.$add({name: "hello"});
+  this.postWorkout = function(move){
+    userWorkouts.$push;
   };
 
   this.moveList = {};
@@ -89,10 +110,10 @@ angular.module('activ8')
 
    this.addMove = function(){
     $('.new-moves').append(
-    '<input class="moving" ng-model="moving" type="text" list="moving" placeholder="Select Movement" autocomplete><br>' +
-    '<input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>' +
-    '<input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>' +
-    '<input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>');
+    '<input class="moving" ng-model="move2.name" type="text" list="moving" placeholder="Select Movement" autocomplete><br>' +
+    '<input type="text" ng-model="move2.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>' +
+    '<input type="text" ng-model="move2.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>' +
+    '<input type="text" ng-model="move2.weight"ng-show="work.weighted()" placeholder="Weight"><br>');
   };
   // this.addWorkout = function(){
   //   console.log("Hello")

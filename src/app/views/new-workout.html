@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
-          <img class="ree" src="images/reebokxfit.png" alt="">
+          <img class="ree" src="./assets/images/reebokxfit.png" alt="">
         </a>
         <a class="name" href="#">
           <h1 class="appName navbar-left">Activ8</h1>
@@ -16,13 +16,17 @@
 <!-- /TODO -->
 
   <section class="main" ng-controller="WorkoutController as work">
-    <form class="newMove" style="margin-top: 40%;" ng-submit="work.postWorkout()">
+    <form class="newMove" style="margin-top: 40%;" ng-submit="work.addWork(user, move, move2 )">
       <div class="new-moves">
         <label>Workout</label><br>
-        <input class="moving" ng-model="moving" type="text" list="moving" placeholder="Select Movement" autocomplete><br>
+        <input class="moving" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete><br>
         <input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>
         <input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>
         <input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>
+        <input class="moving" ng-model="move2.name" type="text" list="moving" placeholder="Select Movement" autocomplete><br> +
+        <input type="text" ng-model="move2.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br> +
+        <input type="text" ng-model="move2.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br> +
+        <input type="text" ng-model="move2.weight"ng-show="work.weighted()" placeholder="Weight"><br>
       </div>
       <div>
         <input type="submit" value="Save">
@@ -35,7 +39,8 @@
     <p style="color: white;">{{moves.type}}</p>
     <input type="Button" value="Add" ng-click="work.addMove()"><br>
     Workouts: {{work.workout}}<br>
-    Work: {{move}}<br>
+    <p style="color: white;">Work: {{move}}</p><br>
+    <p style="color: white;">Work: {{move2}}</p><br>
   </section> <!-- / .main -->
 
   <div class="ui-widget workoutList hidden">
