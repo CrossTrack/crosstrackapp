@@ -1,119 +1,197 @@
 /* COLORS
- * ----------
- *
- *
- */
+* ----------
+* #BE1D29 - red
+*
+*/
 html {
   height: 100%;
 }
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  color: white;
+  padding-top: 70px;
+  background: #232323;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #c8c8c8;
+  line-height: 28px;
+  text-align: center;
 }
-.intro .h1 {
+/*---------------------------------------
+   Typography
+-----------------------------------------*/
 
+/* FONT FACE LOADER */
+@font-face {
+    font-family: 'Lane';
+    src: url('../fonts/lanenar_Lane.eot');
+    src: url('../fonts/lanenar_Lane.eot?#iefix') format('embedded-opentype'), url('../fonts/lanenar_Lane.woff') format('woff'), url('../fonts/lanenar_Lane.ttf') format('truetype'), url('../fonts/lanenar_Lane.svg#Lane') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+    @font-face {
+        font-family: 'Lane';
+        src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
+    }
+}
+/* HEADINGS */
+
+h1,
+h2 {
+    font-family: 'Lane', sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3.75rem;
+    line-height: 4.688rem;
+}
+
+h2 {
+    font-size: 3.125rem;
+    line-height: 4.063rem;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 300;
+}
+/*---------------------------------------
+   CUSTOM BUTTON
+-----------------------------------------*/
+
+.standard-button,
+.standard-button2 {
+    font-size: 18px;
+    background-color:#BE1D29;
+    font-weight: 400 !important;
+    border-radius: 4px !important;
+    text-shadow: 0 !important;
+    color: #ffffff;
+    min-width: 150px;
+    border: none;
+    padding: 16px 25px 16px 25px;
+    margin: 5px;
+    -webkit-transition: all ease 0.25s;
+            transition: all ease 0.25s;
+}
+
+.standard-button:hover,
+.standard-button2:hover {
+    border: none;
+}
+
+.standard-button i,
+.standard-button2 i {
+    vertical-align: inherit;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.intro {
+  font-family: 'Lane', sans-serif;
+  font-weight: normal;
 }
 main {
   height: 100%;
 }
-
 .cd-fixed-bg {
   min-height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center center;
+  background-size: cover;
 }
 .cd-fixed-bg.cd-bg-1 {
   position: relative;
-  background-image: url("images/inthegym.jpg");
+  background-image: url('images/inthegym.jpg');
 }
 .cd-fixed-bg.cd-bg-2 {
-  background-image: url("images/weightrack.jpg");
+  background-image: url('images/weightrack.jpg');
 }
 .cd-fixed-bg.cd-bg-3 {
-  background-image: url("images/outthegym.jpg");
+  background-image: url('images/outthegym.jpg');
 }
 .cd-fixed-bg.cd-bg-4 {
-  background-image: url("images/inthegym5.jpg");
+  background-image: url('images/inthegym5.jpg');
 }
 .cd-scrolling-bg {
-   min-height: 100%;
-}
-.get-move {
-  margin-left: 10em;
-  margin-top: 10em;
-  position: absolute;
+  min-height: 100%;
 }
 .download {
   margin-top: 2%;
   margin-left: 2%;
-}
-.navbar {
-  /*margin-bottom: 0;*/
-}
-.nav-menu {
-  padding/*-right: 3%;
-  margin-right: 0;*/
 }
 .product-description {
   width: 80%;
   margin: 0 auto;
 }
 .main-description {
-  color: white;
   font-size: 15pt;
-  text-align: center;
   padding: 5% 0;
+  text-align: center;
+  color: white;
 }
-
-a.navbar-brand {
-  /*padding-top: 12%;*/
-}
-
 #about-activ8 {
   padding-top: 5%;
 }
 .dash img {
+  display: block;
   width: 60%;
   margin: 0 auto;
-  display: block;
 }
 .cd-scrolling-bg {
+  line-height: 1.6;
   position: relative;
+  z-index: 2;
   min-height: 100%;
   padding: 4em 0;
-  line-height: 1.6;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .5);
 }
 .cd-scrolling-bg.cd-color-1 {
-  background-color: #3d3536;
   color: #a6989a;
+  background-color: #3d3536;
 }
 .cd-scrolling-bg.cd-color-2 {
-  background-color: #99a478;
   color: #3d3536;
+  background-color: #99a478;
 }
 .cd-scrolling-bg.cd-color-3 {
-  background-color: #b4d7a8;
   color: #3d3536;
+  background-color: #b4d7a8;
 }
-
 .pink {
   background-color: pink;
 }
-
 .blue {
   background-color: lightblue;
 }
-
 .purple {
   background-color: thistle;
 }
-
 .o-red {
   outline: red solid 4px;
 }
+
+/* --------------------------------------
+ MEDIA QUERIES
+-----------------------------------------*/
+
+
