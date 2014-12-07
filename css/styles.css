@@ -39,6 +39,10 @@ body {
         src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
     }
 }
+
+.white-text {
+  color: white;
+}
 /* HEADINGS */
 
 h1,
@@ -104,6 +108,27 @@ h5 {
     margin-right: 8px;
     font-size: 20px;
 }
+/*---------------------------------------
+   SECTIONS
+-----------------------------------------*/
+
+.section-header {
+    padding-bottom: 78px;
+}
+
+.section-header h2 {
+    margin-bottom: 20px;
+}
+
+.section-header .section-description {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
 
 .intro {
   font-family: 'Lane', sans-serif;
@@ -135,10 +160,10 @@ main {
 .cd-scrolling-bg {
   min-height: 100%;
 }
-.download {
-  margin-top: 2%;
-  margin-left: 2%;
-}
+/*.color-overlay {
+background: rgba(0, 0, 0, 0.54902) ;
+}*/
+
 .product-description {
   width: 80%;
   margin: 0 auto;
@@ -177,32 +202,81 @@ main {
 .colored-line, .colored-line-left {
 background: rgb(242, 84, 84);
 }
-.pink {
-  background-color: pink;
+.o-red {
+  outline: red solid 4px;
 }
-.blue {
-  background-color: lightblue;
+.o-blue {
+  outline: blue solid 4px;
 }
-.purple {
-  background-color: thistle;
+.o-purple {
+  outline: purple solid 4px;
 }
-/*.o-red {
-  outline: red solid 2px;
-}*/
+.o-green {
+  outline: green solid 4px;
+}
+.o-yellow {
+  outline: yellow solid 4px;
+}
 /* --------------------------------------
  FEATURES
 -----------------------------------------*/
+.features {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    background: #232323;
+}
+
+.features .features-left {
+    text-align: right;
+    margin-top: 26px;
+    margin-bottom: 80px;
+}
+
+.features .features-left .icon-container {
+    float: right;
+    margin-left: 20px;
+}
+
+.features .features-right {
+    text-align: left;
+    margin-top: 26px;
+    margin-bottom: 80px;
+}
+
+.features .features-right .icon-container {
+    float: left;
+    margin-right: 20px;
+}
+
+.features .feature {
+    margin-bottom: 40px;
+}
+
+.features .feature .icon-container {
+    display: block;
+    min-height: 120px;
+    margin-top: 5px;
+}
+
+.features .feature .icon-container .icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    line-height: 55px;
+    font-size: 18px;
+    text-align: center;
+}
+
 .features .phone-image {
-max-width: 250px;
-margin: auto;
-margin-bottom: 80px;
+    max-width: 250px;
+    margin: auto;
+    margin-bottom: 80px;
 }
-.feature-details h4 {
-  color: #BE1D29;
-}
+
 .features .phone-image img {
-width: 100%;
+    width: 100%;
 }
+
 /* --------------------------------------
  MEDIA QUERIES
 -----------------------------------------*/
