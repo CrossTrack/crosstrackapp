@@ -48,27 +48,33 @@ angular.module('activ8')
   this.workout = [ ];
 
   this.addMove = function(){
-
     this.workout.push({
       name: "",
       reps: "",
       rds: "",
       weight: "",
-      moveNumber: this.workout.length + 1
+      moveNumber: this.workout.length + 1,
+      date: Date.now()
     });
-
   };
+  //Delete Movement from a workout
+  this.delete = function(move) {
+    var index = this.workout.indexOf(move)
+    this.workout.splice(index, 1);
+  }
 
   // Utilize the Date for titles?
   this.date = Date.now();
-  var sync = $firebase(ref.child(Date.now()))
+  var sync = $firebase(ref)
 
   this.newWorkout = sync.$asArray();
   this.addWork = function(workout){
     this.newWorkout.$add(workout);
   }
 
-
+  // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {
+  //   console.log(snapshot.key());
+  // });
   this.moveList = {};
   this.moveList.movements = movements;
 

@@ -15,64 +15,27 @@
   </nav>
 <!-- /TODO -->
 <section class="main" ng-controller="WorkoutController as work">
-  <label>Workout</label><br>
-  <form class="newMove" style="margin-top: 40%;" ng-submit="work.addWork(work.workout)" >
+
+  <form class="new-move" ng-submit="work.addWork(work.workout)">
+    <label><h4>Today's Workout</h4></label><br>
+    <p style="color: white;">{{1417906862147 | date:'short'}}</p>
     <div class="new-moves" ng-repeat="move in work.workout">
       <input class='naming{{move.moveNumber}}' ng-model="move.name" type="text" list="moving" placeholder="Select Movement" ><br>
       <input type="text" ng-model="move.reps" placeholder="Reps"><br>
       <input type="text" ng-model="move.rds"  placeholder="Rounds"><br>
-      <input type="text" ng-model="move.weight" placeholder="Weight"><br>
+      <input type="text" ng-model="move.weight" placeholder="Weight"><button class="btn btn-danger glyphicon glyphicon-trash" ng-click="work.delete(move)"></button><br>
       <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
+
     </div>
     <div>
-      <input type="submit" value="Save">
+      <input type="Button" class="btn btn-success" value="(+)Add Movement" ng-click="work.addMove()"><br>
+      <input type="submit" class="btn btn-primary" value="Save Workout">
     </div>
-    <input type="Button" value="Add" ng-click="work.addMove()"><br>
   </form>
+
   <datalist id="moving">
     <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
   </datalist>
   <br>
-  <p style="color: white;">{{moves.type}}</p>
-
-  <p style="color: white;">Work: {{work.workout}}<br> {{work.workout.length}}</p><br>
 </section> <!-- / .main -->
-  <!-- <section class="main" ng-controller="WorkoutController as work">
-    <form class="newMove" style="margin-top: 40%;" ng-submit="work.addWork(user, move, move2 )">
-      <div class="new-moves">
-        <label>Workout</label><br>
-        <input class="moving" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete><br>
-        <input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>
-        <input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>
-        <input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>
-        <input class="moving" ng-model="move2.name" type="text" list="moving" placeholder="Select Movement" autocomplete><br> +
-        <input type="text" ng-model="move2.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br> +
-        <input type="text" ng-model="move2.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br> +
-        <input type="text" ng-model="move2.weight"ng-show="work.weighted()" placeholder="Weight"><br>
-      </div>
-      <div>
-        <input type="submit" value="Save">
-      </div>
-    </form>
-    <datalist id="moving">
-      <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
-    </datalist>
-    <br>
-    <p style="color: white;">{{moves.type}}</p>
-    <input type="Button" value="Add" ng-click="work.addMove()"><br>
-    Workouts: {{work.workout}}<br>
-    <p style="color: white;">Work: {{move}}</p><br>
-    <p style="color: white;">Work: {{move2}}</p><br>
-  </section> / .main -->
-
-  <div class="ui-widget workoutList hidden">
-    <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
-    <input id="workoutList" placeholder="Workout Name">
-  </div> <!-- /.workoutList -->
-
-  <section class="add">
-    <a class="addMovement"><h4>(+) Add Movement</h4></a>
-    <a class="addWorkout removeWorkout" ><h4>(+) Add Workout</h4></a>
-    <button ng-click="work.addWorkout()" class="save btn btn-primary" type="submit">Save</button>
-  </section>
 </div><!-- /.main-body -->

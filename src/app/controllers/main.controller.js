@@ -92,6 +92,15 @@ angular.module('activ8')
   } // END updateUser
 }) // END factory(Auth)
 
+// .factory("History", function(Auth, $firebase) {
+//   return function() {
+//     // create a reference to the user's profile
+//     var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid).orderBy("timestamp").limitToLast(3);
+//     // return it as a synchronized object
+//     return $firebase(ref).$asObject();
+//   }
+// })
+
 /**
 * Main application Controller
 *
