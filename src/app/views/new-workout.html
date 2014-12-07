@@ -14,8 +14,30 @@
     </div>
   </nav>
 <!-- /TODO -->
+<section class="main" ng-controller="WorkoutController as work">
+  <label>Workout</label><br>
+  <form class="newMove" style="margin-top: 40%;" ng-submit="work.addWork(work.workout)" >
+    <div class="new-moves" ng-repeat="move in work.workout">
+      <input class='naming{{move.moveNumber}}' ng-model="move.name" type="text" list="moving" placeholder="Select Movement" ><br>
+      <input type="text" ng-model="move.reps" placeholder="Reps"><br>
+      <input type="text" ng-model="move.rds"  placeholder="Rounds"><br>
+      <input type="text" ng-model="move.weight" placeholder="Weight"><br>
+      <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
+    </div>
+    <div>
+      <input type="submit" value="Save">
+    </div>
+    <input type="Button" value="Add" ng-click="work.addMove()"><br>
+  </form>
+  <datalist id="moving">
+    <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
+  </datalist>
+  <br>
+  <p style="color: white;">{{moves.type}}</p>
 
-  <section class="main" ng-controller="WorkoutController as work">
+  <p style="color: white;">Work: {{work.workout}}<br> {{work.workout.length}}</p><br>
+</section> <!-- / .main -->
+  <!-- <section class="main" ng-controller="WorkoutController as work">
     <form class="newMove" style="margin-top: 40%;" ng-submit="work.addWork(user, move, move2 )">
       <div class="new-moves">
         <label>Workout</label><br>
@@ -41,7 +63,7 @@
     Workouts: {{work.workout}}<br>
     <p style="color: white;">Work: {{move}}</p><br>
     <p style="color: white;">Work: {{move2}}</p><br>
-  </section> <!-- / .main -->
+  </section> / .main -->
 
   <div class="ui-widget workoutList hidden">
     <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
