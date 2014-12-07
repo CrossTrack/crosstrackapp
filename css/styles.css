@@ -12,21 +12,13 @@ body {
   height: 100%;
   color: white;
 }
+.intro .h1 {
+
+}
 main {
   height: 100%;
 }
-h1 {
-  margin-top: 0;
-}
-h2 {
-  color: black;
-  text-align: center;
-  font-size: 30pt;
-  padding-bottom: 2%;
-}
-h3 {
-  margin: 0;
-}
+
 .cd-fixed-bg {
   min-height: 100%;
   background-size: cover;
@@ -60,11 +52,11 @@ h3 {
   margin-left: 2%;
 }
 .navbar {
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
 }
 .nav-menu {
-  padding-right: 3%;
-  margin-right: 0;
+  padding/*-right: 3%;
+  margin-right: 0;*/
 }
 .product-description {
   width: 80%;
@@ -78,7 +70,7 @@ h3 {
 }
 
 a.navbar-brand {
-  padding-top: 12%;
+  /*padding-top: 12%;*/
 }
 
 #about-activ8 {
