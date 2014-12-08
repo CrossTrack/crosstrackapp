@@ -5,25 +5,25 @@ angular.module('activ8')
 /**
 *Personal Bests controller
 */
-.controller('prCtrl', function(Auth){
+.controller('prController', function(Auth){
 
   var self = this;
 
   /**
   *values in ng-options
   */
-  var personalRecords = [
-   "Power Clean",
-   "Squat Clean",
-   "Hang Power Clean",
-   "Hang Squat Clean",
-   "Jerk",
-   "Split Jerk",
-   "Push Jerk",
-   "Clean & Jerk",
-   "Power Snatch",
-   "Squat Snatch"
-  ];
+  // var personalRecords = [
+  //  'Power Clean',
+  //  'Squat Clean',
+  //  'Hang Power Clean',
+  //  'Hang Squat Clean',
+  //  'Jerk',
+  //  'Split Jerk',
+  //  'Push Jerk',
+  //  'Clean & Jerk',
+  //  'Power Snatch',
+  //  'Squat Snatch'
+  // ];
 
   var squatClean = [135, 95, 185, 155];
   var powerClean = [205, 185, 225, 295];
@@ -31,9 +31,9 @@ angular.module('activ8')
   this.test = function(){
     console.log(squatClean);
     console.log(powerClean);
-    console.log("Squat Clean");
+    console.log('Squat Clean');
     console.log(self.viewPr(squatClean));
-    console.log("Power Clean");
+    console.log('Power Clean');
     console.log(self.viewPr(powerClean));
   }
 
@@ -41,7 +41,7 @@ angular.module('activ8')
     // var foo = Auth.getUser();
     // .$asObject();
 
-    console.log(Auth.getUser());
+    console.log('working');
   }
 
   /**

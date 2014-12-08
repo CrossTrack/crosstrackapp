@@ -80,12 +80,15 @@
       </section>
     </section><!-- / section#dashboard -->
 
-    <section ng-show="app.loggedIn()" id="personalBests">
+    <section ng-show="app.loggedIn()" id="personalBests" ng-controller="prController as pr">
       <h3 class="records">Personal Records(PR's)</h3>
       <ul class="prDrop">
         <li>
-          <label for="personalRecords">Select Movement:</label><br>
-          <select type="text" id="personalRecords" placeholder="Breaking Records">
+          <label for="personalRecords" ng-click="pr.test()">Select Movement:</label><br>
+          <select type="text" id="personalRecords" placeholder="Breaking Records"
+            ng-model="selectedPr"
+            ng-change="pr.testPr()"
+          >
             <optgroup label="Clean">
               <option value="Power Clean">Power Clean</option>
               <option value="Squat Clean">Squat Clean</option>
@@ -182,4 +185,3 @@
      });
    });
     </script>
-    
