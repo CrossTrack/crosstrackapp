@@ -1,51 +1,45 @@
 <!-- TODO: extract, inject nav with ng-include instead -->
-<div class="container-fluid main-body" ng-controller="MainController">
+<div class="container-fluid main-body" ng-controller="MainController as app">
   <nav class="navbar navbar-default main-nav" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
-          <img class="ree" src="images/reebokxfit.png" alt="">
+          <img class="ree" src="./assets/images/reebokxfit.png" alt="">
         </a>
         <a class="name" href="#">
           <h1 class="appName navbar-left">Activ8</h1>
         </a>
-        <button ng-click="logOut()" class="logout navbar-right btn">Logout</button>
+        <button ng-click="app.logout()" class="logout navbar-right btn">Logout</button>
       </div>
     </div>
   </nav>
 <!-- /TODO -->
+<section class="main" ng-controller="WorkoutController as work">
 
-  <section class="main" ng-controller="WorkoutController as work">
-    <form class="newMove" style="margin-top: 40%;" ng-submit="work.postWorkout()">
-      <div class="new-moves">
-        <label>Workout</label><br>
-        <input class="moving" ng-model="moving" type="text" list="moving" placeholder="Select Movement" autocomplete><br>
-        <input type="text" ng-model="move.reps" ng-show="work.repsRounds() || work.weighted()" placeholder="Reps"><br>
-        <input type="text" ng-model="move.rds" ng-show="work.repsRounds() || work.weighted()" placeholder="Rounds"><br>
-        <input type="text" ng-model="move.weight"ng-show="work.weighted()" placeholder="Weight"><br>
-      </div>
-      <div>
-        <input type="submit" value="Save">
-      </div>
-    </form>
-    <datalist id="moving">
-      <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
-    </datalist>
-    <br>
-    <p style="color: white;">{{moves.type}}</p>
-    <input type="Button" value="Add" ng-click="work.addMove()"><br>
-    Workouts: {{work.workout}}<br>
-    Work: {{move}}<br>
-  </section> <!-- / .main -->
+  <form class="new-move" ng-submit="work.addWork(work.workout)">
+    <label><h4>Today's Workout</h4></label><br>
+    <div class="new-moves" ng-repeat="move in work.workout">
+      <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on">
+      <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps">
+      <input type="text" class="form-control" ng-model="move.rds"  placeholder="Rounds">
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="move.weight" placeholder="Weight">
+        <span class="input-group-btn">
+          <button class="btn btn-danger glyphicon glyphicon-trash" type="button" ng-click="work.delete(move)"></button>
+        </span>
+      </div><!-- /input-group -->
+      <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
 
-  <div class="ui-widget workoutList hidden">
-    <label class="whatWork" for="workoutList">What Workout Did You Do?</label><br>
-    <input id="workoutList" placeholder="Workout Name">
-  </div> <!-- /.workoutList -->
+    </div>
+    <div>
+      <input type="Button" class="btn btn-success" value="(+)Add Movement" ng-click="work.addMove()"><br>
+      <input type="submit" class="btn btn-primary" value="Save Workout">
+    </div>
+  </form>
 
-  <section class="add">
-    <a class="addMovement"><h4>(+) Add Movement</h4></a>
-    <a class="addWorkout removeWorkout" ><h4>(+) Add Workout</h4></a>
-    <button ng-click="work.addWorkout()" class="save btn btn-primary" type="submit">Save</button>
-  </section>
+  <datalist id="moving">
+    <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
+  </datalist>
+  <br>
+</section> <!-- / .main -->
 </div><!-- /.main-body -->
