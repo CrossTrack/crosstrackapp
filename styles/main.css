@@ -1,0 +1,312 @@
+/*Activ8 CSS*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: rgba(188, 37, 54, 0.8);
+  margin: 0;
+  border: none;
+}
+.appName {
+  color: #eee;
+  display: inline-block;
+  padding-left: 10%;
+}
+.logout {
+  display: inline-block;
+  float: right;
+  margin: 2.5%;
+}
+a, a:hover, a:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+h1 {
+  margin: 6px 0 0 0;
+  padding-left: 15%;
+  font-family: 'Stardos Stencil', 'Arial';
+  font-size: 30pt;
+}
+.container-fluid {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.brand {
+  width: 30px;
+  padding-left: 30%;
+}
+.ree {
+  width: 40px;
+  padding-left: 20%;;
+}
+.name {
+  text-align: center;
+  color: white;
+}
+.main {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+.main-dash {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  height: 100vh;
+}
+.kettleBox {
+  padding: 8%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  height: 100vh;
+  position: relative;
+}
+.whatWork {
+  font-size: 20pt;
+  padding-bottom: 5%;
+  color: white;
+}
+h3 {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  color: white;
+  font-weight: bold;
+}
+.save {
+  margin-top: 5%;
+}
+.kettle {
+  width: 40%;
+  /* margin: 50% auto 0 auto; */
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+}
+.loginText {
+  position: absolute;
+  top: 65%;
+  left: 25%;
+  right: 25%;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: lightgray;
+}
+.container-fluid>.navbar-header {
+  margin-right: 0;
+}
+
+.movementsList, .workoutList {
+  padding-top: 30%;
+}
+.add {
+  padding: 8% 0;
+  margin-top: -10px;
+}
+.userInfo {
+  width: 200px;
+  height: 150px;
+  background: burlywood;
+  margin: 73% auto 0 auto;
+  position: relative;
+}
+.username {
+  position: absolute;
+  left: 14%;
+  top: 18%;
+  width: 70%;
+}
+.pw {
+  position: absolute;
+  left: 14%;
+  top: 60%;
+  width: 70%;
+}
+.first24 {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+}
+.second24 {
+  position: absolute;
+  bottom: -8%;
+  left: 25%;
+  right: 25%;
+}
+.first30 {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  transform: rotateZ(90deg)
+}
+.second30 {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  transform: rotateZ(90deg)
+}
+.main-body {
+  background: url(../assets/images/boxbg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+h2 {
+  color: white;
+  margin: 30% auto 0 auto;
+}
+.listOfMoves {
+  list-style-type: none;
+  padding: 0;
+}
+.btn.deleteMove {
+  border-radius: 50%;
+  background-color: firebrick;
+  color: white;
+  border: none;
+  margin: 0;
+  margin-left: -24px;
+  padding: 0 2%;
+}
+.row-1{
+  margin: 0;
+  padding-top: 20%;
+}
+.row-2, .row-3 {
+  color: white;
+  min-height: 20%;
+  background-color: rgba(200,0,0,0.5);
+  margin: 8% auto 0 auto;
+  width: 90%;
+}
+.avatar {
+  padding: 0;
+  padding-left: 10%;
+}
+.plus-workout button {
+  width: 100%;
+  min-height: 80px;
+  font-size: 15pt;
+}
+.plus-workout button a {
+  color: white;
+}
+#personalBests {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+}
+.prList {
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.prDrop {
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.prDrop li {
+  font-size: 12pt;
+  text-align: center;
+  margin: 5% 0;
+}
+.prList li {
+  font-size: 12pt;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.records {
+  margin: 0 auto 2% auto;
+  width: 85%;
+  padding-top: 10%;
+}
+.page-down a {
+  color: rgba(200,0,0,0.5);
+  font-size: 50pt;
+}
+.fbName {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+}
+.page-up {
+  text-align: center;
+  padding: 0;
+}
+.page-up a {
+  color: rgba(200,0,0,0.5);
+  font-size: 50pt;
+}
+#personalRecords {
+  width: 80%;
+  height: 50px;
+}
+.logout-button {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+}
+.new-move {
+  margin-top: 30%;
+  overflow: auto;
+  height: auto;
+  padding: .5rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.new-move::-webkit-scrollbar {
+  display: none;
+}
+.history-list {
+  list-style-type: none;
+}
+.new-moves {
+  width: 80%;
+  margin: 0 auto;
+}
+/* @media (min-width: 380px){
+.loginText {
+top: 75%;
+}
+}
+
+@media (min-width: 540px){
+.kettle {
+width: 40%;
+margin: 50% auto 0 auto;
+position: absolute;
+top: 20%;
+left: 30%;
+right: 30%;
+}
+.loginText {
+top: 75%;
+}
+} */
