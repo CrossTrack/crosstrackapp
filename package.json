@@ -1,7 +1,9 @@
 {
   "name": "activ8",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
   "devDependencies": {
     "gulp": "^3.8.0",
     "gulp-autoprefixer": "^0.0.6",
