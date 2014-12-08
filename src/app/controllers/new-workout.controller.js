@@ -70,6 +70,7 @@ angular.module('activ8')
   this.newWorkout = sync.$asArray();
   this.addWork = function(workout){
     this.newWorkout.$add(workout);
+    this.workout = [ ];
   }
 
   // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {

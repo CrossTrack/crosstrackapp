@@ -20,7 +20,7 @@
     <label><h4>Today's Workout</h4></label><br>
     <p style="color: white;">{{1417906862147 | date:'short'}}</p>
     <div class="new-moves" ng-repeat="move in work.workout">
-      <input class='naming{{move.moveNumber}}' ng-model="move.name" type="text" list="moving" placeholder="Select Movement" ><br>
+      <input class='naming{{move.moveNumber}}' ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on"><br>
       <input type="text" ng-model="move.reps" placeholder="Reps"><br>
       <input type="text" ng-model="move.rds"  placeholder="Rounds"><br>
       <input type="text" ng-model="move.weight" placeholder="Weight"><button class="btn btn-danger glyphicon glyphicon-trash" ng-click="work.delete(move)"></button><br>
