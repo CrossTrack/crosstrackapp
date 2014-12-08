@@ -1,4 +1,4 @@
-  <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
+ <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <div class="container-fluid main-body" ng-controller="MainController as app">
     <!-- Navbar A -->
     <nav ng-hide="app.loggedIn()" class="navbar navbar-default main-nav" role="navigation">
@@ -16,7 +16,7 @@
     <section ng-hide="app.loggedIn()" class="kettleBox" >
       <span>You are logged out. ln#17</span>
       <figure ng-click="app.login()">
-        <a><img src="./assets/images/kettlebell.png" alt="" class="img-responsive kettle"></a><br>
+        <a><img src="./assets/images/reebokxfit.png" alt="" class="img-responsive kettle"></a><br>
         <figcaption class="loginText">
           <a href="#"><h3>Login</h3></a>
         </figcaption>
@@ -57,8 +57,21 @@
       </div>
       <!-- BEGIN History -->
       <div class="row row-3">
-        <section class="myHistory col-xs-12">
+        <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
           <p>My History</p>
+          <ul class="history-list">
+            <li ng-repeat="list in history.historyList ">
+              <a ng-href="#">{{list[0].date | date:'short'}}</a><br>
+              <!-- Move:{{list[0].name}}<br>
+              Reps:{{list[0].reps}}<br>
+              Rds:{{list[0].rds}}<br>
+              Weight:{{list[0].weight}}<br>
+              Move:{{list[1].name}}<br>
+              Reps:{{list[1].reps}}<br>
+              Rds:{{list[1].rds}}<br>
+              Weight:{{list[1].weight}}<br> -->
+              </li>
+          </ul>
         </section>
       </div>
       <!-- BEGIN "page-down" content -->
@@ -141,7 +154,6 @@
      "Power Snatch",
      "Squat Snatch"
      ];
-
      $( "#movements" ).autocomplete({
        source: movements
      });
@@ -170,3 +182,4 @@
      });
    });
     </script>
+    
