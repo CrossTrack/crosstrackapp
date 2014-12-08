@@ -201,7 +201,7 @@ h4 {
   color: white;
   min-height: 20%;
   background-color: rgba(200,0,0,0.5);
-  margin: 15% auto 0 auto;
+  margin: 8% auto 0 auto;
   width: 90%;
 }
 .avatar {
@@ -246,9 +246,6 @@ h4 {
   width: 85%;
   padding-top: 10%;
 }
-.page-down {
-  padding-top: 10%;
-}
 .page-down a {
   color: rgba(200,0,0,0.5);
   font-size: 50pt;
@@ -257,6 +254,7 @@ h4 {
   color: white;
   font-weight: bold;
   text-align: left;
+  margin: 0;
 }
 .page-up {
   text-align: center;
