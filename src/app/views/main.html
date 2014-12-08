@@ -44,6 +44,7 @@
         <section class="avatar col-xs-5">
           <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
           <p class="fbName">{{app.user.fullName|| displayName}}</p>
+          <a role="button" class="btn btn-success work-btn" href="http://localhost:3000/index.html#/personal-records">Personal Records</a>
         </section><!-- / section.avatar -->
         <section class="plus-workout col-xs-7">
           <a role="button" class="btn btn-success work-btn glyphicon glyphicon-plus" href="http://localhost:3000/index.html#/new-workout">New Workout</a>
@@ -80,7 +81,7 @@
       </section>
     </section><!-- / section#dashboard -->
 
-    <section ng-show="app.loggedIn()" id="personalBests" ng-controller="prController as pr">
+    <!-- <section ng-show="app.loggedIn()" id="personalBests" ng-controller="prController as pr">
       <h3 class="records">Personal Records(PR's)</h3>
       <ul class="prDrop">
         <li>
@@ -111,7 +112,7 @@
       <section class="page-up col-xs-12">
         <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
       </section>
-    </section><!-- / section#personalBests -->
+    </section> -->
   </div><!-- .main-body -->
 
   <script>

@@ -22,6 +22,10 @@ angular.module('activ8', ['firebase', 'ngRoute'])
       templateUrl: 'app/views/new-workout.html',
       // controller:  'NewWorkoutCtrl'
     }).
+    when('/personal-records', {
+      templateUrl: 'app/views/personal-records.html',
+      // controller:  'NewWorkoutCtrl'
+    }).
     otherwise({
       redirectTo: '/'
     });

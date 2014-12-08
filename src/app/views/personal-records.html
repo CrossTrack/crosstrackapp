@@ -1,0 +1,34 @@
+<div class="container-fluid main-body" ng-controller="prController">
+  <section ng-show="app.loggedIn()" id="personalBests">
+    <h3 class="records">Personal Records(PR's)</h3>
+    <ul class="prDrop">
+      <li>
+        <label for="personalRecords" ng-click="pr.test()">Select Movement:</label><br>
+        <select type="text" id="personalRecords" placeholder="Breaking Records"
+          ng-model="selectedPr"
+          ng-change="pr.testPr()"
+        >
+          <optgroup label="Clean">
+            <option value="Power Clean">Power Clean</option>
+            <option value="Squat Clean">Squat Clean</option>
+            <option value="Hang Power Clean">Hang Power Clean</option>
+            <option value="Hang Squat Clean">Hang Squat Clean</option>
+            <option value="Clean & Jerk">Clean & Jerk</option>
+          </optgroup>
+          <optgroup label="Jerk">
+            <option value="Jerk">Jerk</option>
+            <option value="Split Jerk">Split Jerk</option>
+            <option value="Push Jerk">Push Jerk</option>
+          </optgroup>
+          <optgroup label="Snatch">
+            <option value="Power Snatch">Power Snatch</option>
+            <option value="Squat Snatch">Squat Snatch</option>
+          </optgroup>
+        </select>
+      </li>
+    </ul>
+    <section class="page-up col-xs-12">
+      <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </section>
+  </section><!-- / section#personalBests -->
+</div>

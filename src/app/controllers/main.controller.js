@@ -66,31 +66,40 @@ angular.module('activ8')
   * @param {Object} authdUser from $firebaseAuth.getAuth()
   * @return {Object} from $firebase.$asObject()
   */
-  function updateUser(authdUser){
-    if ( authdUser === null ){
-      return null;
-    }
+     function updateUser(authdUser){
+       if ( authdUser === null ){
+         return null;
+      }
 
-    var user = $firebase(Firebase
-      .child('users')
-      .child(authdUser.facebook.id)
-    ).$asObject();
+      /**
+       * Create a reference to the users collection within Firebase
+       * Then create a child of the users collection named after the
+       * authdUser's Facebook ID
+       */
+      var user = Firebase.child('users').child(authdUser.facebook.id);
 
-    angular.extend(user, {
-      uid: authdUser.facebook.id,
-      facebook: authdUser.facebook,
-      fullName: authdUser.facebook.displayName,
-      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
-      gender: authdUser.facebook.cachedUserProfile.gender
-    });
+      // Update the authdUser's information in Firebase
+      user.update({
+        uid: authdUser.uid,
+        facebook: authdUser.facebook,
+        fullName: authdUser.facebook.displayName,
+        avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+        gender: authdUser.facebook.cachedUserProfile.gender
+      });
 
-    user.$save();
+      // Set user to the object reference of authdUser
+      user = $firebase(Firebase
+        .child('users')
+        .child(authdUser.facebook.id)
+      ).$asObject();
 
-    currentUser = user;
+      currentUser = user;
 
-    return user;
-  } // END updateUser
-}) // END factory(Auth)
+      return user;
+    } // END updateUser
+  }) // END factory(Auth)
+//  } // END updateUser
+//}) // END factory(Auth)
 
 // .factory("History", function(Auth, $firebase) {
 //   return function() {

@@ -37,11 +37,9 @@ angular.module('activ8')
     console.log(self.viewPr(powerClean));
   }
 
-  this.testPr = function(){
-    // var foo = Auth.getUser();
-    // .$asObject();
-
-    console.log('working');
+  this.testPr = function(selectedPr){
+    console.log(Auth.getUser().pr.squatClean);
+    console.log(Auth.getUser());
   }
 
   /**
