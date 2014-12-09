@@ -50,7 +50,6 @@ angular.module('activ8')
     */
     logout: function(){
       auth.$unauth();
-      console.log("HELLO")
     },
     /**
     *Get the current user.
