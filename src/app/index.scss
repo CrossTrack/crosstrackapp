@@ -59,6 +59,8 @@ h1 {
   background-color: rgba(0,0,0,0.6);
   text-align: center;
   height: 100vh;
+  position: relative;
+  display: flex;
 }
 .main-dash {
   width: 100%;
@@ -272,6 +274,24 @@ h4 {
   position: absolute;
   top: 10%;
   right: 2%;
+}
+.new-move {
+  margin-top: 30%;
+  overflow: auto;
+  height: auto;
+  padding: .5rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.new-move::-webkit-scrollbar {
+  display: none;
+}
+.history-list {
+  list-style-type: none;
+}
+.new-moves {
+  width: 80%;
+  margin: 0 auto;
 }
 /* @media (min-width: 380px){
   .loginText {
