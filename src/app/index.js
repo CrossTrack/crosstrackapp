@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('activ8', ['firebase', 'ngRoute'])
+angular.module('activ8', ['firebase', 'ngRoute', 'ngAnimate'])
 /**
 * Global Configuration Object
 *
@@ -12,23 +12,13 @@ angular.module('activ8', ['firebase', 'ngRoute'])
   }
 })
 
-.config(['$routeProvider', function($routeProvider, $firebase, Auth) {
+.config(['$routeProvider', function($routeProvider, $firebase, $firebaseAuth) {
   $routeProvider
     .when ('/login', {
-      templateUrl: 'app/views/login.html',
-      controller:  'MainController',
-      controllerAs: 'app'
-      // redirectTo: function(){
-      //   if(Auth.loggedIn() === true){
-      //     return "/"
-      //   }
-      //   return "/login"
-      // }
+      templateUrl: 'app/views/login.html'
     })
     .when('/', {
-        templateUrl: 'app/views/main.html',
-        controller:  'MainController',
-        controllerAs: 'app',
+        templateUrl: 'app/views/main.html'
 
     })
      .when('/new-workout', {

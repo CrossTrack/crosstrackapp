@@ -2,7 +2,7 @@
 
 angular.module('activ8')
 
-.controller('NewWorkoutController', function(Auth, $firebase){
+.controller('NewWorkoutController', function(Auth, $firebase, $location){
 
   var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
   self = this,
@@ -71,7 +71,7 @@ angular.module('activ8')
   this.newWorkout = sync.$asArray();
   this.addWork = function(workout){
     this.newWorkout.$add(workout);
-    this.workout = [ ];
+    $location.path('/history')
   }
 
   // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {

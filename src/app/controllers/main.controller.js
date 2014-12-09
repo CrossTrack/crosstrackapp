@@ -36,8 +36,8 @@ angular.module('activ8')
     * Wrapper for `$firebaseAuth.$authWithOAuthPopup()` that invokes the
     * correct provider code.
     */
-    login: function(){
-      return auth.$authWithOAuthRedirect('facebook');
+    login: function($location){
+      return auth.$authWithOAuthRedirect('facebook')
     },
 
     loggedIn: function(){
@@ -107,7 +107,7 @@ angular.module('activ8')
 * @method {Promise} login -- trigger the login workflow
 * @method {undefined} logout -- trigger the logout workflow
 */
-.controller('MainController', function(Auth){
+.controller('MainController', function(Auth, $location){
   var self = this;
 
   this.login = Auth.login;
@@ -116,8 +116,15 @@ angular.module('activ8')
 
   Auth.onAuth(function(user){
     self.user = user;
+    if (user === null ){
+      return $location.path('/login')
+    }
+    else {
+      return $location.path('/')
+    }
   });
 
   this.loggedIn = Auth.loggedIn;
+
 
 });
