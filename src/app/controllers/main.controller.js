@@ -81,7 +81,7 @@ angular.module('activ8')
 
       // Update the authdUser's information in Firebase
       user.update({
-        uid: authdUser.uid,
+        uid: authdUser.facebook.id,
         facebook: authdUser.facebook,
         fullName: authdUser.facebook.displayName,
         avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,

@@ -1,4 +1,4 @@
-<div class="container-fluid main-body" ng-controller="MainController">
+<div class="container-fluid main-body">
   <nav class="navbar navbar-default main-nav" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -13,9 +13,15 @@
     </div>
   </nav>
 
-  <section id="personalBests" ng-controller="prController as pr">
+  <section id="personalBests">
     <h3 class="records">Personal Records(PR's)</h3>
     <button ng-click="pr.test()"> TEST CLICK ME LOL </button>
+
+    <ul class="pr-list">
+        <li ng-repeat="(name, best) in app.user.pr">
+          <a ng-href="#">{{name}}: {{best.weight}}</a><br>
+        </li>
+    </ul>
 
 
     <!-- <ul class="prDrop">
