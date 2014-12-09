@@ -1,3 +1,4 @@
+
  <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <div class="container-fluid main-body" ng-controller="MainController as app">
     <!-- Navbar A -->
@@ -76,43 +77,7 @@
         </section>
       </div>
       <!-- BEGIN "page-down" content -->
-      <section class="page-down">
-        <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
-      </section>
-    </section><!-- / section#dashboard -->
 
-    <!-- <section ng-show="app.loggedIn()" id="personalBests" ng-controller="prController as pr">
-      <h3 class="records">Personal Records(PR's)</h3>
-      <ul class="prDrop">
-        <li>
-          <label for="personalRecords" ng-click="pr.test()">Select Movement:</label><br>
-          <select type="text" id="personalRecords" placeholder="Breaking Records"
-            ng-model="selectedPr"
-            ng-change="pr.testPr()"
-          >
-            <optgroup label="Clean">
-              <option value="Power Clean">Power Clean</option>
-              <option value="Squat Clean">Squat Clean</option>
-              <option value="Hang Power Clean">Hang Power Clean</option>
-              <option value="Hang Squat Clean">Hang Squat Clean</option>
-              <option value="Clean & Jerk">Clean & Jerk</option>
-            </optgroup>
-            <optgroup label="Jerk">
-              <option value="Jerk">Jerk</option>
-              <option value="Split Jerk">Split Jerk</option>
-              <option value="Push Jerk">Push Jerk</option>
-            </optgroup>
-            <optgroup label="Snatch">
-              <option value="Power Snatch">Power Snatch</option>
-              <option value="Squat Snatch">Squat Snatch</option>
-            </optgroup>
-          </select>
-        </li>
-      </ul>
-      <section class="page-up col-xs-12">
-        <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
-      </section>
-    </section> -->
   </div><!-- .main-body -->
 
   <script>
@@ -186,3 +151,34 @@
      });
    });
     </script>
+
+<!-- Dashboard -->
+<section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+  <div class="row row-1">
+    <section class="avatar col-xs-5">
+      <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
+      <p class="fbName">{{app.user.fullName|| displayName}}</p>
+    </section><!-- / section.avatar -->
+    <section class="plus-workout col-xs-7">
+      <a role="button" class="btn btn-success work-btn glyphicon glyphicon-plus" href="#/new-workout">NewWorkout</a>
+    </section><!-- / section.plus-workout -->
+  </div>
+  <!-- BEGIN Days Active -->
+  <div class="row row-2">
+    <section class="daysActive col-xs-12">
+      <h3>Days Active Chart</h3>
+    </section>
+  </div>
+  <!-- BEGIN History -->
+  <div class="row row-3">
+    <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
+      <p>My History</p>
+      <ul class="history-list">
+        <li ng-repeat="list in history.historyList ">
+          <a ng-href="#">{{list[0].date | date:'short'}}</a><br>
+        </li>
+      </ul>
+    </section>
+  </div>
+</section><!-- / section#dashboard -->
+</div><!-- .main-body -->

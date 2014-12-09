@@ -1,32 +1,60 @@
 <!doctype html>
 <html class="no-js" ng-app="activ8">
-  <head>
-    <meta charset="utf-8">
-    <title>Activ8</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+  <meta charset="utf-8">
+  <title>Activ8</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css({.tmp,src}) styles/vendor.css -->
-    <link rel="stylesheet" href="app/vendor.css">
+  <!-- build:css({.tmp,src}) styles/vendor.css -->
+  <link rel="stylesheet" href="app/vendor.css">
 
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:css({.tmp,src}) styles/app.css -->
-    <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="app/index.css">
-    <!-- endbuild -->
+  <!-- build:css({.tmp,src}) styles/app.css -->
+  <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app/index.css">
+  <!-- endbuild -->
 
-    <!-- build:js scripts/modernizr.js -->
-    <script src="../bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
+  <!-- build:js scripts/modernizr.js -->
+  <script src="../bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+  <!-- Main Body Container -->
+  <div class="container-fluid main-body">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-default main-nav" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img class="ree" src="./assets/images/reebokxfit.png" alt="">
+          </a>
+          <a class="name" href="#">
+            <h1 class="appName navbar-left">Activ8</h1>
+          </a>
+          <button ng-click="app.logout()" class="logout navbar-right btn">Logout</button>
+        </div>
+      </div>
+    </nav><!-- End Main Navigation -->
 
     <div ng-view></div>
 
+    <div><!-- End Main Body Container -->
+
+
+      <!-- build:js scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="../bower_components/jquery/dist/jquery.js"></script>
+      <script src="../bower_components/angular/angular.js"></script>
+      <script src="../bower_components/angular-route/angular-route.js"></script>
+      <script src="../bower_components/firebase/firebase.js"></script>
+      <script src="../bower_components/angularfire/dist/angularfire.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -39,7 +67,16 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
+      <!-- build:js({.tmp,src}) scripts/app.js -->
+      <script src="app/index.js"></script>
+      <script src="app/controllers/main.controller.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="app/controllers/new-workout.controller.js"></script>
+      <script src="app/controllers/history.controller.js"></script>
+
 
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <script src="app/index.js"></script>
@@ -49,10 +86,11 @@
     <script src="app/controllers/history.controller.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
 
-    <!-- inject:partials -->
-    <!-- angular templates will be automaticaly converted in js and inserted here -->
-    <!-- endinject -->
-    <!-- endbuild -->
 
-  </body>
-</html>
+      <!-- inject:partials -->
+      <!-- angular templates will be automaticaly converted in js and inserted here -->
+      <!-- endinject -->
+      <!-- endbuild -->
+
+    </body>
+    </html>
