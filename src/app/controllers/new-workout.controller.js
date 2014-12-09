@@ -2,11 +2,8 @@
 
 angular.module('activ8')
 
-<<<<<<< HEAD
-.controller('WorkoutController', function(Auth, $firebase){
-=======
 .controller('NewWorkoutController', function(Auth, $firebase){
->>>>>>> aa41474ff553f806e135f44c0180568f8cf0d696
+
   var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
   self = this,
   movements = {
@@ -83,21 +80,20 @@ angular.module('activ8')
   this.moveList = {};
   this.moveList.movements = movements;
 
-  //Working on displaying the right properties of each movement
-  this.repsRounds = function(){
-    if($('.naming1').val() === ""){
-      return false;
-    }
-    else if($('.naming1').val()){
-      return true;
-    }
-  }
+  // //Working on displaying the right properties of each movement
+  // this.repsRounds = function(){
+  //   if($('.naming1').val() === ""){
+  //     return false;
+  //   }
+  //   else if($('.naming1').val()){
+  //     return true;
+  //   }
+  // }
   //Checking the Movement Value to display proper inputs
-  this.weighted = function(){
-<<<<<<< HEAD
-  if($(".naming1").val().indexOf("Clean") > -1){
-    return true;
-  }
+  // this.weighted = function(){
+  // if($(".naming1").val().indexOf("Clean") > -1){
+  //   return true;
+  // }
   // else if($(".naming1").val().indexOf("Snatch") > -1){
   //   return true;
   // }
@@ -113,14 +109,14 @@ angular.module('activ8')
   // else if($(".naming1").val().indexOf("Dumbbell") > -1){
   //   return true;
   // }
-  else {
-    return false;
-   }
-  }
-=======
-    if($(".naming1").val().indexOf("Clean") > -1){
-      return true;
-    }
+  // else {
+  //   return false;
+  // }
+  // }
+  
+   // if($(".naming1").val().indexOf("Clean") > -1){
+     // return true;
+   // }
     // else if($(".naming1").val().indexOf("Snatch") > -1){
     //   return true;
     // }
@@ -136,10 +132,9 @@ angular.module('activ8')
     // else if($(".naming1").val().indexOf("Dumbbell") > -1){
     //   return true;
     // }
-    else {
-      return false;
-    }
-  }
->>>>>>> aa41474ff553f806e135f44c0180568f8cf0d696
+    //else {
+    //  return false;
+    //}
+  //}
 
 });//End Controller
