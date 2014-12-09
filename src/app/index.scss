@@ -281,8 +281,15 @@ h2 {
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.new-move::-webkit-scrollbar {
+.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar {
   display: none;
+}
+.new-dash {
+  overflow: auto;
+  height: auto;
+  padding: .5rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 .history-list {
   list-style-type: none;

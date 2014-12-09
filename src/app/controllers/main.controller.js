@@ -37,7 +37,7 @@ angular.module('activ8')
     * correct provider code.
     */
     login: function(){
-      return auth.$authWithOAuthPopup('facebook');
+      return auth.$authWithOAuthRedirect('facebook');
     },
 
     loggedIn: function(){
@@ -48,9 +48,8 @@ angular.module('activ8')
     /**
     * Wrapper for `$firebaseAuth.$unauth()`
     */
-    logout: function(){
+    logout: function($location){
       auth.$unauth();
-      console.log("HELLO")
     },
     /**
     *Get the current user.
@@ -120,4 +119,5 @@ angular.module('activ8')
   });
 
   this.loggedIn = Auth.loggedIn;
+
 });

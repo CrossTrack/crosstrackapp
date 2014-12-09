@@ -113,7 +113,7 @@ angular.module('activ8')
   //   return false;
   // }
   // }
-  
+
    // if($(".naming1").val().indexOf("Clean") > -1){
      // return true;
    // }
