@@ -2,9 +2,6 @@
 
 angular.module('activ8')
 
-
-.controller('WorkoutController', function(Auth, $firebase){
-
 .controller('NewWorkoutController', function(Auth, $firebase){
 
   var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
@@ -74,9 +71,7 @@ angular.module('activ8')
   this.newWorkout = sync.$asArray();
   this.addWork = function(workout){
     this.newWorkout.$add(workout);
-
     this.workout = [ ];
-
   }
 
   // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {
@@ -84,24 +79,6 @@ angular.module('activ8')
   // });
   this.moveList = {};
   this.moveList.movements = movements;
-
-  //Working on displaying the right properties of each movement
-  this.repsRounds = function(){
-    if($('.naming1').val() === ""){
-      return false;
-    }
-    else if($('.naming1').val()){
-      return true;
-    }
-  }
-  //Checking the Movement Value to display proper inputs
-  this.weighted = function(){
-  if($(".naming1").val().indexOf("Clean") > -1){
-    return true;
-  }
-  // else if($(".naming1").val().indexOf("Snatch") > -1){
-  //   return true;
-  // }
 
   // //Working on displaying the right properties of each movement
   // this.repsRounds = function(){
@@ -120,7 +97,6 @@ angular.module('activ8')
   // else if($(".naming1").val().indexOf("Snatch") > -1){
   //   return true;
   // }
-
   // else if($(".naming1").val().indexOf("Jerk") > -1){
   //   return true;
   // }
@@ -133,12 +109,6 @@ angular.module('activ8')
   // else if($(".naming1").val().indexOf("Dumbbell") > -1){
   //   return true;
   // }
-
-  else {
-    return false;
-   }
-  }
-
   // else {
   //   return false;
   // }
@@ -166,6 +136,5 @@ angular.module('activ8')
     //  return false;
     //}
   //}
-
 
 });//End Controller
