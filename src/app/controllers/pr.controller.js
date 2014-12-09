@@ -5,11 +5,24 @@ angular.module('activ8')
 /**
 *Personal Bests controller
 */
-.controller('prController', function(Auth){
+.controller('prController', function(Auth, $firebase){
 
+  var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid + "/pr");
+  var sync = $firebase(ref);
+  var prArray = sync.$asObject();
+  this.prList = prArray;
   var self = this;
 
+  this.test = function(){
+    console.log("Test");
+    console.log(Auth.getUser().fullName)
+    console.log(this.prList.powerClean);
+  }
+
+});
+
   /**
+  * Clean - Jerk - Snatch
   *values in ng-options
   */
   // var personalRecords = [
@@ -25,28 +38,10 @@ angular.module('activ8')
   //  'Squat Snatch'
   // ];
 
-  var squatClean = [135, 95, 185, 155];
-  var powerClean = [205, 185, 225, 295];
-
-  this.test = function(){
-    console.log(squatClean);
-    console.log(powerClean);
-    console.log('Squat Clean');
-    console.log(self.viewPr(squatClean));
-    console.log('Power Clean');
-    console.log(self.viewPr(powerClean));
-  }
-
-  this.testPr = function(selectedPr){
-    console.log(Auth.getUser().pr.squatClean);
-    console.log(Auth.getUser());
-  }
 
   /**
   *Returns Personal Best for selected movement
   */
-  this.viewPr = function(selectedPr){
-    return Math.max.apply(null, selectedPr);
-  }
-
-});
+  // this.viewPr = function(selectedPr){
+  //   return Math.max.apply(null, selectedPr);
+  // }
