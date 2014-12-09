@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <!-- <div class="container-fluid main-body" ng-controller="MainController as app">
     Navbar A
@@ -183,3 +184,35 @@
      });
    });
     </script>
+=======
+<!-- Dashboard -->
+<section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+  <div class="row row-1">
+    <section class="avatar col-xs-5">
+      <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
+      <p class="fbName">{{app.user.fullName|| displayName}}</p>
+    </section><!-- / section.avatar -->
+    <section class="plus-workout col-xs-7">
+      <a role="button" class="btn btn-success work-btn glyphicon glyphicon-plus" href="#/new-workout">NewWorkout</a>
+    </section><!-- / section.plus-workout -->
+  </div>
+  <!-- BEGIN Days Active -->
+  <div class="row row-2">
+    <section class="daysActive col-xs-12">
+      <h3>Days Active Chart</h3>
+    </section>
+  </div>
+  <!-- BEGIN History -->
+  <div class="row row-3">
+    <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
+      <p>My History</p>
+      <ul class="history-list">
+        <li ng-repeat="list in history.historyList ">
+          <a ng-href="#">{{list[0].date | date:'short'}}</a><br>
+        </li>
+      </ul>
+    </section>
+  </div>
+</section><!-- / section#dashboard -->
+</div><!-- .main-body -->
+>>>>>>> ffdabd46577863dd750d5af47bf9f29a6ea75f00

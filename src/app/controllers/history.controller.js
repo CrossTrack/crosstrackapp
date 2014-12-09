@@ -9,7 +9,7 @@ angular.module('activ8')
 
   var historyArray = sync.$asArray();
 
-   this.historyList = historyArray
+  this.historyList = historyArray
 
 
 
