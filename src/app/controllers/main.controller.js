@@ -50,6 +50,10 @@ angular.module('activ8')
     */
     logout: function(){
       auth.$unauth();
+<<<<<<< HEAD
+=======
+      console.log("HELLO")
+>>>>>>> release/RELEASE
     },
     /**
     *Get the current user.
@@ -92,6 +96,18 @@ angular.module('activ8')
   } // END updateUser
 }) // END factory(Auth)
 
+<<<<<<< HEAD
+=======
+// .factory("History", function(Auth, $firebase) {
+//   return function() {
+//     // create a reference to the user's profile
+//     var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid).orderBy("timestamp").limitToLast(3);
+//     // return it as a synchronized object
+//     return $firebase(ref).$asObject();
+//   }
+// })
+
+>>>>>>> release/RELEASE
 /**
 * Main application Controller
 *

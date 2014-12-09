@@ -2,8 +2,13 @@
 
 angular.module('activ8')
 
+<<<<<<< HEAD
 .controller('WorkoutController', function(Auth){
   var ref = new Firebase("https://activ8.firebaseio.com/users/" + Auth.getUser().uid),
+=======
+.controller('WorkoutController', function(Auth, $firebase){
+  var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
+>>>>>>> release/RELEASE
   self = this,
   movements = {
    "PullUps": {
@@ -44,6 +49,7 @@ angular.module('activ8')
   }
   };
 
+<<<<<<< HEAD
 
   console.log(movements["PullUps"].type)
   // Utilize the Date for titles?
@@ -113,3 +119,75 @@ angular.module('activ8')
 // <datalist id="comicstitle">
 // <option  data-ng-repeat="ttl in titles" value="{{ttl}}">
 // </datalist>
+=======
+  //Posting Workouts to the Workout Array
+  this.workout = [ ];
+
+  this.addMove = function(){
+    this.workout.push({
+      name: "",
+      reps: "",
+      rds: "",
+      weight: "",
+      moveNumber: this.workout.length + 1,
+      date: Date.now()
+    });
+  };
+  //Delete Movement from a workout
+  this.delete = function(move) {
+    var index = this.workout.indexOf(move)
+    this.workout.splice(index, 1);
+  }
+
+  // Utilize the Date for titles?
+  this.date = Date.now();
+  var sync = $firebase(ref)
+
+  this.newWorkout = sync.$asArray();
+  this.addWork = function(workout){
+    this.newWorkout.$add(workout);
+    this.workout = [ ];
+  }
+
+  // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {
+  //   console.log(snapshot.key());
+  // });
+  this.moveList = {};
+  this.moveList.movements = movements;
+
+  //Working on displaying the right properties of each movement
+  this.repsRounds = function(){
+    if($('.naming1').val() === ""){
+      return false;
+    }
+    else if($('.naming1').val()){
+      return true;
+    }
+  }
+  //Checking the Movement Value to display proper inputs
+  this.weighted = function(){
+  if($(".naming1").val().indexOf("Clean") > -1){
+    return true;
+  }
+  // else if($(".naming1").val().indexOf("Snatch") > -1){
+  //   return true;
+  // }
+  // else if($(".naming1").val().indexOf("Jerk") > -1){
+  //   return true;
+  // }
+  // else if($(".naming1").val().indexOf("Press") > -1){
+  //   return true;
+  // }
+  // else if($(".naming1").val().indexOf("Kettle") > -1){
+  //   return true;
+  // }
+  // else if($(".naming1").val().indexOf("Dumbbell") > -1){
+  //   return true;
+  // }
+  else {
+    return false;
+   }
+  }
+
+});//End Controller
+>>>>>>> release/RELEASE
