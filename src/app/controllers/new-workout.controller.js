@@ -2,46 +2,50 @@
 
 angular.module('activ8')
 
+<<<<<<< HEAD
 .controller('WorkoutController', function(Auth, $firebase){
+=======
+.controller('NewWorkoutController', function(Auth, $firebase){
+>>>>>>> aa41474ff553f806e135f44c0180568f8cf0d696
   var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid),
   self = this,
   movements = {
-   "PullUps": {
+    "PullUps": {
       name: "Pull Ups",
       type: 1
-  },
+    },
     "PushUps": {
       name: "Push Ups",
       type: 1
-  },
+    },
     "HandstandPushUps": {
-    name: "Handstand Push Ups",
-    type: 1
-  },
+      name: "Handstand Push Ups",
+      type: 1
+    },
     "SitUps": {
-    name: "Sit Ups",
-    type: 1
-  },
+      name: "Sit Ups",
+      type: 1
+    },
     "GHDSitUps": {
-    name: "GHD Sit Ups",
-    type: 1
-  },
+      name: "GHD Sit Ups",
+      type: 1
+    },
     "PowerClean": {
-    name: "Power Clean",
-    type: 2
-  },
+      name: "Power Clean",
+      type: 2
+    },
     "SquatClean": {
-    name: "Squat Clean",
-    type: 2
-  },
+      name: "Squat Clean",
+      type: 2
+    },
     "HangPowerClean": {
-    name: "Hang Power Clean",
-    type: 2
-  },
+      name: "Hang Power Clean",
+      type: 2
+    },
     "HangSquatClean": {
-    name: "Hang Squat Clean",
-    type: 2
-  }
+      name: "Hang Squat Clean",
+      type: 2
+    }
   };
 
   //Posting Workouts to the Workout Array
@@ -90,6 +94,7 @@ angular.module('activ8')
   }
   //Checking the Movement Value to display proper inputs
   this.weighted = function(){
+<<<<<<< HEAD
   if($(".naming1").val().indexOf("Clean") > -1){
     return true;
   }
@@ -112,5 +117,29 @@ angular.module('activ8')
     return false;
    }
   }
+=======
+    if($(".naming1").val().indexOf("Clean") > -1){
+      return true;
+    }
+    // else if($(".naming1").val().indexOf("Snatch") > -1){
+    //   return true;
+    // }
+    // else if($(".naming1").val().indexOf("Jerk") > -1){
+    //   return true;
+    // }
+    // else if($(".naming1").val().indexOf("Press") > -1){
+    //   return true;
+    // }
+    // else if($(".naming1").val().indexOf("Kettle") > -1){
+    //   return true;
+    // }
+    // else if($(".naming1").val().indexOf("Dumbbell") > -1){
+    //   return true;
+    // }
+    else {
+      return false;
+    }
+  }
+>>>>>>> aa41474ff553f806e135f44c0180568f8cf0d696
 
 });//End Controller

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <!-- TODO: Separate login code from dashboard code. Give them their own controllers. -->
   <div class="container-fluid main-body" ng-controller="MainController as app">
     <!-- Navbar A -->
@@ -103,83 +104,35 @@
               <option value="Squat Snatch">Squat Snatch</option>
             </optgroup>
           </select>
+=======
+<!-- Dashboard -->
+<section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+  <div class="row row-1">
+    <section class="avatar col-xs-5">
+      <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
+      <p class="fbName">{{app.user.fullName|| displayName}}</p>
+    </section><!-- / section.avatar -->
+    <section class="plus-workout col-xs-7">
+      <a role="button" class="btn btn-success work-btn glyphicon glyphicon-plus" href="#/new-workout">NewWorkout</a>
+    </section><!-- / section.plus-workout -->
+  </div>
+  <!-- BEGIN Days Active -->
+  <div class="row row-2">
+    <section class="daysActive col-xs-12">
+      <h3>Days Active Chart</h3>
+    </section>
+  </div>
+  <!-- BEGIN History -->
+  <div class="row row-3">
+    <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
+      <p>My History</p>
+      <ul class="history-list">
+        <li ng-repeat="list in history.historyList ">
+          <a ng-href="#">{{list[0].date | date:'short'}}</a><br>
+>>>>>>> aa41474ff553f806e135f44c0180568f8cf0d696
         </li>
       </ul>
-      <section class="page-up col-xs-12">
-        <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
-      </section>
-    </section><!-- / section#personalBests -->
-  </div><!-- .main-body -->
-
-  <script>
-    //Array of movements for the input box of workouts
-    $(function() {
-     var movements = [
-     "Pull Ups",
-     "Push Ups",
-     "Sit Ups",
-     "Clean",
-     "Power Clean",
-     "Squat Clean",
-     "Hang Clean",
-     "Hang Squat Clean",
-     "Snatch",
-     "Power Snatch",
-     "Squat Snatch",
-     "Hang Snatch",
-     "Hang Squat Snatch",
-     "Press",
-     "Strict Press",
-     "Push Press",
-     "Jerk",
-     "Push Jerk",
-     "Split Jerk",
-     ];
-     var workouts = [
-     "Amanda",
-     "Annie",
-     "Fran",
-     "Murph",
-     "Filthy Fifty"
-     ];
-     var personalRecords = [
-     "Power Clean",
-     "Squat Clean",
-     "Hang Power Clean",
-     "Hang Squat Clean",
-     "Jerk",
-     "Split Jerk",
-     "Push Jerk",
-     "Clean & Jerk",
-     "Power Snatch",
-     "Squat Snatch"
-     ];
-
-     $( "#movements" ).autocomplete({
-       source: movements
-     });
-     $("#workoutList").autocomplete({
-       source: workouts
-     });
-     $("#personalRecords").autocomplete({
-       source: personalRecords
-     });
-   });
-    </script>
-
-    <script>
-    $(function() {
-     $('a[href*=#]:not([href=#])').click(function() {
-       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-         var target = $(this.hash);
-         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-         if (target.length) {
-           $('html,body').animate({
-             scrollTop: target.offset().top
-           }, 1000);
-           return false;
-         }
-       }
-     });
-   });
-    </script>
+    </section>
+  </div>
+</section><!-- / section#dashboard -->
+</div><!-- .main-body -->

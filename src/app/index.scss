@@ -41,7 +41,7 @@ h1 {
   width: 100%;
   z-index: 1;
 }
- .brand {
+.brand {
   width: 30px;
   padding-left: 30%;
 }
@@ -109,7 +109,7 @@ h4 {
   left: 25%;
   right: 25%;
 }
- footer {
+footer {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -117,69 +117,69 @@ h4 {
   text-align: center;
   color: lightgray;
 }
- .container-fluid>.navbar-header {
-   margin-right: 0;
- }
+.container-fluid>.navbar-header {
+  margin-right: 0;
+}
 
- .movementsList, .workoutList {
-   padding-top: 30%;
- }
- .add {
-   padding: 8% 0;
-   margin-top: -10px;
- }
-  .userInfo {
-    width: 200px;
-    height: 150px;
-    background: burlywood;
-    margin: 73% auto 0 auto;
-    position: relative;
-  }
-  .username {
-    position: absolute;
-    left: 14%;
-    top: 18%;
-    width: 70%;
-  }
-  .pw {
-    position: absolute;
-    left: 14%;
-    top: 60%;
-    width: 70%;
-  }
-  .first24 {
-    position: absolute;
-    top: 0;
-    left: 25%;
-    right: 25%;
-  }
-  .second24 {
-    position: absolute;
-    bottom: -8%;
-    left: 25%;
-    right: 25%;
-  }
-  .first30 {
-    position: absolute;
-    left: 0;
-    top: 45%;
-    transform: rotateZ(90deg)
-  }
-  .second30 {
-    position: absolute;
-    right: 0;
-    top: 45%;
-    transform: rotateZ(90deg)
-  }
-  .main-body {
-    background: url(/assets/images/boxbg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    background-size: cover;
-  }
-  h2 {
-    color: white;
-    margin: 30% auto 0 auto;
-  }
+.movementsList, .workoutList {
+  padding-top: 30%;
+}
+.add {
+  padding: 8% 0;
+  margin-top: -10px;
+}
+.userInfo {
+  width: 200px;
+  height: 150px;
+  background: burlywood;
+  margin: 73% auto 0 auto;
+  position: relative;
+}
+.username {
+  position: absolute;
+  left: 14%;
+  top: 18%;
+  width: 70%;
+}
+.pw {
+  position: absolute;
+  left: 14%;
+  top: 60%;
+  width: 70%;
+}
+.first24 {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+}
+.second24 {
+  position: absolute;
+  bottom: -8%;
+  left: 25%;
+  right: 25%;
+}
+.first30 {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  transform: rotateZ(90deg)
+}
+.second30 {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  transform: rotateZ(90deg)
+}
+.main-body {
+  background: url(../assets/images/boxbg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+h2 {
+  color: white;
+  margin: 30% auto 0 auto;
+}
 .listOfMoves {
   list-style-type: none;
   padding: 0;
@@ -201,7 +201,7 @@ h4 {
   color: white;
   min-height: 20%;
   background-color: rgba(200,0,0,0.5);
-  margin: 15% auto 0 auto;
+  margin: 8% auto 0 auto;
   width: 90%;
 }
 .avatar {
@@ -246,9 +246,6 @@ h4 {
   width: 85%;
   padding-top: 10%;
 }
-.page-down {
-  padding-top: 10%;
-}
 .page-down a {
   color: rgba(200,0,0,0.5);
   font-size: 50pt;
@@ -257,6 +254,7 @@ h4 {
   color: white;
   font-weight: bold;
   text-align: left;
+  margin: 0;
 }
 .page-up {
   text-align: center;
@@ -294,21 +292,21 @@ h4 {
   margin: 0 auto;
 }
 /* @media (min-width: 380px){
-  .loginText {
-    top: 75%;
-  }
+.loginText {
+top: 75%;
+}
 }
 
 @media (min-width: 540px){
-  .kettle {
-    width: 40%;
-    margin: 50% auto 0 auto;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    right: 30%;
-  }
-  .loginText {
-    top: 75%;
-  }
+.kettle {
+width: 40%;
+margin: 50% auto 0 auto;
+position: absolute;
+top: 20%;
+left: 30%;
+right: 30%;
+}
+.loginText {
+top: 75%;
+}
 } */
