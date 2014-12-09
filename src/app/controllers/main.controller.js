@@ -50,10 +50,7 @@ angular.module('activ8')
     */
     logout: function(){
       auth.$unauth();
-<<<<<<< HEAD
-=======
       console.log("HELLO")
->>>>>>> release/RELEASE
     },
     /**
     *Get the current user.
@@ -96,8 +93,6 @@ angular.module('activ8')
   } // END updateUser
 }) // END factory(Auth)
 
-<<<<<<< HEAD
-=======
 // .factory("History", function(Auth, $firebase) {
 //   return function() {
 //     // create a reference to the user's profile
@@ -107,14 +102,13 @@ angular.module('activ8')
 //   }
 // })
 
->>>>>>> release/RELEASE
 /**
 * Main application Controller
 *
 * @method {Promise} login -- trigger the login workflow
 * @method {undefined} logout -- trigger the logout workflow
 */
-  .controller('MainController', function(Auth){
+.controller('MainController', function(Auth){
   var self = this;
 
   this.login = Auth.login;
