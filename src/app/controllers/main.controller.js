@@ -86,6 +86,35 @@ angular.module('activ8')
 
     user.$save();
 
+    // var user = $firebase(Firebase.child('users').child(authdUser.facebook.id);
+    //
+    // // Update the authdUser's information in Firebase
+    // user.update({
+    //   uid: authdUser.facebook.id,
+    //   facebook: authdUser.facebook,
+    //   fullName: authdUser.facebook.displayName,
+    //   avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+    //   gender: authdUser.facebook.cachedUserProfile.gender
+    // });
+    //
+    // var Array = ['power', 'other things'];
+    // Array.forEach(function(){
+    //   var user = $firebase(Firebase.child('users').child(authdUser.uid).child('pr').child(Array[index])//.child(movement.name);
+    //
+    //   user.update({
+    //     weight: 0,
+    //     date: 0
+    //   })
+    // })
+    //
+    //
+    // // Set user to the object reference of authdUser
+    // user = $firebase(FirebaseUrl
+    //   .child('users')
+    //   .child(authdUser.uid)
+    // ).$asObject();
+
+
     currentUser = user;
 
     return user;
@@ -108,7 +137,7 @@ angular.module('activ8')
 * @method {undefined} logout -- trigger the logout workflow
 */
 .controller('MainController', function(Auth, $location){
-  
+
   var self = this;
 
   this.login = Auth.login;

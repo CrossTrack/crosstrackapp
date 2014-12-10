@@ -2,12 +2,12 @@
   <a href="#history" class="btn btn-warning btn-sm">My History</a>
 </section>
 <section class="main">
-  <form class="new-move col-xs-12" ng-submit="work.addWork(work.workout)">
+  <form class="new-move col-xs-12" ng-submit="work.addWork(work.workout)" name="new">
     <label><h4>Today's Workout</h4></label><br>
-    <div class="new-moves" ng-repeat="move in work.workout">
-      <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on">
-      <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps">
-      <input type="text" class="form-control" ng-model="move.rds"  placeholder="Rounds">
+    <div class="new-moves" ng-repeat="move in work.workout" >
+      <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on" required>
+      <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps" required>
+      <input type="text" class="form-control" ng-model="move.rds"  placeholder="Rounds" required>
       <div class="input-group">
         <input type="text" class="form-control" ng-model="move.weight" placeholder="Weight">
         <span class="input-group-btn">
@@ -19,7 +19,7 @@
     </div>
     <div>
       <input type="Button" class="btn btn-success" value="(+)Add Movement" ng-click="work.addMove()"><br>
-      <input type="submit" class="btn btn-primary" value="Save Workout">
+      <input type="submit" class="btn btn-primary" value="Save Workout" ng-disabled="work.disable()">
 
 
     </div>

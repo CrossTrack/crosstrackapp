@@ -273,7 +273,7 @@ h2 {
   top: 10%;
   right: 2%;
 }
-.new-move {
+.new-move, {
   margin-top: 30%;
   overflow: auto;
   height: auto;
@@ -281,7 +281,7 @@ h2 {
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar {
+.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar, .my-history::-webkit-scrollbar {
   display: none;
 }
 .new-dash {
@@ -291,8 +291,20 @@ h2 {
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
+.my-history {
+  padding-top: 10%;
+  margin-top: 15%;
+  overflow: auto;
+  height: auto;
+  padding: .5rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.histroy-head {
+  margin-top: 0;
+}
 .history-list {
-  list-style-type: none;
+  color: white;
 }
 .new-moves {
   width: 80%;
@@ -313,8 +325,7 @@ h2 {
 /* PAGES (specific colors for each page)
 ============================================================================= */
 .page-home 		{ background:#00D0BC; color:#00907c; }
-.page-about 	{ background:#E59400; color:#a55400; }
-.page-contact 	{ background:#ffa6bb; color:#9e0000; }
+
 /* ANIMATIONS
 ============================================================================= */
 

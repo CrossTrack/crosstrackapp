@@ -55,10 +55,10 @@ angular.module('activ8')
       reps: "",
       rds: "",
       weight: "",
-      moveNumber: this.workout.length + 1,
-      date: Date.now()
+      moveNumber: this.workout.length + 1
     });
   };
+  console.log(this.workout)
   //Delete Movement from a workout
   this.delete = function(move) {
     var index = this.workout.indexOf(move)
@@ -70,14 +70,28 @@ angular.module('activ8')
   var sync = $firebase(ref)
 
   this.newWorkout = sync.$asArray();
-  this.addWork = function(workout){
-    this.newWorkout.$add(workout);
+
+  this.addWork = function(movements){
+    this.newWorkout.$add({
+      date: Date.now(),
+      movements: movements
+    });
+    this.workout = [ ];
+    console.log(this.workout)
     $location.path('/history')
+
   }
 
-  // ref.orderByKey().limitToLast(3).on("child_added", function(snapshot) {
-  //   console.log(snapshot.key());
-  // });
+  this.disable = function(){
+    if($('form').hasClass('ng-pristine')){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+
   this.moveList = {};
   this.moveList.movements = movements;
 
