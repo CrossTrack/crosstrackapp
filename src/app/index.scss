@@ -301,7 +301,7 @@ h2 {
   color: white;
   background-color: rgba(0,0,0,0.5);
   padding: .5rem;
-  margin-top: 20%;
+  margin-top: 14%;
   overflow: auto;
   height: 100vh;
   width: 100%;
@@ -310,7 +310,11 @@ h2 {
 #personalBests::-webkit-scrollbar {
   display: none;
 }
-
+[contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 3px;
+}
 
 /* @media (min-width: 380px){
 .loginText {
