@@ -37,7 +37,7 @@ angular.module('activ8')
     * correct provider code.
     */
     login: function(){
-      return auth.$authWithOAuthPopup('facebook');
+      return auth.$authWithOAuthRedirect('facebook');
     },
 
     loggedIn: function(){

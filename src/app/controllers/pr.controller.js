@@ -13,6 +13,13 @@ angular.module('activ8')
     self.user = user;
   });
 
+  // console.log(self.user);
+  //
+  // self.user.$child('pr').set({
+  //   'Squat Snatch': '195',
+  //   'Power Clean': 255
+  // });
+
 });
 
   /**
