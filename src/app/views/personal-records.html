@@ -14,10 +14,10 @@
   </nav>
 
   <section id="personalBests">
-    <h3 class="records">Personal Records (PR's)</h3>
+    <h3 class="records">Personal Records</h3>
     <ul class="pr-list">
         <li ng-repeat="(name, best) in app.user.pr">
-          <a ng-href="#">{{name}}: {{best.weight}}</a><br>
+            {{name}}: {{best.weight}}<br>
         </li>
     </ul>
 
