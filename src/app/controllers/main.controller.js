@@ -93,6 +93,32 @@ angular.module('activ8')
         .child(authdUser.facebook.id)
       ).$asObject();
 
+
+      var userPRs = Firebase.child('users').child(authdUser.facebook.id).child('pr')//.child(movement.name);
+        userPRs.update({
+           'Power Clean': {weight: 205},
+           'Squat Clean': {weight: 195},
+           'Hang Power Clean': {weight: 165},
+           'Hang Squat Clean': {weight: 195},
+           'Jerk': {weight: 205},
+           'Split Jerk': {weight: 235},
+           'Push Jerk': {weight: 215},
+           'Clean & Jerk': {weight: 195},
+           'Power Snatch': {weight: 355},
+           'Squat Snatch': {weight: 385}
+        })
+
+
+      // var prMovements = ['power', 'other things'];
+      // prMovements.forEach(function(){
+      //   var user = $firebase(Firebase.child('users').child(authdUser.facebook.id).child('pr').child(prMovements[index]))//.child(movement.name);
+      //
+      //   user.update({
+      //     weight: 0,
+      //     date: 0
+      //   })
+      // })
+
       currentUser = user;
 
       return user;
