@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('activ8', ['firebase', 'ngRoute', 'ngAnimate'])
+angular.module('activ8', ['firebase', 'ngRoute'])
 /**
 * Global Configuration Object
 *
@@ -32,16 +32,13 @@ angular.module('activ8', ['firebase', 'ngRoute', 'ngAnimate'])
         controller:  'HistoryController',
         controllerAs: 'history',
 
-      })
-     .otherwise({
-        redirectTo: '/'
-      });
+    })
       .when('/personal-records', {
         templateUrl: 'app/views/personal-records.html',
         controller:  'prController',
         controllerAs: 'pr',
 
-      }).
+    })
       .otherwise({
         redirectTo: '/'
       });
