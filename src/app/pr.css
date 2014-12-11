@@ -39,7 +39,7 @@
 #personalBests::-webkit-scrollbar {
   display: none;
 }
-[contenteditable]:focus {
+#contenteditable:focus {
     border-style: dashed;
     border-color: black;
     border-width: 3px;
