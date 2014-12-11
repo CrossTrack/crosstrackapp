@@ -156,5 +156,14 @@ angular.module('activ8')
 
   this.loggedIn = Auth.loggedIn;
 
+  this.chevron = function(){
+    if($location.path() === "/" || $location.path() === "/login"){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
 
 });

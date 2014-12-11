@@ -382,6 +382,11 @@ label > h3 {
   position: absolute;
   bottom: 0%;
 }
+.glyphicon-chevron-left {
+  padding: 0;
+  color: rgba(255,255,255,0.8);
+  font-size: 20pt;
+}
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 568px)
