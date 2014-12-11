@@ -94,6 +94,13 @@ h4 {
   color: white;
   font-weight: bold;
 }
+.history-list h4 {
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  border-bottom: 2px solid gray;
+  width: 10em;
+  margin: 0 auto;
+}
 .save {
   margin-top: 5%;
 }
@@ -288,7 +295,7 @@ h2 {
 }
 .my-history {
   padding-top: 10%;
-  margin-top: 15%;
+  margin-top: 10ex;
   overflow: auto;
   height: auto;
   padding: .5rem;
@@ -299,7 +306,17 @@ h2 {
   margin-top: 0;
 }
 .history-list {
-  color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin: 2ex auto 5ex;
+  padding: 2ex;
+  width: 90%;
+}
+.move-listings h5 {
+  font-size: 15pt;
+}
+.move-listings p {
+  font-size: 10pt;
 }
 .new-moves {
   width: 80%;
@@ -395,6 +412,15 @@ label > h3 {
   .add-move-btn, .save-btn {
     width: 12em;
   }
+  .history-list {
+    width: 80%;
+  }
+  .move-listings h5 {
+    font-size: 18pt;
+  }
+  .move-listings p {
+    font-size: 13pt;
+  }
  }
 //Medium devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -412,6 +438,15 @@ label > h3 {
   }
   span > button.glyphicon-trash {
     height: 7ex;
+  }
+  .history-list {
+    width: 60%;
+  }
+  .move-listings h5 {
+    font-size: 20pt;
+  }
+  .move-listings p {
+    font-size: 15pt;
   }
 }
 /*Large devices (large desktops, 1200px and up)
