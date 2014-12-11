@@ -32,8 +32,6 @@ angular.module('activ8', ['firebase', 'ngRoute'])
       })
       .when('/pr', {
         templateUrl: 'app/views/pr.html',
-        controller:  'PRController',
-        controllerAs: 'pr',
       })
      .otherwise({
         redirectTo: '/'
