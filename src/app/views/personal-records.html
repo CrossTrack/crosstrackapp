@@ -3,8 +3,8 @@
     <h2 class="pr-head">Personal Records</h3>
     <ul class="pr-list">
         <li ng-repeat="(name, best) in app.user.pr">
-          <span class="prName">{{name}}</span>
-          <div contenteditable name="prs" ng-model="best.weight" strip-br="true">{{best.weight}}</br></div>
+          <p class="prName">{{name}}</p>
+          <div contenteditable name="prs" ng-model="best.weight" strip-br="true" class="prWeight">{{best.weight}}</br></div>
         </li>
     </ul>
   </section>

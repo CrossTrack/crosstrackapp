@@ -13,8 +13,13 @@
   text-align: center;
 }
 .prName {
-  font-size: 12pt;
+  text-align: center;
+  font-size: 14pt;
   border-bottom: 1pt solid grey;
+}
+.prWeight {
+  text-align: center;
+  font-size: 11pt;
 }
 
 #personalBests {
@@ -40,15 +45,39 @@
 
 
 @media (min-width: 768px) {
-  .pr-list {
-    color: solid red;
+    .pr-list {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 0.8);
+      margin: 2ex auto 5ex;
+      padding: 2ex;
+      width: 70%;
+      list-style: none;
+    }
+    .prName {
+      font-size: 15pt;
+    }
+    .prWeight {
+      font-size: 12pt;
+    }
   }
-}
 
 
 @media (min-width: 992px) {
-
-}
+    .pr-list {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 0.8);
+      margin: 2ex auto 5ex;
+      padding: 2ex;
+      width: 40%;
+      list-style: none;
+    }
+    .prName {
+      font-size: 16pt;
+    }
+    .prWeight {
+      font-size: 13pt;
+    }
+  }
 
 @media (min-width: @screen-lg-min) {
 
