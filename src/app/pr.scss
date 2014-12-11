@@ -1,0 +1,27 @@
+//
+// PR page CSS
+//
+.pr-list {
+  list-style: none;
+  font-size: 14pt;
+  line-height: 4ex;
+}
+
+#personalBests {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: .5rem;
+  margin-top: 14%;
+  overflow: auto;
+  height: 100vh;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+#personalBests::-webkit-scrollbar {
+  display: none;
+}
+[contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 3px;
+}
