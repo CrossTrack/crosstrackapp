@@ -5,7 +5,7 @@ angular.module('activ8')
 /**
 *Personal Bests controller
 */
-.controller('prController', function(Auth, $firebase, CONFIG){
+.controller('prController', function(Auth){
 
   var self = this;
 
