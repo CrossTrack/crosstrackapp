@@ -1,0 +1,65 @@
+
+<section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
+  <nav class="navbar navbar-default main-nav" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img class="ree" src="./assets/images/reebokxfit.png" alt="">
+        </a>
+        <section class="appName navbar-left"><a class="name" href="#"><h1>Activ8</h1></a></section>
+        <button ng-click="app.logout()" class="btn navbar-right logout-button">Logout</button>
+      </div>
+    </div><!--/.container-fluid -->
+  </nav>
+  <div class="row row-1">
+    <section class="avatar col-xs-5">
+      <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
+      <p class="fbName">{{app.user.fullName|| displayName}}</p>
+    </section>
+    <section class="plus-workout col-xs-7">
+      <button type="button" class="btn btn-success work-btn glyphicon glyphicon-plus">NewWorkout</button>
+    </section>
+  </div>
+  <div class="row row-2">
+    <section class="daysActive col-xs-12">
+      <h3>Days Active Chart</h3>
+    </section>
+  </div>
+  <div class="row row-3">
+    <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
+      <p>My History</p>
+    </section>
+  </div>
+  <section class="page-down">
+    <a href="#personalBests"><span class="glyphicon glyphicon-chevron-down"></span></a>
+  </section>
+</section>
+<section ng-show="app.loggedIn()" id="personalBests">
+  <h3 class="records">Personal Records(PR's)</h3>
+  <ul class="prDrop">
+    <li>
+      <label for="personalRecords">Select Movement:</label><br>
+      <select type="text" id="personalRecords" placeholder="Breaking Records">
+        <optgroup label="Clean">
+          <option value="Power Clean">Power Clean</option>
+          <option value="Squat Clean">Squat Clean</option>
+          <option value="Hang Power Clean">Hang Power Clean</option>
+          <option value="Hang Squat Clean">Hang Squat Clean</option>
+          <option value="Clean & Jerk">Clean & Jerk</option>
+        </optgroup>
+        <optgroup label="Jerk">
+          <option value="Jerk">Jerk</option>
+          <option value="Split Jerk">Split Jerk</option>
+          <option value="Push Jerk">Push Jerk</option>
+        </optgroup>
+        <optgroup label="Snatch">
+          <option value="Power Snatch">Power Snatch</option>
+          <option value="Squat Snatch">Squat Snatch</option>
+        </optgroup>
+      </select>
+    </li>
+  </ul>
+  <section class="page-up col-xs-12">
+    <a href="#dashboard"><span class="glyphicon glyphicon-chevron-up"></span></a>
+  </section>
+</section>

@@ -1,0 +1,30 @@
+
+<section class="main">
+
+  <form class="new-move" ng-submit="work.addWork(work.workout)">
+    <label><h4>Today's Workout</h4></label><br>
+    <div class="new-moves" ng-repeat="move in work.workout">
+      <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on">
+      <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps">
+      <input type="text" class="form-control" ng-model="move.rds"  placeholder="Rounds">
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="move.weight" placeholder="Weight">
+        <span class="input-group-btn">
+          <button class="btn btn-danger glyphicon glyphicon-trash" type="button" ng-click="work.delete(move)"></button>
+        </span>
+      </div><!-- /input-group -->
+      <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
+
+    </div>
+    <div>
+      <input type="Button" class="btn btn-success" value="(+)Add Movement" ng-click="work.addMove()"><br>
+      <input type="submit" class="btn btn-primary" value="Save Workout">
+    </div>
+  </form>
+
+  <datalist id="moving">
+    <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
+  </datalist>
+  <br>
+</section> <!-- / .main -->
+</div><!-- /.main-body -->
