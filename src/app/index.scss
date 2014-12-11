@@ -196,7 +196,7 @@ h2 {
 }
 .row-2, .row-3 {
   color: white;
-  min-height: 20%;
+  min-height: 14%;
   margin: 0;
   width: 100%;
 }
@@ -316,7 +316,7 @@ h2 {
 }
 .work-btn, .history-btn, .pr-btn {
   background-color: rgba(255,255,255,0.8);
-  height: 18.2vh;
+  height: 11.05ex;
   color: rgba(0,0,0,0.8);
   text-align: center;
   padding-top: 3ex;
@@ -342,15 +342,41 @@ h2 {
   width: 100%;
   margin: 0;
 }
-/* Small devices (tablets, 768px and up)
-@media (min-width: @screen-sm-min) {
-
+// Small devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .row-1 {
+    margin: 12ex auto 4ex auto;
+    width: 50%;
+  }
+  .row-2 {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .fb-avatar {
+    width: 180px;
+    margin: 0;
+    float: left;
+    padding: 0;
+  }
+  .fbName {
+    font-size: 24pt;
+    padding-top: 3ex;
+  }
+  .work-btn:hover, .history-btn:hover, .pr-btn:hover {
+    color: firebrick;
+  }
  }
-Medium devices (desktops, 992px and up)
-@media (min-width: @screen-md-min) {
+//Medium devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .fbName {
+    font-size: 30pt;
+    padding: 0;
+    padding-top: 2ex;
+    width: 60%;
 
+  }
 }
-Large devices (large desktops, 1200px and up)
+/*Large devices (large desktops, 1200px and up)
 @media (min-width: @screen-lg-min) {
 
  } */
