@@ -17,17 +17,19 @@ body {
 .logout {
   display: inline-block;
   float: right;
-  margin: 2.5%;
+  margin: 1.5ex .5em;
 }
 a, a:hover, a:active {
   text-decoration: none;
   cursor: pointer;
 }
 h1 {
-  margin: 6px 0 0 0;
-  padding-left: 15%;
+  margin: 0.4ex 0 0 0;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
+  position: absolute;
+  left: 15%;
+  right: 25%;
 }
 .container-fluid {
   padding: 0;
@@ -117,10 +119,6 @@ footer {
   text-align: center;
   color: lightgray;
 }
-.container-fluid>.navbar-header {
-  margin-right: 0;
-}
-
 .movementsList, .workoutList {
   padding-top: 30%;
 }
@@ -194,18 +192,16 @@ h2 {
   padding: 0 2%;
 }
 .row-1{
-  margin: 0;
-  padding-top: 20%;
+  margin: 12ex 0 2.3ex 0;
 }
 .row-2, .row-3 {
   color: white;
-  min-height: 20%;
+  min-height: 14%;
   margin: 0;
   width: 100%;
 }
 .avatar {
   padding: 0;
-  padding-left: 10%;
 }
 .plus-workout button {
   width: 100%;
@@ -316,45 +312,71 @@ h2 {
 }
 .fb-avatar {
   margin: 0 auto;
-  width: 55%;
-  padding-top: 5%;
+  width: 125px;
 }
 .work-btn, .history-btn, .pr-btn {
-  background-color: rgba(255, 255, 255, 0.4);
-  height: 18.2vh;
-  color: white;
+  background-color: rgba(255,255,255,0.8);
+  height: 11.05ex;
+  color: rgba(0,0,0,0.8);
   text-align: center;
-  padding-top: 10%;
+  padding-top: 3ex;
   font-size: 15pt;
 }
 .work-btn, .history-btn {
   border-bottom: .3ex solid rgba(0,0,0,0.3);
 }
-.dash-buttons {
-  height: 50vh;;
-}
 .glyphicon {
-  padding: 0;
+  padding: .8ex 0 0 0;
 }
 .new-btn {
   margin-left: -6%;
+  padding-top: 1ex;
+  padding-left: 0;
 }
-/* @media (min-width: 380px){
-.loginText {
-top: 75%;
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
+.container > div.navbar-header {
+  width: 100%;
+  margin: 0;
 }
+// Small devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .row-1 {
+    margin: 12ex auto 4ex auto;
+    width: 50%;
+  }
+  .row-2 {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .fb-avatar {
+    width: 180px;
+    margin: 0;
+    float: left;
+    padding: 0;
+  }
+  .fbName {
+    font-size: 24pt;
+    padding-top: 3ex;
+  }
+  .work-btn:hover, .history-btn:hover, .pr-btn:hover {
+    color: firebrick;
+  }
+ }
+//Medium devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .fbName {
+    font-size: 30pt;
+    padding: 0;
+    padding-top: 2ex;
+    width: 60%;
 
-@media (min-width: 540px){
-.kettle {
-width: 40%;
-margin: 50% auto 0 auto;
-position: absolute;
-top: 20%;
-left: 30%;
-right: 30%;
+  }
 }
-.loginText {
-top: 75%;
-}
-} */
+/*Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) {
+
+ } */
