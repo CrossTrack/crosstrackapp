@@ -70,6 +70,9 @@ h1 {
   background-color: rgba(0,0,0,0.5);
   text-align: center;
   height: 100vh;
+  overflow: auto;
+  padding: .5rem;
+  -webkit-overflow-scrolling: touch;
 }
 .kettleBox {
   width: 100%;
@@ -279,7 +282,8 @@ h2 {
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar, .my-history::-webkit-scrollbar {
+
+.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar, .my-history::-webkit-scrollbar, .main-dash::-webkit-scrollbar {
   display: none;
 }
 .new-dash {
