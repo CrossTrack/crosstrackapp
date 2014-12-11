@@ -3,7 +3,7 @@
 </section> -->
 <section class="main">
   <form class="new-move" ng-submit="work.addWork(work.workout)" name="new">
-    <label><h4>Today's Workout</h4></label><br>
+    <label><h3>Today's Workout</h3></label><br>
     <div class="new-moves" ng-repeat="move in work.workout" >
       <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on" required>
       <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps" required>
