@@ -398,6 +398,11 @@ and (orientation : landscape) {
   .main-dash {
     float: left;
   }
+  .kettle {
+    width: 9em;
+    margin: 0 auto;
+    padding-top: 11ex;
+  }
 }
 // Small devices (tablets, 768px and up)
 @media (min-width: 768px) {
