@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('activ8', ['firebase', 'ngRoute', 'ngAnimate'])
+angular.module('activ8', ['firebase', 'ngRoute'])
 /**
 * Global Configuration Object
 *
