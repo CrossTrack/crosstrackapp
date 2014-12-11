@@ -1,0 +1,13 @@
+<!-- PR Page -->
+<div class="container-fluid main-body">
+  <section id="personalBests">
+    <h2 class="pr-head">Personal Records</h3>
+      <ul class="pr-list">
+        <li ng-repeat="(name, best) in app.user.pr">
+          <p class="prName">{{name}}</p>
+          <div contenteditable name="prs" ng-model="best.weight" strip-br="true" class="prWeight">{{best.weight}}</br></div>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <!-- End PR Page -->
