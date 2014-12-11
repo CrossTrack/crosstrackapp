@@ -382,6 +382,15 @@ label > h3 {
   position: absolute;
   bottom: 0%;
 }
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+  .dash-buttons {
+    width: 100%;
+    position: relative;
+  }
+}
 // Small devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .row-1 {
