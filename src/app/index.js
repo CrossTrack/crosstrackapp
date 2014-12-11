@@ -15,25 +15,25 @@ angular.module('activ8', ['firebase', 'ngRoute'])
 .config(['$routeProvider', function($routeProvider, $firebase, $firebaseAuth) {
   $routeProvider
     .when ('/login', {
-      templateUrl: 'app/views/login.html'
+      templateUrl: 'app/views/login.html',
     })
     .when('/', {
-        templateUrl: 'app/views/maindash.html'
+        templateUrl: 'app/views/maindash.html',
     })
      .when('/new-workout', {
         templateUrl: 'app/views/new-workout.html',
         controller:  'NewWorkoutController',
-        controllerAs: 'work'
+        controllerAs: 'work',
     })
       .when('/history', {
         templateUrl: 'app/views/history.html',
         controller:  'HistoryController',
-        controllerAs: 'history'
+        controllerAs: 'history',
       })
       .when('/pr', {
         templateUrl: 'app/views/pr.html',
         controller:  'prController',
-        controllerAs: 'pr'
+        controllerAs: 'pr',
       })
      .otherwise({
         redirectTo: '/'
