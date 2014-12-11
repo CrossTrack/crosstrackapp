@@ -6,11 +6,18 @@ angular.module('activ8')
 
   var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid).orderByKey().limitToLast(3);
 
+<<<<<<< HEAD
 
   var sync = $firebase(ref);
 
   var historyArray = sync.$asArray();
 
   this.historyList = historyArray;
+=======
+  var sync = $firebase(ref)
+>>>>>>> upstream/development
 
+  this.historyList = sync.$asArray();
+  console.log(this.historyList)
+  console.log(Auth.getUser().uid)
 });

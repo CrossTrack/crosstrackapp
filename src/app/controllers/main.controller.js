@@ -36,8 +36,9 @@ angular.module('activ8')
     * Wrapper for `$firebaseAuth.$authWithOAuthPopup()` that invokes the
     * correct provider code.
     */
-    login: function(){
-      return auth.$authWithOAuthRedirect('facebook');
+
+    login: function($location){
+      return auth.$authWithOAuthRedirect('facebook')
     },
 
     loggedIn: function(){
@@ -48,7 +49,7 @@ angular.module('activ8')
     /**
     * Wrapper for `$firebaseAuth.$unauth()`
     */
-    logout: function(){
+    logout: function($location){
       auth.$unauth();
     },
     /**
@@ -127,6 +128,34 @@ angular.module('activ8')
 //  } // END updateUser
 //}) // END factory(Auth)
 
+    // var user = $firebase(Firebase.child('users').child(authdUser.facebook.id);
+    //
+    // // Update the authdUser's information in Firebase
+    // user.update({
+    //   uid: authdUser.facebook.id,
+    //   facebook: authdUser.facebook,
+    //   fullName: authdUser.facebook.displayName,
+    //   avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+    //   gender: authdUser.facebook.cachedUserProfile.gender
+    // });
+    //
+    // var Array = ['power', 'other things'];
+    // Array.forEach(function(){
+    //   var user = $firebase(Firebase.child('users').child(authdUser.uid).child('pr').child(Array[index])//.child(movement.name);
+    //
+    //   user.update({
+    //     weight: 0,
+    //     date: 0
+    //   })
+    // })
+    //
+    //
+    // // Set user to the object reference of authdUser
+    // user = $firebase(FirebaseUrl
+    //   .child('users')
+    //   .child(authdUser.uid)
+    // ).$asObject();
+
 // .factory("History", function(Auth, $firebase) {
 //   return function() {
 //     // create a reference to the user's profile
@@ -151,7 +180,8 @@ angular.module('activ8')
 * @method {Promise} login -- trigger the login workflow
 * @method {undefined} logout -- trigger the logout workflow
 */
-.controller('MainController', function(Auth){
+.controller('MainController', function(Auth, $location){
+
   var self = this;
 
   this.login = Auth.login;
@@ -160,7 +190,15 @@ angular.module('activ8')
 
   Auth.onAuth(function(user){
     self.user = user;
+    if (user === null ){
+      return $location.path('/login')
+    }
+    else {
+      return $location.path('/')
+    }
   });
 
   this.loggedIn = Auth.loggedIn;
+
+
 });
