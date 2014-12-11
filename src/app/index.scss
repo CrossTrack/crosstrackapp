@@ -390,6 +390,9 @@ and (orientation : landscape) {
     width: 100%;
     position: relative;
   }
+  .main-dash {
+    float: left;
+  }
 }
 // Small devices (tablets, 768px and up)
 @media (min-width: 768px) {
