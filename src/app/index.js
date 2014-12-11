@@ -18,7 +18,7 @@ angular.module('activ8', ['firebase', 'ngRoute'])
       templateUrl: 'app/views/login.html'
     })
     .when('/', {
-        templateUrl: 'app/views/main.html'
+        templateUrl: 'app/views/maindash.html'
     })
      .when('/new-workout', {
         templateUrl: 'app/views/new-workout.html',
