@@ -307,7 +307,7 @@ h2 {
 }
 .go-to-history {
   position: absolute;
-  top: 9%;
+  top: 2ex;
   z-index: 200;
 }
 .fb-avatar {
@@ -325,6 +325,15 @@ h2 {
 .work-btn, .history-btn {
   border-bottom: .3ex solid rgba(0,0,0,0.3);
 }
+.add-move-btn, .save-btn {
+  background-color: rgba(255,255,255,0.8);
+  height: 6ex;
+  color: rgba(0,0,0,0.8);
+  text-align: center;
+  padding-top: 0;
+  font-size: 10pt;
+  width: 9em;
+}
 .glyphicon {
   padding: .8ex 0 0 0;
 }
@@ -341,6 +350,15 @@ h2 {
 .container > div.navbar-header {
   width: 100%;
   margin: 0;
+}
+.form-control {
+  height: 6ex;
+}
+span > button.glyphicon-trash {
+  height: 4ex;
+}
+label > h3 {
+  padding-bottom: 1ex;
 }
 // Small devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -365,6 +383,18 @@ h2 {
   .work-btn:hover, .history-btn:hover, .pr-btn:hover {
     color: firebrick;
   }
+  .new-moves {
+    width: 60%;
+  }
+  .form-control {
+    height: 8ex;
+  }
+  span > button.glyphicon-trash {
+    height: 5.5ex;
+  }
+  .add-move-btn, .save-btn {
+    width: 12em;
+  }
  }
 //Medium devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -373,7 +403,15 @@ h2 {
     padding: 0;
     padding-top: 2ex;
     width: 60%;
-
+  }
+  .new-moves {
+    width: 40%;
+  }
+  .form-control {
+    height: 10ex;
+  }
+  span > button.glyphicon-trash {
+    height: 7ex;
   }
 }
 /*Large devices (large desktops, 1200px and up)
