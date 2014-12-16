@@ -158,7 +158,7 @@ angular.module('activ8')
   };
 
   //Posting Workouts to the Workout Array
-  this.workout = [ ];
+  this.workout = [ ]; this.namedWorkout = [];
 
   this.addMove = function(){
     this.workout.push({
@@ -201,7 +201,6 @@ angular.module('activ8')
       return false;
     }
   }
-
 
   this.moveList = {};
   this.moveList.movements = movements;
