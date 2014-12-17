@@ -1,0 +1,10 @@
+<div class="new-move">
+  <select ng-model="selectedWork" id="namedWorkouts" ng-options="name.namedWork for name in work.namedList.named">
+  </select>
+  <section ng-repeat="move in selectedWork.movements">
+    <p style="color: white;">{{move.name}}</p>
+    <p style="color: white;">{{move.reps}}</p>
+    <p style="color: white;">{{move.rds}}</p>
+    <input value="{{move.weight}}">
+  </section>
+</div>

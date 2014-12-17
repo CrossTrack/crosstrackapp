@@ -158,7 +158,7 @@ angular.module('activ8')
   };
 
   //Posting Workouts to the Workout Array
-  this.workout = [ ]; this.namedWorkout = [];
+  this.workout = [ ];
 
   this.addMove = function(){
     this.workout.push({
@@ -205,6 +205,245 @@ angular.module('activ8')
   this.moveList = {};
   this.moveList.movements = movements;
 
+
+  this.namedWorkout = [];
+
+  this.addNamed = function(){
+    this.namedWorkout.push({
+      name: "",
+      reps: "",
+      rds: "",
+      weight: "",
+    });
+  };
+
+  var named = [
+    {
+      namedWork: "Angie",
+      movements: {
+        "Pullups": {
+        name: "Pull Ups",
+        reps: "100",
+        rds: "1",
+        weight: "Body Weight"
+        },
+        "PushUps": {
+        name:"Push Ups",
+        reps: "100",
+        rds: "1",
+        weight: "Body Weight"
+        },
+        "SitUps": {
+        name:"Sit Ups",
+        reps: "100",
+        rds: "1",
+        weight: "Body Weight"
+        },
+        "AirSquats": {
+        name:"Air Squats",
+        reps: "100",
+        rds: "1",
+        weight: "Body Weight"
+        }
+      },
+    },
+  {
+    namedWork: "Barbara",
+    movements: {
+    "PullUps": {
+    name: "Pull Ups",
+    reps: "20",
+    rds: "5",
+    weight: "Body Weight"
+    },
+    "PushUps": {
+    name:"Push Ups",
+    reps: "30",
+    rds: "5",
+    weight: "Body Weight",
+    },
+    "SitUps": {
+    name:"Sit Ups",
+    reps: "40",
+    rds: "5",
+    weight: "Body Weight"
+    },
+    "AirSquats": {
+    name:"Air Squats",
+    reps: "50",
+    rds: "5",
+    weight: "Body Weight"
+    },
+   }
+  }
+];
+
+  //   workout2: {
+
+  //       movement4: {
+  //         Squats: {
+  //           reps: {
+  //             50
+  //           }
+  //           rounds: {
+  //             5
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  //   workout3: {
+  //     name: Chelsea {
+  //       movement1: {
+  //         Pull Ups: {
+  //           reps: {
+  //             5
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //       movement2: {
+  //         Push Ups: {
+  //           reps: {
+  //             10
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //       movement3: {
+  //         Squats: {
+  //           reps: {
+  //             15
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  //   workout4: {
+  //     name: Cindy {
+  //       movement1: {
+  //         Pull Ups: {
+  //           reps: {
+  //             5
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //       movement2: {
+  //         Push Ups: {
+  //           reps: {
+  //             10
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //       movement3: {
+  //         Squats: {
+  //           reps: {
+  //             15
+  //           }
+  //           rounds: {
+  //             1
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  //   workout5: {
+  //     name: Diane {
+  //       movement1: {
+  //         Deadlift: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //           weight: {
+  //             225
+  //           }
+  //         }
+  //       },
+  //       movement2: {
+  //         Handstand Push Ups: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  //   workout6: {
+  //     name: Elizabeth {
+  //       movement1: {
+  //         Clean: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //           weight: {
+  //             225
+  //           }
+  //         }
+  //       },
+  //       movement2: {
+  //         Ring Dips: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  //   workout7: {
+  //     name: Fran {
+  //       movement1: {
+  //         Thrusters: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //           weight: {
+  //             95
+  //           }
+  //         }
+  //       },
+  //       movement2: {
+  //         Pull Ups: {
+  //           reps: {
+  //             21-15-9
+  //           }
+  //           rounds: {
+  //             3
+  //           },
+  //         }
+  //       },
+  //     }
+  //   },
+  // }
+  this.namedList = {};
+  this.namedList.named = named;
   // //Working on displaying the right properties of each movement
   // this.repsRounds = function(){
   //   if($('.naming1').val() === ""){

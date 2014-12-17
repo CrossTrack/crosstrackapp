@@ -2,7 +2,7 @@
   <a href="#history" class="btn btn-warning btn-sm my-history-btn">My History</a>
 </section> -->
 <section class="main">
-  <form class="new-move" ng-submit="work.addWork(work.workout)" name="new">
+  <!-- <form class="new-move" ng-submit="work.addWork(work.workout)" name="new">
     <label><h3>Today's Workout</h3></label><br>
     <div class="new-moves" ng-repeat="move in work.workout" >
       <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on" required>
@@ -13,7 +13,7 @@
         <span class="input-group-btn">
           <button class="btn btn-danger glyphicon glyphicon-trash" type="button" ng-click="work.delete(move)"></button>
         </span>
-      </div><!-- /input-group -->
+      </div>/input-group
       <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
 
     </div>
@@ -23,11 +23,40 @@
 
 
     </div>
-  </form>
+  </form> -->
+  
+  <!-- <form class="new-move" ng-submit="work.addWork(work.workout)" name="new">
+    <label><h3>Today's Workout</h3></label><br>
+    <div class="new-moves" ng-repeat="move in work.namedList.named" >
+      <input class="form-control" ng-model="selected" type="text" list="naming" placeholder="Select Movement" autocomplete="on" required>
+      <p style="color: white;">{{selected.name}}</p>
+      <p style="color: white;">{{selected.reps}}</p>
+      <p style="color: white;">{{selected.rds}}</p>
+      <input type="text" value="{{selected.weight}}">
+
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="move.movements.weight" placeholder="Weight">
+        <span class="input-group-btn">
+          <button class="btn btn-danger glyphicon glyphicon-trash" type="button" ng-click="work.delete(move)"></button>
+        </span>
+      </div>
+
+    </div>
+    <div>
+      <input type="button" class="add-move-btn" value="Add Movement" ng-click="work.addNamed()"><br>
+      <input type="submit" class="save-btn" value="Save Workout" ng-hide="work.disable()">
+
+
+    </div>
+  </form> -->
 
   <datalist id="moving">
     <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
   </datalist>
+  <datalist id="naming">
+    <option data-ng-repeat="name in work.namedList.named" value="{{name.namedWork}}"></option>
+  </datalist>
+
   <br>
 
 </section>
