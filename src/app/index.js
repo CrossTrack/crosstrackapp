@@ -33,6 +33,11 @@ angular.module('activ8', ['firebase', 'ngRoute'])
       .when('/pr', {
         templateUrl: 'app/views/pr.html',
       })
+      .when('/named', {
+        templateUrl: 'app/views/namedworkout.html',
+        controller:  'NewWorkoutController',
+        controllerAs: 'work',
+      })
      .otherwise({
         redirectTo: '/'
       });

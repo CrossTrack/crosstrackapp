@@ -247,201 +247,133 @@ angular.module('activ8')
         }
       },
     },
-  {
-    namedWork: "Barbara",
-    movements: {
-    "PullUps": {
-    name: "Pull Ups",
-    reps: "20",
-    rds: "5",
-    weight: "Body Weight"
+    {
+      namedWork: "Barbara",
+      movements: {
+      "PullUps": {
+      name: "Pull Ups",
+      reps: "20",
+      rds: "5",
+      weight: "Body Weight"
+      },
+      "PushUps": {
+      name:"Push Ups",
+      reps: "30",
+      rds: "5",
+      weight: "Body Weight",
+      },
+      "SitUps": {
+      name:"Sit Ups",
+      reps: "40",
+      rds: "5",
+      weight: "Body Weight"
+      },
+      "AirSquats": {
+      name:"Air Squats",
+      reps: "50",
+      rds: "5",
+      weight: "Body Weight"
+      },
+     }
     },
-    "PushUps": {
-    name:"Push Ups",
-    reps: "30",
-    rds: "5",
-    weight: "Body Weight",
+    {
+      namedWork: "Chelsea",
+      movements: {
+        "PullUps": {
+          name: "Pull Ups",
+          reps: "5",
+          rds: "30",
+          weight: "Body Weight"
+        },
+        "PushUps": {
+          name:"Push Ups",
+          reps: "10",
+          rds: "30",
+          weight: "Body Weight",
+        },
+        "AirSquats": {
+          name:"Air Squats",
+          reps: "15",
+          rds: "30",
+          weight: "Body Weight"
+        },
+      }
     },
-    "SitUps": {
-    name:"Sit Ups",
-    reps: "40",
-    rds: "5",
-    weight: "Body Weight"
+    {
+      namedWork: "Cindy",
+      movements: {
+        "PullUps": {
+          name: "Pull Ups",
+          reps: "5",
+          rds: "1",
+          weight: "Body Weight"
+        },
+        "PushUps": {
+          name:"Push Ups",
+          reps: "10",
+          rds: "1",
+          weight: "Body Weight",
+        },
+        "AirSquats": {
+          name:"Air Squats",
+          reps: "15",
+          rds: "1",
+          weight: "Body Weight"
+        },
+      }
     },
-    "AirSquats": {
-    name:"Air Squats",
-    reps: "50",
-    rds: "5",
-    weight: "Body Weight"
-    },
-   }
-  }
-];
-
-  //   workout2: {
-
-  //       movement4: {
-  //         Squats: {
-  //           reps: {
-  //             50
-  //           }
-  //           rounds: {
-  //             5
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  //   workout3: {
-  //     name: Chelsea {
-  //       movement1: {
-  //         Pull Ups: {
-  //           reps: {
-  //             5
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //       movement2: {
-  //         Push Ups: {
-  //           reps: {
-  //             10
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //       movement3: {
-  //         Squats: {
-  //           reps: {
-  //             15
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  //   workout4: {
-  //     name: Cindy {
-  //       movement1: {
-  //         Pull Ups: {
-  //           reps: {
-  //             5
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //       movement2: {
-  //         Push Ups: {
-  //           reps: {
-  //             10
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //       movement3: {
-  //         Squats: {
-  //           reps: {
-  //             15
-  //           }
-  //           rounds: {
-  //             1
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  //   workout5: {
-  //     name: Diane {
-  //       movement1: {
-  //         Deadlift: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //           weight: {
-  //             225
-  //           }
-  //         }
-  //       },
-  //       movement2: {
-  //         Handstand Push Ups: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  //   workout6: {
-  //     name: Elizabeth {
-  //       movement1: {
-  //         Clean: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //           weight: {
-  //             225
-  //           }
-  //         }
-  //       },
-  //       movement2: {
-  //         Ring Dips: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  //   workout7: {
-  //     name: Fran {
-  //       movement1: {
-  //         Thrusters: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //           weight: {
-  //             95
-  //           }
-  //         }
-  //       },
-  //       movement2: {
-  //         Pull Ups: {
-  //           reps: {
-  //             21-15-9
-  //           }
-  //           rounds: {
-  //             3
-  //           },
-  //         }
-  //       },
-  //     }
-  //   },
-  // }
+    {
+      namedWork: "Diane",
+      movements: {
+        "Deadlift": {
+            name: "Deadlift",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "225"
+          },
+        "HandstandPushUps": {
+            name: "Handstand Push Ups",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "Body Weight"
+          },
+        }
+     },
+     {
+      namedWork: "Elizabeth",
+      movements: {
+          "Clean": {
+            name: "Clean",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "135"
+          },
+          "RingDips": {
+            name: "Ring Dips",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "Body Weight"
+          }
+        }
+      },
+      {
+        namedWork: "Fran",
+        movements: {
+          "Thrusters": {
+            name: "Thrusters",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "95"
+          },
+          "PullUps": {
+            name: "Pull Ups",
+            reps: "21-15-9",
+            rds: "3",
+            weight: "Body Weight"
+          }
+        },
+      }
+  ];
   this.namedList = {};
   this.namedList.named = named;
   // //Working on displaying the right properties of each movement
