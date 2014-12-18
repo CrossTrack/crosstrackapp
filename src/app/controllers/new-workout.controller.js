@@ -220,6 +220,7 @@ angular.module('activ8')
   var named = [
     {
       namedWork: "Angie",
+      finalScore: "0:00",
       movements: {
         "Pullups": {
         name: "Pull Ups",
@@ -249,6 +250,7 @@ angular.module('activ8')
     },
     {
       namedWork: "Barbara",
+      finalScore: "0:00",
       movements: {
       "PullUps": {
       name: "Pull Ups",
@@ -278,6 +280,7 @@ angular.module('activ8')
     },
     {
       namedWork: "Chelsea",
+      finalScore: "0",
       movements: {
         "PullUps": {
           name: "Pull Ups",
@@ -301,6 +304,7 @@ angular.module('activ8')
     },
     {
       namedWork: "Cindy",
+      finalScore: "0",
       movements: {
         "PullUps": {
           name: "Pull Ups",
@@ -324,6 +328,7 @@ angular.module('activ8')
     },
     {
       namedWork: "Diane",
+      finalScore: "0:00",
       movements: {
         "Deadlift": {
             name: "Deadlift",
@@ -341,6 +346,7 @@ angular.module('activ8')
      },
      {
       namedWork: "Elizabeth",
+      finalScore: "0:00",
       movements: {
           "Clean": {
             name: "Clean",
@@ -358,6 +364,7 @@ angular.module('activ8')
       },
       {
         namedWork: "Fran",
+        finalScore: "0:00",
         movements: {
           "Thrusters": {
             name: "Thrusters",
