@@ -1,12 +1,14 @@
 <section class="main">
   <div class="new-move">
-    <select ng-model="selectedWork" id="namedWorkouts" ng-options="name.namedWork for name in work.namedList.named">
+    <h3>Workout Of the Day</h3>
+    <select ng-model="selectedWork" id="namedWorkouts" class="form-control"  ng-options="name.namedWork for name in work.namedList.named">
+      <option value="Select Workout">Select Workout</option>
     </select>
     <section ng-repeat="move in selectedWork.movements">
       <p style="color: white;">{{move.name}}</p>
-      <p style="color: white;">{{move.reps}}</p>
-      <p style="color: white;">{{move.rds}}</p>
-      <input value="{{move.weight}}">
+      <p style="color: white; font-weight: bold;">Reps:</p><p style="color: white;">{{move.reps}}</p>
+    <p style="color: white; font-weight: bold;">Rds:</p><p style="color: white;">{{move.rds}}</p>
+  <p style="color: white; font-weight: bold;">Weight:</p><input value="{{move.weight}}">
     </section>
   </div>
 </section>
