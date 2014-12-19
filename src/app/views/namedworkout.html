@@ -1,6 +1,7 @@
 <section class="main">
   <div class="new-move">
     <h3>Workout Of the Day</h3>
+    <form name="namedWorkouts">
     <select ng-model="selectedWork" id="namedWorkouts" class="form-control"  ng-options="name.namedWork for name in work.namedList.named">
       <option value="" selected>Select Workout</option>
     </select>
@@ -10,6 +11,9 @@
     <p style="color: white; font-weight: bold;">Rds:</p><p style="color: white;">{{move.rds}}</p>
   <p style="color: white; font-weight: bold;">Weight:</p><input value="{{move.weight}}">
     </section>
-    <p style="color: white; font-weight: bold;">Final Score/Time:</p><input type="text" value="{{selectedWork.finalScore}}">
+    <p style="color: white; font-weight: bold;">Final Score/Time:</p><input type="text" placeholder="{{selectedWork.finalScore}}">
+    <input type="button" class="btn btn-success" value="Save Workout" ng-click="work.saveNamed()">
+  </form>
   </div>
+
 </section>
