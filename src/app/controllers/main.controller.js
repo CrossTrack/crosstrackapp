@@ -36,8 +36,8 @@ angular.module('activ8')
     * Wrapper for `$firebaseAuth.$authWithOAuthPopup()` that invokes the
     * correct provider code.
     */
-    login: function(){
-      return auth.$authWithOAuthPopup('facebook');
+    login: function($location){
+      return auth.$authWithOAuthRedirect('facebook')
     },
 
     loggedIn: function(){
@@ -48,9 +48,8 @@ angular.module('activ8')
     /**
     * Wrapper for `$firebaseAuth.$unauth()`
     */
-    logout: function(){
+    logout: function($location){
       auth.$unauth();
-      console.log("HELLO")
     },
     /**
     *Get the current user.
@@ -72,12 +71,15 @@ angular.module('activ8')
       return null;
     }
 
-    var user = $firebase(Firebase
-      .child('users')
-      .child(authdUser.facebook.id)
-    ).$asObject();
+    /**
+    * Create a reference to the users collection within Firebase
+    * Then create a child of the users collection named after the
+    * authdUser's Facebook ID
+    */
+    var user = Firebase.child('users').child(authdUser.facebook.id);
 
-    angular.extend(user, {
+    // Update the authdUser's information in Firebase
+    user.update({
       uid: authdUser.facebook.id,
       facebook: authdUser.facebook,
       fullName: authdUser.facebook.displayName,
@@ -85,22 +87,58 @@ angular.module('activ8')
       gender: authdUser.facebook.cachedUserProfile.gender
     });
 
-    user.$save();
+    // Set user to the object reference of authdUser
+    user = $firebase(Firebase
+      .child('users')
+      .child(authdUser.facebook.id)
+    ).$asObject();
 
+    //Populate PR object
+    var userPRs = Firebase.child('users').child(authdUser.facebook.id).child('pr')//.child(movement.name);
+    userPRs.update({
+      'Power Clean': {weight: 205},
+      'Squat Clean': {weight: 195},
+      'Hang Power Clean': {weight: 165},
+      'Hang Squat Clean': {weight: 195},
+      'Jerk': {weight: 205},
+      'Split Jerk': {weight: 235},
+      'Push Jerk': {weight: 215},
+      'Clean & Jerk': {weight: 195},
+      'Power Snatch': {weight: 355},
+      'Squat Snatch': {weight: 385}
+    })
+
+    //stores the user information for use elsewhere
     currentUser = user;
 
     return user;
-  } // END updateUser
-}) // END factory(Auth)
-
-// .factory("History", function(Auth, $firebase) {
-//   return function() {
-//     // create a reference to the user's profile
-//     var ref = new Firebase("https://activ8.firebaseio.com/workouts/" + Auth.getUser().uid).orderBy("timestamp").limitToLast(3);
-//     // return it as a synchronized object
-//     return $firebase(ref).$asObject();
-//   }
-// })
+   }
+  }) // END updateUser
+//   function updateUser(authdUser){
+//     if ( authdUser === null ){
+//       return null;
+//     }
+//
+//     var user = $firebase(Firebase
+//       .child('users')
+//       .child(authdUser.facebook.id)
+//     ).$asObject();
+//
+//     angular.extend(user, {
+//       uid: authdUser.facebook.id,
+//       facebook: authdUser.facebook,
+//       fullName: authdUser.facebook.displayName,
+//       avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+//       gender: authdUser.facebook.cachedUserProfile.gender
+//     });
+//
+//     user.$save();
+//
+//     currentUser = user;
+//
+//     return user;
+//   } // END updateUser
+// }) // END factory(Auth)
 
 /**
 * Main application Controller
@@ -108,7 +146,8 @@ angular.module('activ8')
 * @method {Promise} login -- trigger the login workflow
 * @method {undefined} logout -- trigger the logout workflow
 */
-.controller('MainController', function(Auth){
+.controller('MainController', function(Auth, $location){
+
   var self = this;
 
   this.login = Auth.login;
@@ -117,7 +156,24 @@ angular.module('activ8')
 
   Auth.onAuth(function(user){
     self.user = user;
+    if (user === null ){
+      return $location.path('/login')
+    }
+    else {
+      return $location.path('/')
+    }
   });
 
   this.loggedIn = Auth.loggedIn;
+
+  this.chevron = function(){
+    if($location.path() === "/" || $location.path() === "/login"){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+
 });

@@ -12,17 +12,33 @@ angular.module('activ8', ['firebase', 'ngRoute'])
   }
 })
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-    when('/', {
-      templateUrl: 'app/views/main.html',
-      // controller:  'MainController'
-    }).
-    when('/new-workout', {
-      templateUrl: 'app/views/new-workout.html',
-      // controller:  'NewWorkoutCtrl'
-    }).
-    otherwise({
-      redirectTo: '/'
-    });
+.config(['$routeProvider', function($routeProvider, $firebase, $firebaseAuth) {
+  $routeProvider
+    .when ('/login', {
+      templateUrl: 'app/views/login.html'
+    })
+    .when('/', {
+        templateUrl: 'app/views/main.html'
+    })
+     .when('/new-workout', {
+        templateUrl: 'app/views/new-workout.html',
+        controller:  'NewWorkoutController',
+        controllerAs: 'work',
+    })
+      .when('/history', {
+        templateUrl: 'app/views/history.html',
+        controller:  'HistoryController',
+        controllerAs: 'history',
+      })
+      .when('/pr', {
+        templateUrl: 'app/views/pr.html',
+      })
+      .when('/named', {
+        templateUrl: 'app/views/namedworkout.html',
+        controller:  'NewWorkoutController',
+        controllerAs: 'work',
+      })
+     .otherwise({
+        redirectTo: '/'
+      });
 }]);

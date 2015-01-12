@@ -1,30 +1,24 @@
 <!-- Dashboard -->
-<section ng-show="app.loggedIn()" id="dashboard" class="main-dash">
-  <div class="row row-1">
-    <section class="avatar col-xs-5">
-      <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar" alt="" width="100px" height="100px">
-      <p class="fbName">{{app.user.fullName|| displayName}}</p>
-    </section><!-- / section.avatar -->
-    <section class="plus-workout col-xs-7">
-      <a role="button" class="btn btn-success work-btn glyphicon glyphicon-plus" href="#/new-workout">NewWorkout</a>
-    </section><!-- / section.plus-workout -->
-  </div>
-  <!-- BEGIN Days Active -->
-  <div class="row row-2">
-    <section class="daysActive col-xs-12">
-      <h3>Days Active Chart</h3>
-    </section>
-  </div>
-  <!-- BEGIN History -->
-  <div class="row row-3">
-    <section class="myHistory col-xs-12" ng-controller="HistoryController as history">
-      <p>My History</p>
-      <ul class="history-list">
-        <li ng-repeat="list in history.historyList ">
-          <a ng-href="#">{{list[0].date | date:'short'}}</a><br>
-        </li>
-      </ul>
-    </section>
-  </div>
+<section id="dashboard" class="main-dash">
+  <!-- Begin new-dash -->
+  <section class="new-dash">
+      <div class="row row-1">
+      <section class="avatar col-xs-12 ">
+        <img ng-src="{{app.user.avatarUrl}}" class="img-responsive img-rounded fb-avatar col-md-6" alt="" >
+        <p class="fbName col-md-6">{{app.user.fullName|| displayName}}</p>
+      </section><!-- / section.avatar -->
+    </div>
+    <!-- BEGIN Buttons -->
+  </section><!-- End new-dash -->
+  <section class="dash-buttons">
+    <div class="row row-2 button1">
+      <a role="button" class="work-btn col-xs-12" href="#new-workout"><span class="glyphicon glyphicon-plus col-xs-2"></span><p class="col-xs-10 new-btn"> New Workout</p></a>
+    </div>
+    <div class="row row-2 button2">
+      <a role="button" class="history-btn col-xs-12" href="#history"><span class="glyphicon glyphicon-calendar col-xs-2"></span> <p class="col-xs-10 new-btn">My History</p></a>
+    </div>
+    <div class="row row-2 button3">
+      <a role="button" class="pr-btn col-xs-12" href="#pr"> <span class="glyphicon glyphicon-fire col-xs-2"></span><p class="new-btn col-xs-10">My PR's</p></a>
+    </div>
+  </section>
 </section><!-- / section#dashboard -->
-</div><!-- .main-body -->
