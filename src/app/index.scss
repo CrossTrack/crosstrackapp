@@ -17,17 +17,19 @@ body {
 .logout {
   display: inline-block;
   float: right;
-  margin: 2.5%;
+  margin: 1.5ex .5em;
 }
 a, a:hover, a:active {
   text-decoration: none;
   cursor: pointer;
 }
 h1 {
-  margin: 6px 0 0 0;
-  padding-left: 15%;
+  margin: 0.4ex 0 0 0;
   font-family: 'Stardos Stencil', 'Arial';
   font-size: 30pt;
+  position: absolute;
+  left: 15%;
+  right: 25%;
 }
 .container-fluid {
   padding: 0;
@@ -68,9 +70,10 @@ h1 {
   background-color: rgba(0,0,0,0.5);
   text-align: center;
   height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .kettleBox {
-  padding: 8%;
   width: 100%;
   margin: 0 auto;
   background-color: rgba(0,0,0,0.4);
@@ -92,16 +95,20 @@ h4 {
   color: white;
   font-weight: bold;
 }
+.history-list h4 {
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  border-bottom: 2px solid gray;
+  width: 10em;
+  margin: 0 auto;
+}
 .save {
   margin-top: 5%;
 }
 .kettle {
-  width: 60%;
-  /* margin: 50% auto 0 auto; */
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  right: 20%;
+  width: 12em;
+  margin: 0 auto;
+  padding-top: 22ex;
 }
 .loginText {
   position: absolute;
@@ -117,10 +124,6 @@ footer {
   text-align: center;
   color: lightgray;
 }
-.container-fluid>.navbar-header {
-  margin-right: 0;
-}
-
 .movementsList, .workoutList {
   padding-top: 30%;
 }
@@ -172,7 +175,7 @@ footer {
   transform: rotateZ(90deg)
 }
 .main-body {
-  background: url(../assets/images/boxbg.jpg) no-repeat center center fixed;
+  background: url(http://uptcrossfit.com/wp-content/uploads/2013/06/UPT-gym-11.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -194,18 +197,16 @@ h2 {
   padding: 0 2%;
 }
 .row-1{
-  margin: 0;
-  padding-top: 20%;
+  margin: 9ex 0 2ex 0;
 }
 .row-2, .row-3 {
   color: white;
-  min-height: 20%;
+  min-height: 14%;
   margin: 0;
   width: 100%;
 }
 .avatar {
   padding: 0;
-  padding-left: 10%;
 }
 .plus-workout button {
   width: 100%;
@@ -273,14 +274,15 @@ h2 {
   right: 2%;
 }
 .new-move, {
-  margin-top: 30%;
+  margin-top: 10ex;
   overflow: auto;
   height: auto;
   padding: .5rem;
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar, .my-history::-webkit-scrollbar {
+
+.new-move::-webkit-scrollbar, .new-dash::-webkit-scrollbar, .my-history::-webkit-scrollbar, .main-dash::-webkit-scrollbar {
   display: none;
 }
 .new-dash {
@@ -292,7 +294,7 @@ h2 {
 }
 .my-history {
   padding-top: 10%;
-  margin-top: 15%;
+  margin-top: 10ex;
   overflow: auto;
   height: auto;
   padding: .5rem;
@@ -303,7 +305,17 @@ h2 {
   margin-top: 0;
 }
 .history-list {
-  color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin: 2ex auto 5ex;
+  padding: 2ex;
+  width: 90%;
+}
+.move-listings h5 {
+  font-size: 15pt;
+}
+.move-listings p {
+  font-size: 10pt;
 }
 .new-moves {
   width: 80%;
@@ -311,50 +323,180 @@ h2 {
 }
 .go-to-history {
   position: absolute;
-  top: 9%;
+  top: 2ex;
   z-index: 200;
 }
 .fb-avatar {
   margin: 0 auto;
-  width: 55%;
-  padding-top: 5%;
+  width: 10em;
 }
 .work-btn, .history-btn, .pr-btn {
-  background-color: rgba(255, 255, 255, 0.4);
-  height: 18.2vh;
-  color: white;
+  background-color: rgba(255,255,255,0.8);
+  height: 9ex;
+  color: rgba(0,0,0,0.8);
   text-align: center;
-  padding-top: 10%;
+  padding-top: 3ex;
   font-size: 15pt;
 }
 .work-btn, .history-btn {
   border-bottom: .3ex solid rgba(0,0,0,0.3);
 }
-.dash-buttons {
-  height: 50vh;;
+.add-move-btn, .save-btn {
+  background-color: rgba(255,255,255,0.8);
+  height: 6ex;
+  color: rgba(0,0,0,0.8);
+  text-align: center;
+  padding-top: 0;
+  font-size: 10pt;
+  width: 9em;
+  font-weight: bold;
 }
 .glyphicon {
-  padding: 0;
+  padding: .8ex 0 0 0;
 }
 .new-btn {
   margin-left: -6%;
+  padding-top: 1ex;
+  padding-left: 0;
 }
-/* @media (min-width: 380px){
-.loginText {
-top: 75%;
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
+.container > div.navbar-header {
+  width: 100%;
+  margin: 0;
 }
+.form-control {
+  height: 6ex;
+}
+span > button.glyphicon-trash {
+  height: 4ex;
+}
+label > h3 {
+  padding-bottom: 1ex;
+}
+.dash-buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+}
+.glyphicon-chevron-left {
+  padding: 0;
+  color: rgba(255,255,255,0.8);
+  font-size: 20pt;
+}
+#namedWorkouts {
+  width: 25%;
+  margin: 0 auto;
+  font-size: 15pt;
+  height: 3ex;
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+  .dash-buttons {
+    width: 100%;
+    position: relative;
+  }
+  .main-dash {
+    float: left;
+  }
+  .kettle {
+    width: 9em;
+    margin: 0 auto;
+    padding-top: 11ex;
+  }
+}
+// Small devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .row-1 {
+    margin: 12ex auto 4ex auto;
+    width: 60%;
+  }
+  .row-2 {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .fb-avatar {
+    width: 16em;
+    margin: 0;
+    float: left;
+    padding: 0;
+  }
+  .fbName {
+    font-size: 24pt;
+    padding-top: 3ex;
+  }
+  .work-btn:hover, .history-btn:hover, .pr-btn:hover {
+    color: firebrick;
+  }
+  .new-moves {
+    width: 60%;
+  }
+  .form-control {
+    height: 8ex;
+  }
+  span > button.glyphicon-trash {
+    height: 5.5ex;
+  }
+  .add-move-btn, .save-btn {
+    width: 12em;
+  }
+  .history-list {
+    width: 80%;
+  }
+  .move-listings h5 {
+    font-size: 18pt;
+  }
+  .move-listings p {
+    font-size: 13pt;
+  }
+  .kettle {
+    width: 18em;
+    margin: 0 auto;
+    padding-top: 15ex;
+  }
+  .dash-buttons {
+    position: relative;
+  }
+ }
 
-@media (min-width: 540px){
-.kettle {
-width: 40%;
-margin: 50% auto 0 auto;
-position: absolute;
-top: 20%;
-left: 30%;
-right: 30%;
+//Medium devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .fbName {
+    font-size: 30pt;
+    padding: 0;
+    padding-top: 2ex;
+    width: 60%;
+  }
+  .new-moves {
+    width: 40%;
+  }
+  .form-control {
+    height: 10ex;
+  }
+  span > button.glyphicon-trash {
+    height: 7ex;
+  }
+  .history-list {
+    width: 60%;
+  }
+  .move-listings h5 {
+    font-size: 20pt;
+  }
+  .move-listings p {
+    font-size: 15pt;
+  }
+  .kettle {
+    width: 25em;
+    margin: 0 auto;
+    padding-top: 10%;
+  }
 }
-.loginText {
-top: 75%;
-}
-} */
+/*Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) {
+
+ } */

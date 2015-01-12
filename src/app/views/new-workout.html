@@ -1,9 +1,9 @@
-<section class="go-to-history col-xs-12">
-  <a href="#history" class="btn btn-warning btn-sm">My History</a>
-</section>
+<!-- <section class="go-to-history col-xs-12">
+  <a href="#history" class="btn btn-warning btn-sm my-history-btn">My History</a>
+</section> -->
 <section class="main">
-  <form class="new-move col-xs-12" ng-submit="work.addWork(work.workout)" name="new">
-    <label><h4>Today's Workout</h4></label><br>
+  <form class="new-move" ng-submit="work.addWork(work.workout)" name="new">
+    <label><h3>Today's Workout</h3></label><br>
     <div class="new-moves" ng-repeat="move in work.workout" >
       <input class="form-control" ng-model="move.name" type="text" list="moving" placeholder="Select Movement" autocomplete="on" required>
       <input type="text" class="form-control" ng-model="move.reps" placeholder="Reps" required>
@@ -13,21 +13,23 @@
         <span class="input-group-btn">
           <button class="btn btn-danger glyphicon glyphicon-trash" type="button" ng-click="work.delete(move)"></button>
         </span>
-      </div><!-- /input-group -->
+      </div>/input-group
       <input type="text" ng-hide="true" ng-model="move.moveNumber"><br>
 
     </div>
     <div>
-      <input type="Button" class="btn btn-success" value="(+)Add Movement" ng-click="work.addMove()"><br>
-      <input type="submit" class="btn btn-primary" value="Save Workout" ng-disabled="work.disable()">
-
-
+      <input type="button" class="add-move-btn" value="Add Movement" ng-click="work.addMove()"><br>
+      <input type="submit" class="save-btn" value="Save Workout" ng-hide="work.disable()">
     </div>
   </form>
 
   <datalist id="moving">
     <option data-ng-repeat="moves in work.moveList.movements" value="{{moves.name}}"></option>
   </datalist>
+  <datalist id="naming">
+    <option data-ng-repeat="name in work.namedList.named" value="{{name.namedWork}}"></option>
+  </datalist>
+
   <br>
 
 </section>

@@ -1,0 +1,87 @@
+
+.pr-list {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin: 2ex auto 5ex;
+  padding: 2ex 0;
+  width: 90%;
+  list-style: none;
+}
+
+.pr-head {
+  margin-top: 0;
+  text-align: center;
+}
+.prName {
+  text-align: center;
+  font-size: 14pt;
+  border-bottom: 1pt solid grey;
+  width: 100%;
+}
+.prWeight {
+  text-align: center;
+  font-size: 11pt;
+  width: 20%;
+  margin: 0 auto
+}
+
+#personalBests {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: .5rem;
+  margin-top: 6ex;
+  padding-top: 6ex;
+  overflow: auto;
+  height: 100vh;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+#personalBests::-webkit-scrollbar {
+  display: none;
+}
+#contenteditable:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 3px;
+    width: 20%;
+    margin: 0 auto;
+}
+.prLI {
+  padding: 2ex 0;
+}
+
+
+@media (min-width: 768px) {
+    .pr-list {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 0.8);
+      margin: 2ex auto 5ex;
+      padding: 2ex 0;
+      width: 70%;
+      list-style: none;
+    }
+    .prName {
+      font-size: 15pt;
+    }
+    .prWeight {
+      font-size: 12pt;
+    }
+  }
+
+
+@media (min-width: 992px) {
+    .pr-list {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 0.8);
+      margin: 2ex auto 5ex;
+      padding: 2ex 0;
+      width: 40%;
+      list-style: none;
+    }
+    .prName {
+      font-size: 16pt;
+    }
+    .prWeight {
+      font-size: 13pt;
+    }
+  }
